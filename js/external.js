@@ -40,21 +40,65 @@
 // }
 
 //3a
-let moneyInAccount = 19.99;
-let creditsInAccount = 7.50;
-let driverIsNearby = true;
-let canGetRideshare = (moneyInAccount > 10 || creditsInAccount > 10.00) && driverIsNearby;
-if (canGetRideshare){
-    alert("your ride is on the way!");
-}else{
-    alert("You have insufficient funds for a ride!");
-}
+
+//Start old variable values
+//let moneyInAccount = 19.99;
+//let creditsInAccount = 7.50;
+//let driverIsNearby = true;
+//end old variable values
+
+// var moneyInAccount = "";
+// while (moneyInAccount === ""){
+//     moneyInAccount = prompt('How much money is in the account?'); //e.g. 9.99 or 10.01
+// }
+// var creditsInAccount = "";
+// while (creditsInAccount === ""){
+//     creditsInAccount = prompt('How many credits are in the account?'); //e.g. 9.99 or 10.01
+// }
+// var driverIsNearby = "";
+// while (driverIsNearby === ""){
+//     driverIsNearby = prompt("Is the driver nearby? Type 'yes' or 'no'");
+// }
+// if(driverIsNearby === "yes"){
+//     (driverIsNearby = true);
+// }else{
+//     (driverIsNearby = false);
+// }
+
+// let canGetRideshare = (moneyInAccount > 10 || creditsInAccount > 10.00) && driverIsNearby;
+// if (canGetRideshare){
+//     alert("your ride is on the way!");
+// }else{
+//     alert("Sorry, no ride can be made available for you!");
+// }
 
 //3b
+
+//Start old variable values
 // let noConflict = true;
 // let notFull = true;
+//End old variable values
+
+// var noConflict = "";
+// while (noConflict === ""){
+//     noConflict = prompt("Is the schedule free of conflicts? Type 'yes' or 'no'");
+// }
+// if(noConflict === "yes"){
+//     (noConflict = true);
+// }else{
+//     (noConflict = false);
+// }
+// var notFull = "";
+// while (notFull === ""){
+//     notFull = prompt("Is the class full yet? Type 'yes' or 'no'");
+// }
+// if(notFull === "no"){
+//     (notFull = true);
+// }else{
+//     (notFull = false);
+// }
 //
-// let canEnroll = notFull && noConflict;
+// let canEnroll = noConflict && notFull;
 // if (canEnroll){
 //     alert("You can enroll!");
 // }else{
@@ -62,15 +106,39 @@ if (canGetRideshare){
 // }
 
 //3c
+
+//Start old variable values
 // let personBuys = 0;
 // let notExpired = true;
 // let premiumMember = false;
-// let applyProductOffer = (personBuys > 2 && notExpired) || premiumMember;
-// if (applyProductOffer){
-//     alert("Product offer can be applied!");
-// }else{
-//     alert("Sorry, product offer can not be applied");
-// }
+//End old variable values
 
+var personBuys = "";
+while (personBuys === ""){
+    personBuys = prompt('How many items has the person bought?'); //e.g. more than 2 to pass
+}
+var notExpired = "";
+while (notExpired === ""){
+    notExpired = prompt("Is the offer expired? Type 'yes' or 'no'");
+}
+if(notExpired === "no"){
+    (notExpired = true);
+}else{
+    (notExpired = false);
+}
+var premiumMember = "";
+while (premiumMember === ""){
+    premiumMember = prompt("Is the person a premium member? Type 'yes' or 'no'");
+}
+if(premiumMember === "yes"){
+    (premiumMember = true);
+}else{
+    (premiumMember = false);
+}
 
-
+let applyProductOffer = (personBuys > 2 && notExpired) || premiumMember;
+if (applyProductOffer){
+    alert("Product offer can be applied!");
+}else{
+    alert("Sorry, product offer can not be applied");
+}
