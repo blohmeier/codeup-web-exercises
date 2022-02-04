@@ -142,34 +142,47 @@
 // let premiumMember = false;
 //End old variable values
 
-var personBuys = "";
-while (personBuys === ""){
-    personBuys = prompt('How many items has the person bought?'); //e.g. more than 2 to pass
-}
-var notExpired = "";
-while (notExpired === ""){
-    notExpired = prompt("Is the offer expired? Type 'yes' or 'no'");
-}
-if(notExpired === "no"){
-    (notExpired = true);
-}else{
-    (notExpired = false);
-}
-var premiumMember = "";
-while (premiumMember === ""){
-    premiumMember = prompt("Is the person a premium member? Type 'yes' or 'no'");
-}
-if(premiumMember === "yes"){
-    (premiumMember = true);
-}else{
-    (premiumMember = false);
-}
-
-let applyProductOffer = (personBuys > 2 && notExpired) || premiumMember;
-if (applyProductOffer){
-    alert("Product offer can be applied!");
-}else{
-    alert("Sorry, product offer can not be applied");
-}
-
+// var personBuys = "";
+// while (personBuys === ""){
+//     personBuys = prompt('How many items has the person bought?'); //e.g. more than 2 to pass
+// }
+// var notExpired = "";
+// while (notExpired === ""){
+//     notExpired = prompt("Is the offer expired? Type 'yes' or 'no'");
+// }
+// if(notExpired === "no"){
+//     (notExpired = true);
+// }else{
+//     (notExpired = false);
+// }
+// var premiumMember = "";
+// while (premiumMember === ""){
+//     premiumMember = prompt("Is the person a premium member? Type 'yes' or 'no'");
+// }
+// if(premiumMember === "yes"){
+//     (premiumMember = true);
+// }else{
+//     (premiumMember = false);
+// }
+//
+// let applyProductOffer = (personBuys > 2 && notExpired) || premiumMember;
+// if (applyProductOffer){
+//     alert("Product offer can be applied!");
+// }else{
+//     alert("Sorry, product offer can not be applied");
+// }
+//Uziel's answer
+// let buy2Items = prompt("did the customer bought 2 or more products??")
+// console.log("answer: " + buy2Items)
+//
+// let offerExpired = prompt("is the offer expired??")
+// console.log("answer: " + offerExpired)
+//
+// let userPremium = prompt("is the user a premium user?")
+//
+// if ( (buy2Items == "yes" && offerExpired == "no") || userPremium == "yes"){
+//     alert("discount applied!!!")
+// } else {
+//     alert("discount wasnt applied!!! :(")
+// }
 //Instructor answer

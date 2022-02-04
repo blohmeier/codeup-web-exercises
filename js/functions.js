@@ -1,5 +1,7 @@
 "use strict";
+//Class learning
 
+//Start of actual exercises
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -10,10 +12,10 @@
  */
 
 
-function sayHello(name) {
-    var returnValue = ("Hello, " + name + "!");
-    alert(returnValue);
-}
+// function sayHello(name) {
+//     var returnValue = ("Hello, " + name + "!");
+//     alert(returnValue);
+// }
 
 // sayHello("Jack");
 
@@ -32,11 +34,11 @@ function sayHello(name) {
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Brett";
-sayHello(myName);
-// Don't modify the following line, it generates a random number between 1 and 3
-// and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+// var myName = "Brett";
+// sayHello(myName);
+// // Don't modify the following line, it generates a random number between 1 and 3
+// // and stores it in a variable named random
+// var random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -55,13 +57,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(number) {
-    (number === 2) ? console.log("true") : console.log("false");
-}
-isTwo(1) // returns false
-isTwo(2) // returns true
-isTwo(3) // returns false
-isTwo(random);
+// function isTwo(number) {
+//     (number === 2) ? console.log("true") : console.log("false");
+// }
+// isTwo(1) // returns false
+// isTwo(2) // returns true
+// isTwo(3) // returns false
+// isTwo(random);
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -73,30 +75,30 @@ isTwo(random);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(tipPercentage, billTotal) {
-    var amountToTip = (tipPercentage * billTotal);
-    console.log(amountToTip);
-}
-calculateTip(0.20, 20) // returns 4
-calculateTip(0.25, 25.50) // returns 6.375
-calculateTip(0.15, 33.42) // returns 5.013
+// function calculateTip(tipPercentage, billTotal) {
+//     var amountToTip = (tipPercentage * billTotal);
+//     console.log(amountToTip);
+// }
+// calculateTip(0.20, 20) // returns 4
+// calculateTip(0.25, 25.50) // returns 6.375
+// calculateTip(0.15, 33.42) // returns 5.013
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var billTotal = "";
-while (billTotal === ""){
-    billTotal = prompt('What is the bill total?');
-}
-
-var tipPercentage = "";
-while (tipPercentage === ""){
-    tipPercentage = prompt('What is the tip percentage (use decimal value)?');
-}
-
-calculateTip(billTotal,tipPercentage);
+// var billTotal = "";
+// while (billTotal === ""){
+//     billTotal = prompt('What is the bill total?');
+// }
+//
+// var tipPercentage = "";
+// while (tipPercentage === ""){
+//     tipPercentage = prompt('What is the tip percentage (use decimal value)?');
+// }
+//
+// calculateTip(billTotal,tipPercentage);
 
 /**
  * TODO:
@@ -112,18 +114,18 @@ calculateTip(billTotal,tipPercentage);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount(priceBeforeDiscount,discountPercentage){
-    var discountedPrice = (priceBeforeDiscount - (priceBeforeDiscount * discountPercentage));
-    console.log(discountedPrice);
-}
-var priceBeforeDiscount = "";
-while (priceBeforeDiscount === ""){
-    priceBeforeDiscount = prompt('What is the price before applying the discount?');
-}
-
-var discountPercentage = "";
-while (discountPercentage === ""){
-    discountPercentage = prompt('What is the discount percentage (use decimal value)?');
-}
-
-applyDiscount(priceBeforeDiscount,discountPercentage);
+// function applyDiscount(priceBeforeDiscount,discountPercentage){
+//     var discountedPrice = (priceBeforeDiscount - (priceBeforeDiscount * discountPercentage));
+//     console.log(discountedPrice);
+// }
+// var priceBeforeDiscount = "";
+// while (priceBeforeDiscount === ""){
+//     priceBeforeDiscount = prompt('What is the price before applying the discount?');
+// }
+//
+// var discountPercentage = "";
+// while (discountPercentage === ""){
+//     discountPercentage = prompt('What is the discount percentage (use decimal value)?');
+// }
+//
+// applyDiscount(priceBeforeDiscount,discountPercentage);
