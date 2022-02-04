@@ -30,7 +30,8 @@
 // console.log("Hello from inline JavaScript");
 // alert("Welcome to my website!");
 
-
+//Working with Data Types, Operators, and Vars questipons
+//First problem group
 // let userInput = prompt('Favorite color?');
 // while(userInput != "red") {
 //     prompt("No good, try again!");
@@ -39,7 +40,11 @@
 //     console.log("That's my favorite too!");
 // }
 
-//3a
+// better version of the above ("First Problem Group")
+// alert(prompt("Favorite color?") + " " + "is my favorite color too!");
+
+//WRONG PROBLEMS!!.
+//Wrong Problem 1
 
 //Start old variable values
 //let moneyInAccount = 19.99;
@@ -64,15 +69,30 @@
 // }else{
 //     (driverIsNearby = false);
 // }
-
-// let canGetRideshare = (moneyInAccount > 10 || creditsInAccount > 10.00) && driverIsNearby;
+//Wrong Problem 2
+// let canGetRideshare = (moneyInAccount > 10 || creditsInAccount > 10) && driverIsNearby;
 // if (canGetRideshare){
 //     alert("your ride is on the way!");
 // }else{
 //     alert("Sorry, no ride can be made available for you!");
 // }
 
+//Second problem group (refactoring problem 3 from previous lesson, with prompts and alerts).
+//3a
+//Instructor answer
+// let lilMermaid = parseInt(prompt("How long did you rent 'The Little Mermaid'?"));
+// let broBear = parseInt(prompt("How long did you rent 'Brother Bear'?"));
+// let herc = parseInt(prompt("How long did you rent 'Hercules'?"));
+//
+// console.log(lilMermaid ? lilMermaid * 3 : "You did not enter a number");
+// alert((lilMermaid + broBear + herc) * 3);
 //3b
+//Instructor answer
+// let g = parseInt(prompt("How many hours did you work for Google?")) * 400;
+// let f = parseInt(prompt("How long did you rent 'Brother Bear'?")) * 350;
+// let a = parseInt(prompt("How long did you rent 'Hercules'?")) * 380;
+// alert("Your paycheck is " + (g + f + a));
+//3c
 
 //Start old variable values
 // let noConflict = true;
@@ -105,7 +125,16 @@
 //     alert("You are not able to enroll.");
 // }
 
-//3c
+//Instructor answer
+// let hasConflict = confirm("Do you have a class at 10am?");
+// let seatsRemaining = 29;
+//
+// if (!hasConflict && seatsRemaining){
+//     alert("You are enrolled in Theoretical History of Existential Nihilism - Congrats! Or Not...?")
+// }else{
+//     alert("You can't enroll!");
+// }
+//3d
 
 //Start old variable values
 // let personBuys = 0;
@@ -142,3 +171,5 @@ if (applyProductOffer){
 }else{
     alert("Sorry, product offer can not be applied");
 }
+
+//Instructor answer
