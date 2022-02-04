@@ -1,17 +1,5 @@
 "use strict";
 
-//Class learning
-tryGetRideshare(20, true, prompt("How much $$ do you have?"));
-
-function getFundsAvailable(){...}
-
-function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
-
-        let moneyInAccount = parseFloat(prompt("How much is in the account"));
-        var creditsInAccount = parseFloat(prompt("How much is in the account"));
-        return moneyInAccount + creditsInAccount;
-}
-//Start of actual exercises
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -23,11 +11,10 @@ function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
 
 
 // function sayHello(name) {
-//     var returnValue = ("Hello, " + name + "!");
-//     alert(returnValue);
+//     return ("Hello, " + name + "!");
 // }
 
-// sayHello("Jack");
+//sayHello("codeup");
 
 /**
  * TODO:
@@ -36,7 +23,8 @@ function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
  *
  * console.log 'helloMessage' to check your work
  */
-//sayHello("Brett");
+// let helloMessage = sayHello("Brett");
+// console.log(helloMessage);
 
 /**
  * TODO:
@@ -44,11 +32,11 @@ function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Brett";
-sayHello(myName);
+// let myName = "Brett";
+// console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+// var random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:

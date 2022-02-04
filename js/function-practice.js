@@ -1,3 +1,18 @@
+//CLASS NOTES AND PRACTICE
+
+//Class learning
+// tryGetRideshare(20, true, prompt("How much $$ do you have?"));
+//
+// function getFundsAvailable(){...}
+//
+// function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
+//
+//     let moneyInAccount = parseFloat(prompt("How much is in the account"));
+//     var creditsInAccount = parseFloat(prompt("How much is in the account"));
+//     return moneyInAccount + creditsInAccount;
+// }
+//Start of actual exercises
+
 /* TODO: MINI-EXERCISE:
 *   -> Write a function named getName() which will return the result of the user inputting their name(s)
 *   -> Console log the invocation of getName() to ensure it works properly
@@ -72,13 +87,9 @@
 // console.log(doubleN());
 
 //Make a function named areIdentical(input1, input2) that returns true if both inputs are same value and data type; otherwise it returns false.
-function areIdentical(input1, input2){
+function areIdentical(){
     var input1 = prompt("type a first input to be compared");
     var input2 = prompt("type a second input to compare the first input to");
-    if (input1 === input2){
-        return true;
-    }else{
-        return false;
-    }
+    return input1 === input2;
 }
 console.log(areIdentical());
