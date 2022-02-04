@@ -1,8 +1,8 @@
 "use strict";
 
 //Class learning
-tryGetRideshare(20, true, 19);
-tryGetRideshare(10.50, true, 10.51);
+tryGetRideshare(20, true, prompt("How much $$ do you have?"));
+tryGetRideshare(10.50, true, prompt("How much $$ do you have?"));
 
 
 function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
