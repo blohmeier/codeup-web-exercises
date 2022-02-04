@@ -3,13 +3,14 @@
 //Class learning
 tryGetRideshare(20, true, prompt("How much $$ do you have?"));
 
-function getFundsAvailable(){
+function getFundsAvailable(){...}
+
+function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
+
         let moneyInAccount = parseFloat(prompt("How much is in the account"));
         var creditsInAccount = parseFloat(prompt("How much is in the account"));
         return moneyInAccount + creditsInAccount;
 }
-
-function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {}
 //Start of actual exercises
 /**
  * TODO:
@@ -43,11 +44,11 @@ function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {}
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-// var myName = "Brett";
-// sayHello(myName);
-// // Don't modify the following line, it generates a random number between 1 and 3
-// // and stores it in a variable named random
-// var random = Math.floor((Math.random() * 3) + 1);
+var myName = "Brett";
+sayHello(myName);
+// Don't modify the following line, it generates a random number between 1 and 3
+// and stores it in a variable named random
+var random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
