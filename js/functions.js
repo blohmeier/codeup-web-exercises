@@ -1,10 +1,10 @@
 "use strict";
 //Class learning
 
-function tryGeetRideshare(costOfRide){
+function tryGeetRideshare(costOfRide, driverAvailable){
     let moneyInAccount = 100;
     let creditsAvail = 7:50;
-    let driverNearby = true;
+    //let driverNearby = true;
 }
 
 //don't know how much ride will be - DONE
@@ -12,7 +12,7 @@ function tryGeetRideshare(costOfRide){
 //money sources?
 //money available?
 
-if (driverNearby && (moneyInAccount >= costOfRide) || creditsAvail >costOfRide){
+if (driverAvailable && (moneyInAccount >= costOfRide) || creditsAvail >costOfRide){
     console.log("Ride is on the way")
 }else{
     console.log("No drivers aree available at this time")
