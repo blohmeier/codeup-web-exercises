@@ -2,18 +2,17 @@
 
 //Class learning
 tryGetRideshare(20, true, prompt("How much $$ do you have?"));
-tryGetRideshare(10.50, true, prompt("How much $$ do you have?"));
+
+function getFundsAvailable(){
+        let moneyInAccount = prompt("How much is in the account");
+        let numOfRiders;
+        if(confirm("Are you splitting this ride with someone else?")){
+            numOfRiders = prompt("How many riders do you have?");
+        }
+}
 
 
 function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
-    let moneyInAccount = 100;
-    let creditsAvail = 7.50;
-    //let driverNearby = true;
-
-//don't know how much ride will be - DONE
-//don't know if driver ready/nearby
-//money sources?
-//money available?
 
     if (driverAvailable && totalFundsAvailable >= costOfRide) {
         console.log("Ride is on the way")
