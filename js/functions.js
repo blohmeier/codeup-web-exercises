@@ -16,9 +16,9 @@
 //sayHello("codeup");
 
 //Instructor version
-function sayHello(name){
-    return `Hello, ${name}!`;
-}
+// function sayHello(name){
+//     return `Hello, ${name}!`;
+// }
 //console.log(sayHello("Brett"));
 //End instructor version
 /**
@@ -37,8 +37,8 @@ function sayHello(name){
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-let myName = "Brett";
-console.log(sayHello(myName));
+// let myName = "Brett";
+// console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 // var random = Math.floor((Math.random() * 3) + 1);
@@ -138,3 +138,10 @@ console.log(sayHello(myName));
 // let priceBeforeDiscount = parseFloat(prompt("What is the bill total?"));
 // let discountPercentage = (parseFloat(prompt("What is the discount percentage?")) * .01);
 // applyDiscount(priceBeforeDiscount,discountPercentage);
+//CORRECTED VERSION
+function applyDiscount(originalPrice, discountPercent){
+    return (originalPrice - (originalPrice * discountPercent));
+}
+// let priceBeforeDiscount = parseFloat(prompt("What is the bill total?"));
+// let discountPercentage = (parseFloat(prompt("What is the discount percentage?")) * .01);
+applyDiscount(45.99, 0.12);
