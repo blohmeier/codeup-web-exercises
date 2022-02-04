@@ -9,13 +9,18 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-
 // function sayHello(name) {
 //     return ("Hello, " + name + "!");
 // }
 
 //sayHello("codeup");
 
+//Instructor version
+function sayHello(name){
+    return `Hello, ${name}!`;
+}
+//console.log(sayHello("Brett"));
+//End instructor version
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -32,8 +37,8 @@
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-// let myName = "Brett";
-// console.log(sayHello(myName));
+let myName = "Brett";
+console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 // var random = Math.floor((Math.random() * 3) + 1);
@@ -74,7 +79,7 @@
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 // function calculateTip(tipPercentage, billTotal) {
-//     var amountToTip = (tipPercentage * billTotal);
+//     let amountToTip = (tipPercentage * billTotal);
 //     console.log(amountToTip);
 // }
 // calculateTip(0.20, 20) // returns 4
@@ -86,16 +91,19 @@
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-// var billTotal = "";
+// LESS EFFICIENT VERSION (SEE BELOW)
+// let billTotal = "";
 // while (billTotal === ""){
 //     billTotal = prompt('What is the bill total?');
 // }
-//
 // var tipPercentage = "";
 // while (tipPercentage === ""){
 //     tipPercentage = prompt('What is the tip percentage (use decimal value)?');
 // }
-//
+// calculateTip(billTotal,tipPercentage);
+//MORE EFFICIENT VERSION OF THE ABOVE
+// let billTotal = parseFloat(prompt("What is the bill total?"));
+// let tipPercentage = parseFloat(prompt("What is the tip percentage (first, convert percentage to decimal value)?"));
 // calculateTip(billTotal,tipPercentage);
 
 /**
@@ -116,14 +124,17 @@
 //     var discountedPrice = (priceBeforeDiscount - (priceBeforeDiscount * discountPercentage));
 //     console.log(discountedPrice);
 // }
-// var priceBeforeDiscount = "";
+// LESS EFFICIENT VERSION (SEE FURTHER BELOW)
+// let priceBeforeDiscount = "";
 // while (priceBeforeDiscount === ""){
 //     priceBeforeDiscount = prompt('What is the price before applying the discount?');
 // }
-//
-// var discountPercentage = "";
+// let discountPercentage = "";
 // while (discountPercentage === ""){
-//     discountPercentage = prompt('What is the discount percentage (use decimal value)?');
+//     discountPercentage = (prompt('What is the discount percentage?') * .01);
 // }
-//
+// applyDiscount(priceBeforeDiscount,discountPercentage);
+// MORE EFFICIENT VERSION OF THE ABOVE
+// let priceBeforeDiscount = parseFloat(prompt("What is the bill total?"));
+// let discountPercentage = (parseFloat(prompt("What is the discount percentage?")) * .01);
 // applyDiscount(priceBeforeDiscount,discountPercentage);

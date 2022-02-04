@@ -93,3 +93,5 @@ function areIdentical(){
     return input1 === input2;
 }
 console.log(areIdentical());
+
+//MORE NOTES FRIDAY PM - 2:50PM
