@@ -4,22 +4,12 @@
 tryGetRideshare(20, true, prompt("How much $$ do you have?"));
 
 function getFundsAvailable(){
-        let moneyInAccount = prompt("How much is in the account");
-        let numOfRiders;
-        if(confirm("Are you splitting this ride with someone else?")){
-            numOfRiders = prompt("How many riders do you have?");
-        }
+        let moneyInAccount = parseFloat(prompt("How much is in the account"));
+        var creditsInAccount = parseFloat(prompt("How much is in the account"));
+        return moneyInAccount + creditsInAccount;
 }
 
-
-function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {
-
-    if (driverAvailable && totalFundsAvailable >= costOfRide) {
-        console.log("Ride is on the way")
-    } else {
-        console.log("No drivers are available at this time")
-    }
-}
+function tryGetRideshare(costOfRide, driverAvailable, totalFundsAvailable) {}
 //Start of actual exercises
 /**
  * TODO:
