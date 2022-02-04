@@ -8,15 +8,46 @@
 *   -> Test to ensure your code is working as expected
 * */
 
-function getName(){
-    var userName = prompt("Enter name");
-    return userName;
-}
-//console.log("Hello, " + getName());
+// function getName(){
+//     var userName = prompt("Enter name");
+//     return userName;
+// }
+// //console.log("Hello, " + getName());
+//
+// function showName(){
+//     var userName = getName();
+//     alert("Your name is " + userName);
+// }
+// showName();
 
-function showName(){
-    var userName = getName();
-    alert("Your name is " + userName);
+// Inst solution
+// function getName(){
+//     return prompt("What is your name?");
+// }
+// //console.log(getName());
+//
+// function showName(username) {
+//     alert(username);
+// }
+//
+// showName(getName());
+
+// Inst solution  2
+function getName(){
+    let addMoreNames = true;
+    let username = "";
+    while (addMoreNames){
+        username += prompt("What is your name?");
+        addMoreNames = confirm("Would you like to add another name?")
+        if (addMoreNames){
+            username += " "
+        }
+    }
+    return username;
 }
-showName();
-//let lilMermaid = parseInt(prompt("How long did you rent 'The Little Mermaid'?"));
+
+function showName(username) {
+    alert(username);
+}
+
+showName(getName());
