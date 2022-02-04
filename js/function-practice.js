@@ -33,21 +33,52 @@
 // showName(getName());
 
 // Inst solution  2
-function getName(){
-    let addMoreNames = true;
-    let username = "";
-    while (addMoreNames){
-        username += prompt("What is your name?");
-        addMoreNames = confirm("Would you like to add another name?")
-        if (addMoreNames){
-            username += " "
-        }
+// function getName(){
+//     let addMoreNames = true;
+//     let username = "";
+//     while (addMoreNames){
+//         username += prompt("What is your name?");
+//         addMoreNames = confirm("Would you like to add another name?")
+//         if (addMoreNames){
+//             username += " "
+//         }
+//     }
+//     return username;
+// }
+//
+// function showName(username) {
+//     alert(username);
+// }
+//
+// showName(getName());
+
+//Extra mini-exercises
+//Make a function named isLowerCase(letter) which returns true if the parameter is lower-cased.
+// function isLowerCase() {
+//     var testLetter = prompt("type a letter")
+//     if (testLetter.toUpperCase() == testLetter){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+// console.log(isLowerCase());
+
+//Write a function named double(n) that returns a number times two
+// function doubleN(){
+//     var testNumber = prompt("type a number");
+//     return testNumber*2;
+// }
+// console.log(doubleN());
+
+//Make a function named areIdentical(input1, input2) that returns true if both inputs are same value and data type; otherwise it returns false.
+function areIdentical(input1, input2){
+    var input1 = prompt("type a first input to be compared");
+    var input2 = prompt("type a second input to compare the first input to");
+    if (input1 === input2){
+        return true;
+    }else{
+        return false;
     }
-    return username;
 }
-
-function showName(username) {
-    alert(username);
-}
-
-showName(getName());
+console.log(areIdentical());
