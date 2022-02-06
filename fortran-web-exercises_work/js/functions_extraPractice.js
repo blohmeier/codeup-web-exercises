@@ -1,18 +1,28 @@
 // Function Drills
 // Functions using conditionals but not loops or arrays:
 //
-// 1. Make a function named isOdd(number)
-function isOdd(number) {
-    if (Math.abs((number % 2 === 0))) {
-        return console.log("not odd");
+// #1 Make a function named isOdd(number)
+// function isOdd(number) {
+//     if (Math.abs((number % 2 === 0))) {
+//         return console.log("not odd");
+//     }
+//     return console.log("is odd");
+// }
+// isOdd(5);
+// isOdd(4);
+// isOdd(-5);
+// isOdd(-4);
+// #2 Make a function named isEven(number)
+function isEven(number) {
+    if (Math.abs((number % 2 !== 0))) {
+        return console.log("not even");
     }
-    return console.log("is odd");
+    return console.log("is even");
 }
-isOdd(5);
-isOdd(4);
-isOdd(-5);
-isOdd(-4);
-// Make a function named isEven(number)
+isEven(5);
+isEven(4);
+isEven(-5);
+isEven(-4);
 // Make a function named identity(input) that returns the input exactly as provided.
 //     Make a function named isFive(input)
 // Make a function named addFive(input) that adds five to some input.
