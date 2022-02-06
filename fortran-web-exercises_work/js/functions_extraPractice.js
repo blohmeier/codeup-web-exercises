@@ -66,16 +66,25 @@
 // isThree(3);
 // isThree(9);
 // #8 Make a function named isMultipleOfThree(input)
-function isMultipleOfThree(input) {
-        if(input % 3 === 0){
-                console.log("This input is a multiple of 3");
+// function isMultipleOfThree(input) {
+//         if(input % 3 === 0){
+//                 console.log("This input is a multiple of 3");
+//         } else {
+//                 console.log("This input is not a multiple of 3");
+//         }
+// }
+// isMultipleOfThree(99);
+// isMultipleOfThree(247);
+// #9 Make a function named isMultipleOfThreeAndFive(input)
+function isMultipleOfThreeAndFive(input) {
+        if(input % 3 === 0 && input % 5 === 0){
+                console.log("This input is both a multiple of 3 and a multiple of 5");
         } else {
-                console.log("This input is not a multiple of 3");
+                console.log("This input is not both a multiple of 3 and a multiple of 5");
         }
 }
-isMultipleOfThree(99);
-isMultipleOfThree(247);
-// Make a function named isMultipleOfThreeAndFive(input)
+isMultipleOfThreeAndFive(15);
+isMultipleOfThreeAndFive(5);
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
 // Make a function named isTrue(boolean)
 // Make a function named isFalse(boolean)
