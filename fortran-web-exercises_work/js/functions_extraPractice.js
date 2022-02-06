@@ -31,12 +31,21 @@
 // identity(-4);
 // #4 Make a function named isFive(input)
 function isFive(input) {
-        console.log(input+5);
+        if(input === 5){
+                console.log("This input is 5");
+        } else {
+                console.log("This input is not 5");
+        }
 }
 isFive(5);
 isFive(-4);
-// Make a function named addFive(input) that adds five to some input.
-//     Make a function named isMultipleOfFive(input)
+// #5 Make a function named addFive(input) that adds five to some input.
+// function addFive(input) {
+//         console.log(input+5);
+// }
+// addFive(5);
+// addFive(-4);
+// Make a function named isMultipleOfFive(input)
 // Make a function named isThree(input)
 // Make a function named isMultipleOfThree(input)
 // Make a function named isMultipleOfThreeAndFive(input)
