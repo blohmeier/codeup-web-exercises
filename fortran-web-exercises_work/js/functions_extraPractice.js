@@ -86,20 +86,76 @@
 // isMultipleOfThreeAndFive(15);
 // isMultipleOfThreeAndFive(5);
 // #10 Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
-function isMultipleOf(target, n) {
-        if(target % n === 0){
-                return(`The value: ${target} is a multiple of divisor: ${n}`);
-        } else {
-                return(`The value: ${target} is not a multiple of divisor: ${n}`);
+// function isMultipleOf(target, n) {
+//         if(target % n === 0){
+//                 return(`The value: ${target} is a multiple of divisor: ${n}`);
+//         } else {
+//                 return(`The value: ${target} is not a multiple of divisor: ${n}`);
+//         }
+// }
+// console.log(isMultipleOf(15,5));
+// console.log(isMultipleOf(20,7));
+// #11 Make a function named isTrue(boolean)
+// function isTrue(boolean) {
+//         if(boolean === true){
+//                 console.log(`Input ${boolean} is boolean true`);
+//         } else {
+//                 console.log(`Input ${boolean} is not boolean true`);
+//         }
+// }
+// console.log(isTrue(true));
+// console.log(isTrue("bear"));
+// console.log(isTrue(7));
+// console.log(isTrue(false));
+// #12 Make a function named isFalse(boolean)
+// function isFalse(boolean) {
+//         if(boolean === false){
+//                 console.log(`Input ${boolean} is boolean false`);
+//         } else {
+//                 console.log(`Input ${boolean} is not boolean false`);
+//         }
+// }
+// console.log(isFalse(true));
+// console.log(isFalse("bear"));
+// console.log(isFalse(7));
+// console.log(isFalse(false));
+// #13 Make a function named isTruthy(input), remember that values other than true will behave like true. REFERENCES: https://developer.mozilla.org/en-US/docs/Glossary/Truthy and https://bobbyhadz.com/blog/javascript-check-if-value-is-truthy
+// function isTruthy(input) {
+//         if(input){
+//         //if(input == (true || {} || [] || 42 || "0" || "false" || new Date() || -42 || 12n || 3.14 || -3.14 || Infinity || -Infinity)){
+//                 console.log(`Input ${input} is truthy (i.e., is not false, 0, empty string, null, undefined, or NaN`);
+//         } else {
+//                 console.log(`Input ${input} is not truthy`);
+//         }
+// }
+// console.log(isTruthy(42));
+// console.log(isTruthy(false));
+// console.log(isTruthy(12n));
+// console.log(isTruthy(""));
+// #14 Make a function named isFalsy(input), remember that values other than false behave like false
+// function isFalsy(input) {
+//         if(input){
+//                 console.log(`Input ${input} is not falsy (i.e., is not false, 0, empty string, null, undefined, or NaN`);
+//         } else {
+//                 console.log(`Input ${input} is falsy`);
+//         }
+// }
+// console.log(isFalsy(42));
+// console.log(isFalsy(false));
+// console.log(isFalsy(12n));
+// console.log(isFalsy(""));
+// #15 Make a function named isVowel(letter)
+function isVowel(letter){
+        letter2 = letter.toLowerCase();
+        if (letter2 == 'a' || letter2 == 'e' || letter2 == 'i' || letter2 == 'o' || letter2 == 'u' ){
+                return (`${letter} is a vowel`);
         }
+        return (`${letter} is not a vowel`);
 }
-console.log(isMultipleOf(15,5));
-console.log(isMultipleOf(20,7));
-// Make a function named isTrue(boolean)
-// Make a function named isFalse(boolean)
-// Make a function named isTruthy(input), remember that values other than true will behave like true
-// Make a function named isFalsy(input), remember that values other than false behave like false
-// Make a function named isVowel(letter)
+console.log(isVowel("A"));
+console.log(isVowel("g"));
+console.log(isVowel("u"));
+console.log(isVowel("v"));
 // Make a function named isConsonant(letter)
 // Make a function named isCapital(letter)
 // Make a function named isLowerCase(letter)
