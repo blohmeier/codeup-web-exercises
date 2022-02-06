@@ -1,4 +1,4 @@
-// Function Drills
+// SECTION 1 OF 4: Function Drills
 // Functions using conditionals but not loops or arrays:
 //
 // #1 Make a function named isOdd(number)
@@ -145,22 +145,76 @@
 // console.log(isFalsy(12n));
 // console.log(isFalsy(""));
 // #15 Make a function named isVowel(letter)
-function isVowel(letter){
-        letter2 = letter.toLowerCase();
-        if (letter2 == 'a' || letter2 == 'e' || letter2 == 'i' || letter2 == 'o' || letter2 == 'u' ){
-                return (`${letter} is a vowel`);
+// function isVowel(letter){
+//         letter2 = letter.toLowerCase();
+//         if (letter2 == 'a' || letter2 == 'e' || letter2 == 'i' || letter2 == 'o' || letter2 == 'u' ){
+//                 return (`${letter} is a vowel`);
+//         }
+//         return (`${letter} is not a vowel`);
+// }
+// console.log(isVowel("A"));
+// console.log(isVowel("g"));
+// console.log(isVowel("u"));
+// console.log(isVowel("v"));
+// #16 Make a function named isConsonant(letter)
+// function isConsonant(letter){
+//         letter2 = letter.toLowerCase();
+//         if (letter2 == 'a' || letter2 == 'e' || letter2 == 'i' || letter2 == 'o' || letter2 == 'u' ){
+//                 return (`${letter} is not a consonant`);
+//         }
+//         return (`${letter} is a consonant`);
+// }
+// console.log(isConsonant("A"));
+// console.log(isConsonant("g"));
+// console.log(isConsonant("u"));
+// console.log(isConsonant("V"));
+// #17 Make a function named isCapital(letter)
+// function isCapital(letter){
+//         letter2 = letter.toLowerCase();
+//         if (letter2 === letter){
+//                 return (`${letter} is not a capital letter`);
+//         }
+//         return (`${letter} is a capital letter`);
+// }
+// console.log(isCapital("A"));
+// console.log(isCapital("g"));
+// console.log(isCapital("u"));
+// console.log(isCapital("V"));
+// #18 Make a function named isLowerCase(letter)
+// function isLowerCase(letter){
+//         letter2 = letter.toLowerCase();
+//         if (letter2 === letter){
+//                 return (`${letter} is a lower case letter`);
+//         }
+//         return (`${letter} is not a lower case letter`);
+// }
+// console.log(isLowerCase("A"));
+// console.log(isLowerCase("g"));
+// console.log(isLowerCase("u"));
+// console.log(isLowerCase("V"));
+// #19 Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+// function hasLowerCase(stringTest){
+//         stringTest2 = stringTest.toUpperCase();
+//         if (stringTest2 === stringTest){
+//                 return (`${stringTest} has no lower cased letters in its string`);
+//         }
+//         return (`${stringTest} has at least one lower cased letter in its string`);
+// }
+// console.log(hasLowerCase("THIS SHOULD HAVE NO LOWER CASED LETTERS"));
+// console.log(hasLowerCase("This should have at least one lower case letter"));
+// console.log(hasLowerCase("NO LOWER CASE LETTERS HERE"));
+// console.log(hasLowerCase("aT LEAST ONE LOWER CASE LETTER"));
+// #20 Make a function named isSpace(letter) that returns if a character is a space character
+function isSpace(letter){
+        if (letter === " "){
+                return (`${letter} is a space character`);
         }
-        return (`${letter} is not a vowel`);
+        return (`${letter} is not a space character`);
 }
-console.log(isVowel("A"));
-console.log(isVowel("g"));
-console.log(isVowel("u"));
-console.log(isVowel("v"));
-// Make a function named isConsonant(letter)
-// Make a function named isCapital(letter)
-// Make a function named isLowerCase(letter)
-// Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
-// Make a function named isSpace(letter) that returns if a character is a space character
+console.log(isSpace(" "));
+console.log(isSpace("a"));
+console.log(isSpace("_"));
+console.log(isSpace("?"));
 // Make a function named isZero(number)
 // Make a function named notZero(input) that returns true if the input is not zero
 // Write a function named lowerCase(string)
@@ -190,7 +244,8 @@ console.log(isVowel("v"));
 // Write a function called reverseString(string) that reverses a string
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
 //     Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
-//     Simple Function Drills
+
+// SECTION 2 OF 4: Simple Function Drills
 // Make a function called returnTwo() that returns the number 2 when called
 //
 // Test this function with console.log(returnTwo())
@@ -213,7 +268,8 @@ console.log(isVowel("v"));
 //
 // Test this function with console.log(sayString('codeup'))
 //
-//     Challenge Function Drills
+
+// SECTION 3 OF 4: Challenge Function Drills
 // Write a function called identity(input) that takes in an argument called input and returns that input.
 //
 //     Write a function called getRandomNumber(min, max) that returns a random number between min and max values sent to that function call.
@@ -246,7 +302,8 @@ console.log(isVowel("v"));
 //
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 //
-// Even More Function Bonuses
+
+// SECTION 4 OF 4: Even More Function Bonuses
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
 //
 //     Create a function that takes in two string inputs.
@@ -262,7 +319,7 @@ console.log(isVowel("v"));
 //
 // Create a function returnFalseMessage() that returns the string "Hey, it's false!"
 // Create a function returnMessage() that takes in a function and returns the call to the function
-// Experiement passing in different functions.
+// Experiment passing in different functions.
 //     Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
 //
 //     The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
