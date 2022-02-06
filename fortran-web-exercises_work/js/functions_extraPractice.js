@@ -30,24 +30,51 @@
 // identity(5);
 // identity(-4);
 // #4 Make a function named isFive(input)
-function isFive(input) {
-        if(input === 5){
-                console.log("This input is 5");
-        } else {
-                console.log("This input is not 5");
-        }
-}
-isFive(5);
-isFive(-4);
+// function isFive(input) {
+//         if(input === 5){
+//                 console.log("This input is 5");
+//         } else {
+//                 console.log("This input is not 5");
+//         }
+// }
+// isFive(5);
+// isFive(-4);
 // #5 Make a function named addFive(input) that adds five to some input.
 // function addFive(input) {
 //         console.log(input+5);
 // }
 // addFive(5);
 // addFive(-4);
-// Make a function named isMultipleOfFive(input)
-// Make a function named isThree(input)
+#6 Make a function named isMultipleOfFive(input)
+function isMultipleOfFive(input) {
+        if(input % 5 === 0){
+                console.log("This input is a multiple of 5");
+        } else {
+                console.log("This input is not a multiple of 5");
+        }
+}
+isMultipleOfFive(255);
+isMultipleOfFive(247);
+// #7 Make a function named isThree(input)
+// function isThree(input) {
+//         if(input === 3){
+//                 console.log("This input is 3");
+//         } else {
+//                 console.log("This input is not 3");
+//         }
+// }
+// isThree(3);
+// isThree(9);
 // Make a function named isMultipleOfThree(input)
+// function isMultipleOfFive(input) {
+//         if(input % 5 === 0){
+//                 console.log("This input is a multiple of 5");
+//         } else {
+//                 console.log("This input is not a multiple of 5");
+//         }
+// }
+// isMultipleOfFive(255);
+// isMultipleOfFive(247);
 // Make a function named isMultipleOfThreeAndFive(input)
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
 // Make a function named isTrue(boolean)
