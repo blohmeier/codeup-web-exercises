@@ -276,20 +276,85 @@
 // }
 // console.log(multiply(7,3));
 // #30 Write a function named divide(a, b) that returns a divided by b
-function divide(a, b){
-        return a / b;
-}
-console.log(divide(7,3));
+// function divide(a, b){
+//         return a / b;
+// }
+// console.log(divide(7,3));
 // #31 Write a function named remainder(a, b) that returns the remainder after dividing a by b
-// #32 Make a function named modulo(a, b) that returns the ?quotient? after dividing a by b
+// function remainder(a, b){
+//         return a % b;
+// }
+// console.log(remainder(7,3));
+// #32 Make a function named modulo(a, b) that returns the remainder ?quotient? after dividing a by b
+// function modulo(a, b){
+//         return Math.floor(a / b);
+// }
+// console.log(modulo(7,3));
+// console.log(modulo(10,5));
+// console.log(modulo(100,3));
 // #33 Write a function named cube(n) that returns n * n * n
+// function cube(n){
+//         return Math.pow(n, 3);
+// }
+// console.log(cube(7));
 // #34 Write a function named squareRoot(n) that returns the square root of the input
+// function squareRoot(n){
+//         return Math.pow(n, 1/2);
+// }
+// console.log(squareRoot(49));
 // #35 Write a function named cubeRoot(n) that returns the cube root of the input
-// #36 Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
+// function cubeRoot(n){
+//         return Math.round(Math.pow(n, 1/3));
+// }
+// console.log(cubeRoot(343));
+// #36 Write a function named invertSign(number) that returns a negative version of a positive number, a positive version of negative, and false for all else.
+// function invertSign(number){
+//         if (parseFloat (number) > 0){
+//                 return (number*-1) + " is the negative version of " + number;
+//         } else if (parseFloat(number) < 0){
+//                 return ((number*-1) + " is the positive version of " + number)
+//         } else{ return false };
+// }
+// console.log(invertSign(-4));
+// console.log(invertSign(2));
+// console.log(invertSign("teddy bear"));
+// console.log(invertSign(true));
 // #37 Write a function named degreesToRadians(number)
+// function degreesToRadians(number){
+//         let pi = Math.PI;
+//         return number * (pi/180);
+// }
+// console.log(degreesToRadians(45));
 // #38 Write a function named radiansToDegrees(number)
-// #39 Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+// function radiansToDegrees(number){
+//         let pi = Math.PI;
+//         return number * (180/pi);
+// }
+// console.log(radiansToDegrees(0.7853981633974483));
+// #39 Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs. REFERENCE: https://www.codegrepper.com/code-examples/javascript/how+to+check+if+string+contains+space+in+javascript
+// function isBlank(input){
+//         if (/\s/.test(input)) {
+//                 return(`The input:\n...\n${input} \n...\ncontains some type of whitespace (i.e. spaces, tabs or line breaks)`);
+//         } else {
+//                 return(`The input:\n...\n${input} \n...\ncontains no whitespace (i.e. no spaces, tabs or line breaks)`);
+//         }
+// }
+// console.log(isBlank("String\ntest\n1."));
+// console.log(isBlank("test2"));
+// console.log(isBlank("String test 3."));
+// console.log(isBlank("String\ttest\t4."));
 // #40 Make a function named trim(string) that removes empty spaces before and after the input.
+function trim(stringTest){
+        let stringTest2 = stringTest.trim();
+        if (stringTest2 === stringTest) {
+                console.log("String is:\n" + stringTest + "\nNo need to remove empty spaces from string:\n" + stringTest);
+        } else {
+                console.log("String is:\n" + stringTest + "\nString with empty spaces removed is:\n" + stringTest2);
+        }
+}
+trim(" String test 1. ");
+trim("String test 2");
+trim("String test 3. ");
 // #41 Make a function named areEqual(input1, input2) that returns if both inputs have the same value
 // #42 Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
 // #43 Make a function named not(input) returns the input with a flipped boolean
