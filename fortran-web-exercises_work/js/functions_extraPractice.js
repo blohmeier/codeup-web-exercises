@@ -13,18 +13,23 @@
 // isOdd(-5);
 // isOdd(-4);
 // #2 Make a function named isEven(number)
-function isEven(number) {
-    if (Math.abs((number % 2 !== 0))) {
-        return console.log("not even");
-    }
-    return console.log("is even");
+// function isEven(number) {
+//     if (Math.abs((number % 2 !== 0))) {
+//         return console.log("not even");
+//     }
+//     return console.log("is even");
+// }
+// isEven(5);
+// isEven(4);
+// isEven(-5);
+// isEven(-4);
+// #3 Make a function named identity(input) that returns the input exactly as provided.
+function identity(input) {
+        console.log(input);
 }
-isEven(5);
-isEven(4);
-isEven(-5);
-isEven(-4);
-// Make a function named identity(input) that returns the input exactly as provided.
-//     Make a function named isFive(input)
+identity(5);
+identity(-4);
+// #4 Make a function named isFive(input)
 // Make a function named addFive(input) that adds five to some input.
 //     Make a function named isMultipleOfFive(input)
 // Make a function named isThree(input)
