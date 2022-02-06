@@ -70,7 +70,7 @@
 // false || false || false || false || false || true
 // true && true && true && true && false
 //
-## Typeof Operator
+// ## Typeof Operator
 //
 // typeof true
 // typeof false
@@ -93,12 +93,12 @@
 // typeof 5.23 - number
 // typepof typeof 5.23 - string
 //
-// ## Comparison Operators
+## Comparison Operators
 //
 // 99 === 99
 // 2 === 2.0
-// 2 == "2"
-// 2 === "2"
+// 2 == "2" - true (value only)
+// 2 === "2" - false (value and type)
 // 2 === 2.0
 // 4 !== 2
 // true === true
@@ -113,48 +113,48 @@
 // (11 - 3) === 7
 // "Hello" === "Hello"
 // typeof "Howdy" === typeof "Howdy"
-// 5 === "5"
-// 5 == "5"
-// 5 !== "5"
-// 5 != "5"
-// 10 > 2
-// "23" > 42
-// 20 >= 20
+// 5 === "5" - false
+// 5 == "5" - true
+// 5 !== "5" - true
+// 5 != "5" - false
+// 10 > 2 - true
+// "23" > 42 - false
+// 20 >= 20 - true
 // 5 < 10
-// "Hello" != "World"
-// undefined == null
-// undefined === null
-// "" == false
-// "" === false
-// typeof "banana"
-// typeof true === tyepof "banana"
-// true === 1
-// true == 1
-// false === 0
-// false == 0
-// 5 === 5
-// 5 == 5
-// 5 = 5
-// 2 != "2"
-// 2 !== "2"
-// 2 != 2
-// 2 !== 2
-// undefined == false
-// undefined === false
-// null == false
-// null === false
-// 0 == false
-// 0 === false
-// "" == false
-// "" === false
-// "" == 0
-// "" === 0
-// "code" == 1
-// "code" === 1
-// "banana" == true
-// "banana" === true
-// "banana" != true
-// "banana" !== true
+// "Hello" != "World" - true
+undefined == null
+undefined === null
+"" == false
+"" === false
+typeof "banana"
+typeof true === tyepof "banana"
+true === 1
+true == 1
+false === 0
+false == 0
+5 === 5
+5 == 5
+5 = 5
+2 != "2"
+2 !== "2"
+2 != 2
+2 !== 2
+undefined == false
+undefined === false
+null == false
+null === false
+0 == false
+0 === false
+"" == false
+"" === false
+"" == 0
+"" === 0
+"code" == 1
+"code" === 1
+"banana" == true
+"banana" === true
+"banana" != true
+"banana" !== true
 //
 // ## String Concatenation
 //
