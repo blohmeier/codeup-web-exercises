@@ -45,26 +45,26 @@
 // }
 // addFive(5);
 // addFive(-4);
-#6 Make a function named isMultipleOfFive(input)
-function isMultipleOfFive(input) {
-        if(input % 5 === 0){
-                console.log("This input is a multiple of 5");
-        } else {
-                console.log("This input is not a multiple of 5");
-        }
-}
-isMultipleOfFive(255);
-isMultipleOfFive(247);
-// #7 Make a function named isThree(input)
-// function isThree(input) {
-//         if(input === 3){
-//                 console.log("This input is 3");
+// #6 Make a function named isMultipleOfFive(input)
+// function isMultipleOfFive(input) {
+//         if(input % 5 === 0){
+//                 console.log("This input is a multiple of 5");
 //         } else {
-//                 console.log("This input is not 3");
+//                 console.log("This input is not a multiple of 5");
 //         }
 // }
-// isThree(3);
-// isThree(9);
+// isMultipleOfFive(255);
+// isMultipleOfFive(247);
+// #7 Make a function named isThree(input)
+function isThree(input) {
+        if(input === 3){
+                console.log("This input is 3");
+        } else {
+                console.log("This input is not 3");
+        }
+}
+isThree(3);
+isThree(9);
 // Make a function named isMultipleOfThree(input)
 // function isMultipleOfFive(input) {
 //         if(input % 5 === 0){
