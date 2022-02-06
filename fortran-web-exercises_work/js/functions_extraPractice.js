@@ -205,45 +205,100 @@
 // console.log(hasLowerCase("NO LOWER CASE LETTERS HERE"));
 // console.log(hasLowerCase("aT LEAST ONE LOWER CASE LETTER"));
 // #20 Make a function named isSpace(letter) that returns if a character is a space character
-function isSpace(letter){
-        if (letter === " "){
-                return (`${letter} is a space character`);
-        }
-        return (`${letter} is not a space character`);
+// function isSpace(letter){
+//         if (letter === " "){
+//                 return (`${letter} is a space character`);
+//         }
+//         return (`${letter} is not a space character`);
+// }
+// console.log(isSpace(" "));
+// console.log(isSpace("a"));
+// console.log(isSpace("_"));
+// console.log(isSpace("?"));
+// #21 Make a function named isZero(number)
+// function isZero(number){
+//         if (Math.abs(number) === 0){
+//                 return (`${number} is the number 0`);
+//         }
+//         return (`${number} is not the number 0`);
+// }
+// console.log(isZero(0));
+// console.log(isZero(-0));
+// console.log(isZero(Infinity));
+// console.log(isZero("0"));
+// #22 Make a function named notZero(input) that returns true if the input is not zero
+// function notZero(input){
+//         if (Math.abs(input) === 0){
+//                 return false;
+//         }
+//         return true;
+// }
+// console.log(notZero(0));
+// console.log(notZero(-0));
+// console.log(notZero(Infinity));
+// console.log(notZero("0"));
+// #23 Write a function named lowerCase(string)
+// function lowerCase(string){
+//         return string.toLowerCase();
+// }
+// console.log(lowerCase("THIS SHOULD HAVE NO LOWER CASED LETTERS. String test 1."));
+// console.log(lowerCase("This should have at least one lower case letter. String test 2."));
+// console.log(lowerCase("NO LOWER CASE LETTERS HERE. String test 3."));
+// console.log(lowerCase("aT LEAST ONE LOWER CASE LETTER. String test 4."));
+// #24 Write a function named double(n) that returns a number times two
+// function double(n){
+//         return n*2;
+// }
+// console.log(double(7));
+// #25 Write a function named triple(n) that returns a number times 3
+// function triple(n){
+//         return n*3;
+// }
+// console.log(triple(7));
+// #26 Write a function named quadruple(n) that returns a number times 4
+// function quadruple(n){
+//         return n*4;
+// }
+// console.log(quadruple(7));
+// #27 Write a function named half(n) that returns 1/2 of the provided input
+// function half(n){
+//         return n/2;
+// }
+// console.log(half(7));
+// #28 Write a function named subtract(a, b) that returns a minus b
+// function subtract(a, b){
+//         return a - b;
+// }
+// console.log(subtract(7,3));
+// #29 Write a function named multiply(a, b) that returns the product of a times b
+// function multiply(a, b){
+//         return a * b;
+// }
+// console.log(multiply(7,3));
+// #30 Write a function named divide(a, b) that returns a divided by b
+function divide(a, b){
+        return a / b;
 }
-console.log(isSpace(" "));
-console.log(isSpace("a"));
-console.log(isSpace("_"));
-console.log(isSpace("?"));
-// Make a function named isZero(number)
-// Make a function named notZero(input) that returns true if the input is not zero
-// Write a function named lowerCase(string)
-// Write a function named double(n) that returns a number times two
-// Write a function named triple(n) that returns a number times 3
-// Write a function named quadruple(n) that returns a number times 4
-// Write a function named half(n) that returns 1/2 of the provided input
-// Write a function named subtract(a, b) that returns a minus b
-// Write a function named multiply(a, b) that returns the product of a times b
-// Write a function named divide(a, b) that returns a divided by b
-// Write a function named remainder(a, b) that returns the remainder after dividing a by b
-// Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
-// Write a function named cube(n) that returns n * n * n
-// Write a function named squareRoot(n) that returns the square root of the input
-// Write a function named cubeRoot(n) that returns the cube root of the input
-// Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
-// Write a function named degreesToRadians(number)
-// Write a function named radiansToDegrees(number)
-// Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
-//     Make a function named trim(string) that removes empty spaces before and after the input.
-//     Make a function named areEqual(input1, input2) that returns if both inputs have the same value
-// Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
-//     Make a function named not(input) returns the input with a flipped boolean
-// Make a function named notNot(input) that the negation of the negation of the input.
-//     Make a function named and(predicate1, predicate2) that returns the logical operation of AND
-// Make a function named or(predicate1, predicate2) that returns the logical operation of OR
-// Write a function called reverseString(string) that reverses a string
-// Make a function named absoluteValue(number) that returns the absolute value of a number.
-//     Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
+console.log(divide(7,3));
+// #31 Write a function named remainder(a, b) that returns the remainder after dividing a by b
+// #32 Make a function named modulo(a, b) that returns the ?quotient? after dividing a by b
+// #33 Write a function named cube(n) that returns n * n * n
+// #34 Write a function named squareRoot(n) that returns the square root of the input
+// #35 Write a function named cubeRoot(n) that returns the cube root of the input
+// #36 Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
+// #37 Write a function named degreesToRadians(number)
+// #38 Write a function named radiansToDegrees(number)
+// #39 Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+// #40 Make a function named trim(string) that removes empty spaces before and after the input.
+// #41 Make a function named areEqual(input1, input2) that returns if both inputs have the same value
+// #42 Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
+// #43 Make a function named not(input) returns the input with a flipped boolean
+// #44 Make a function named notNot(input) that the negation of the negation of the input.
+// #45 Make a function named and(predicate1, predicate2) that returns the logical operation of AND
+// #46 Make a function named or(predicate1, predicate2) that returns the logical operation of OR
+// #47 Write a function called reverseString(string) that reverses a string
+// #48 Make a function named absoluteValue(number) that returns the absolute value of a number.
+// #49 Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
 
 // SECTION 2 OF 4: Simple Function Drills
 // Make a function called returnTwo() that returns the number 2 when called
