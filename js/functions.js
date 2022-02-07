@@ -12,14 +12,14 @@
 // function sayHello(name) {
 //     return ("Hello, " + name + "!");
 // }
-
-//sayHello("codeup");
+//
+// sayHello("codeup");
 
 //Instructor version
 // function sayHello(name){
 //     return `Hello, ${name}!`;
 // }
-//console.log(sayHello("Brett"));
+// console.log(sayHello("Brett"));
 //End instructor version
 /**
  * TODO:
@@ -39,8 +39,8 @@
  */
 // let myName = "Brett";
 // console.log(sayHello(myName));
-// Don't modify the following line, it generates a random number between 1 and 3
-// and stores it in a variable named random
+// // Don't modify the following line, it generates a random number between 1 and 3
+// // and stores it in a variable named random
 // var random = Math.floor((Math.random() * 3) + 1);
 
 /**
@@ -62,10 +62,12 @@
  */
 // function isTwo(number) {
 //     (number === 2) ? console.log("true") : console.log("false");
+//     //return number === 2; //alternative to the above.
 // }
 // isTwo(1) // returns false
 // isTwo(2) // returns true
 // isTwo(3) // returns false
+// console.log(random); // outputs random to be tested below. If random = 2, output true. Else output false.
 // isTwo(random);
 /**
  * TODO:
@@ -80,11 +82,20 @@
  */
 // function calculateTip(tipPercentage, billTotal) {
 //     let amountToTip = (tipPercentage * billTotal);
-//     console.log(amountToTip);
+//     alert(amountToTip);
 // }
 // calculateTip(0.20, 20) // returns 4
 // calculateTip(0.25, 25.50) // returns 6.375
 // calculateTip(0.15, 33.42) // returns 5.013
+//Instructor version
+// function calculateTip(tipPercentage, billTotal) {
+//     return tipPercentage * billTotal;
+// }
+// console.log(calculateTip(0.20, 20)); // returns 4
+// console.log(calculateTip(0.25, 25.50)); // returns 6.375
+// console.log(calculateTip(0.15, 33.42)); // returns 5.013
+//end instructor version
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -102,10 +113,12 @@
 // }
 // calculateTip(billTotal,tipPercentage);
 //MORE EFFICIENT VERSION OF THE ABOVE
-// let billTotal = parseFloat(prompt("What is the bill total?"));
-// let tipPercentage = parseFloat(prompt("What is the tip percentage (first, convert percentage to decimal value)?"));
+// let billTotal = prompt("What is the bill total?");
+// let tipPercentage = prompt("What is the tip percentage (first, convert percentage to decimal value)?");
 // calculateTip(billTotal,tipPercentage);
-
+// calculateTip(0.20, 20) // returns 4
+// calculateTip(0.25, 25.50) // returns 6.375
+// calculateTip(0.15, 33.42) // returns 5.013
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -122,7 +135,7 @@
  */
 // function applyDiscount(priceBeforeDiscount,discountPercentage){
 //     var discountedPrice = (priceBeforeDiscount - (priceBeforeDiscount * discountPercentage));
-//     console.log(discountedPrice);
+//     alert(discountedPrice);
 // }
 // LESS EFFICIENT VERSION (SEE FURTHER BELOW)
 // let priceBeforeDiscount = "";
@@ -138,10 +151,10 @@
 // let priceBeforeDiscount = parseFloat(prompt("What is the bill total?"));
 // let discountPercentage = (parseFloat(prompt("What is the discount percentage?")) * .01);
 // applyDiscount(priceBeforeDiscount,discountPercentage);
-//CORRECTED VERSION
+// COMPLETED CORRECTED VERSION
 function applyDiscount(originalPrice, discountPercent){
-    return (originalPrice - (originalPrice * discountPercent));
+    alert ("Discounted price is: $" +(originalPrice - (originalPrice * discountPercent)));
 }
-// let priceBeforeDiscount = parseFloat(prompt("What is the bill total?"));
-// let discountPercentage = (parseFloat(prompt("What is the discount percentage?")) * .01);
-applyDiscount(45.99, 0.12);
+let originalPrice = parseFloat(prompt("What is the bill total?"));
+let discountPercent = (parseFloat(prompt("What is the discount percentage?")) * .01);
+applyDiscount(originalPrice,discountPercent); // 45.99, 12% = 40.4712. 100, 20% = 80.
