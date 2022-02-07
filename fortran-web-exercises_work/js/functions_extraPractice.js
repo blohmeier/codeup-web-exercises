@@ -400,12 +400,28 @@
 //                 return false;
 //         }
 // }
-// console.log(and(false,false));
-// console.log(and(true,false));
-// console.log(and(false,true));
-// console.log(and(true,true));
+// console.log(and(false,false)); //false
+// console.log(and(true,false)); //false
+// console.log(and(false,true));//false
+// console.log(and(true,true)); //true
 // #46 Make a function named or(predicate1, predicate2) that returns the logical operation of OR
+// function or(predicate1,predicate2) {
+//         if (predicate1 || predicate2) {
+//                 return true;
+//         } else {
+//                 return false;
+//         }
+// }
+// console.log(or(false,false)); //false
+// console.log(or(true,false)); //true
+// console.log(or(false,true)); //true
+// console.log(or(true,true)); //true
 // #47 Write a function called reverseString(string) that reverses a string
+function reverse(string) {
+        return string.split("").reverse().join("");
+}
+console.log(reverse(" String test 1. "));
+console.log(reverse("String test 2."));
 // #48 Make a function named absoluteValue(number) that returns the absolute value of a number.
 // #49 Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
 
