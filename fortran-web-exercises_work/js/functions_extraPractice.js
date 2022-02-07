@@ -344,22 +344,66 @@
 // console.log(isBlank("String test 3."));
 // console.log(isBlank("String\ttest\t4."));
 // #40 Make a function named trim(string) that removes empty spaces before and after the input.
-function trim(stringTest){
-        let stringTest2 = stringTest.trim();
-        if (stringTest2 === stringTest) {
-                console.log("String is:\n" + stringTest + "\nNo need to remove empty spaces from string:\n" + stringTest);
-        } else {
-                console.log("String is:\n" + stringTest + "\nString with empty spaces removed is:\n" + stringTest2);
-        }
-}
-trim(" String test 1. ");
-trim("String test 2");
-trim("String test 3. ");
+// function trim(stringTest){
+//         let stringTest2 = stringTest.trim();
+//         if (stringTest2 === stringTest) {
+//                 console.log("String is:\n" + stringTest + "\nNo need to remove empty spaces from string:\n" + stringTest);
+//         } else {
+//                 console.log("String is:\n" + stringTest + "\nString with empty spaces removed is:\n" + stringTest2);
+//         }
+// }
+// trim(" String test 1. ");
+// trim("String test 2");
+// trim("String test 3. ");
 // #41 Make a function named areEqual(input1, input2) that returns if both inputs have the same value
+// function areEqual(input1, input2){
+//         if (input1 == input2) {
+//                 console.log("Input 1 (below):\n" + input1 + "\nIs equal in value to input 2 (below):\n" + input2);
+//         } else {
+//                 console.log("Input 1 (below):\n" + input1 + "\nIs not equal in value to input 2 (below):\n" + input2 + "\n");
+//         }
+// }
+// areEqual(" String test 1. ",  "String test 1. ");
+// areEqual("String test 1.",  "String test 1.");
+// areEqual("7",  7);
+// areEqual(false,  false);
 // #42 Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
+// function areIdentical(input1, input2){
+//         if (input1 === input2) {
+//                 console.log("Input 1 (below):\n" + input1 + "\nIs identical to input 2 (below):\n" + input2+ "\n");
+//         } else {
+//                 console.log("Input 1 (below):\n" + input1 + "\nIs not identical to input 2 (below):\n" + input2 + "\n");
+//         }
+//         console.log("\n\n\n");
+// }
+// areIdentical(" String test 1. ",  "String test 1. ");
+// areIdentical("String test 1.",  "String test 1.");
+// areIdentical("7",  7);
+// areIdentical(false,  false);
 // #43 Make a function named not(input) returns the input with a flipped boolean
+// function not(input){
+//         return !input;
+// }
+// console.log(not(true));
+// console.log(not(false));
 // #44 Make a function named notNot(input) that the negation of the negation of the input.
+// function notNot(input){
+//         return !!input;
+// }
+// console.log(notNot(true));
+// console.log(notNot(false));
 // #45 Make a function named and(predicate1, predicate2) that returns the logical operation of AND
+// function and(predicate1,predicate2) {
+//         if (predicate1 && predicate2) {
+//                 return true;
+//         } else {
+//                 return false;
+//         }
+// }
+// console.log(and(false,false));
+// console.log(and(true,false));
+// console.log(and(false,true));
+// console.log(and(true,true));
 // #46 Make a function named or(predicate1, predicate2) that returns the logical operation of OR
 // #47 Write a function called reverseString(string) that reverses a string
 // #48 Make a function named absoluteValue(number) that returns the absolute value of a number.
