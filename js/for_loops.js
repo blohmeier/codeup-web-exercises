@@ -27,13 +27,19 @@
 // }
 
 // "For Loops" #4.
+// var s = "";
 // for (i = 1; i <= 9; i++) {
-//     for (j = 0; j < i; j++)
-//         console.log(i);
-// }
-// for( loop = 1; loop <= 5; loop = loop + 1 )
-// {
-//     for( count = 1; count <= loop; count  = count + 1 )
-//         console.log(loop );
+//     for (j = 0; j < i; j++) {
+//         s += i;
+//         console.log(j);
+//     }
 //     //console.log("\n");
 // }
+var a = "";
+for(b = 1;b <= 9; b = b + 1) {
+    var d = "";
+    for(c = 1; c <= b; c = c + 1) {
+        d += b
+    }
+    console.log(d);
+}
