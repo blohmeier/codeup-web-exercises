@@ -1,13 +1,13 @@
 // using same example input even numbers 8-50
-let num = 8
-while (num < 50) {
-    if (num % 2 === 0) {
-        console.log(num)
-        num++
-    } else {
-        num++
-    }
-}
+// let num = 8
+// while (num < 50) {
+//     if (num % 2 === 0) {
+//         console.log(num)
+//         num++
+//     } else {
+//         num++
+//     }
+// }
 
 // //
 // let fullNameEntered = false;
@@ -23,15 +23,38 @@ while (num < 50) {
 // //
 
 //
-let fullNameEntered = false;
-let names = "";
+// let fullNameEntered = false;
+// let names = "";
 // NOT AS HACKY AS ABOVE
-do {
-    names += prompt("Please enter or add to your name");
-    fullNameEntered = confirm("Is this your full name?" + names);
-    if (!fullNameEntered) {
-        names += " ";
-    }
-} while (!fullNameEntered)
-alert("You have entered: " + names);
+// do {
+//     names += prompt("Please enter or add to your name");
+//     fullNameEntered = confirm("Is this your full name?" + names);
+//     if (!fullNameEntered) {
+//         names += " ";
+//     }
+// } while (!fullNameEntered)
+// alert("You have entered: " + names);
 //
+
+// // TODO: A parking lot with 30 parking spaces wants to display the amount of spaces available as it gets filled.
+//  Let's assume that there are allowing two cars into the parking lot at a time. As those cars take up spaces,
+//  write a do-while loop that prints the spaces available. If the parking lot gets filled, print "this parking lot
+//  is now full" to the console.
+//
+// let lotFull = false;
+// let spaces = 30;
+// do {
+//     console.log("Spaces available is: " + spaces)
+//     spaces = spaces - 2;
+//
+// } while (spaces > 0)
+//     console.log("Lot is now full")
+//TODO: using prompt() and alert(), write a while loop that will continue to ask for the correct password until the
+//  correct password is given.
+// let input;
+// let password = "secret";
+// while (input != password) {
+//     input = prompt("Please enter password");
+// }
+// alert("That is correct! ");
+//INSTRUCTOR SOLUTION FOR ABOVE
