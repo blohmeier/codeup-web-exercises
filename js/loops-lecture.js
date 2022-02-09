@@ -1,13 +1,13 @@
 // using same example input even numbers 8-50
-// let num = 8
-// while (num < 50) {
-//     if (num % 2 === 0) {
-//         console.log(num)
-//         num++
-//     } else {
-//         num++
-//     }
-// }
+let num = 8
+while (num < 50) {
+    if (num % 2 === 0) {
+        console.log(num)
+        num++
+    } else {
+        num++
+    }
+}
 
 // //
 // let fullNameEntered = false;
@@ -25,7 +25,7 @@
 //
 // let fullNameEntered = false;
 // let names = "";
-// NOT AS HACKY AS ABOVE
+// //NOT AS HACKY AS ABOVE
 // do {
 //     names += prompt("Please enter or add to your name");
 //     fullNameEntered = confirm("Is this your full name?" + names);
@@ -34,7 +34,7 @@
 //     }
 // } while (!fullNameEntered)
 // alert("You have entered: " + names);
-//
+
 
 // // TODO: A parking lot with 30 parking spaces wants to display the amount of spaces available as it gets filled.
 //  Let's assume that there are allowing two cars into the parking lot at a time. As those cars take up spaces,
