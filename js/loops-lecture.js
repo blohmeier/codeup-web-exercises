@@ -49,7 +49,7 @@
 //
 // } while (spaces > 0)
 //     console.log("Lot is now full")
-//TODO: using prompt() and alert(), write a while loop that will continue to ask for the correct password until the
+// // TODO: using prompt() and alert(), write a while loop that will continue to ask for the correct password until the
 //  correct password is given.
 // let input;
 // let password = "secret";
@@ -61,13 +61,11 @@
 let password = "passw0rd123";
 let isCorrect = false;
 let attempt = "";
-
-while (isCorrect){
-
+while (!isCorrect){
     attempt = prompt("please enter your password...");
     isCorrect = attempt === password;
     if (!isCorrect) {
         alert("That was not the correct password...");
     }
-
+    alert("You entered the correct password.");
 }
