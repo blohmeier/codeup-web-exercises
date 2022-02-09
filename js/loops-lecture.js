@@ -14,6 +14,6 @@ let names = "";
 while (!fullNameEntered){
     names += prompt("Please enter");
 
-    fullNameEntered = true;
+    fullNameEntered = confirm("Is this your full name?");
 }
 alert("This is your name: " + names);
