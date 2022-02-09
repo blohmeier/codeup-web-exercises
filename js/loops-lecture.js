@@ -58,3 +58,16 @@
 // }
 // alert("That is correct! ");
 //INSTRUCTOR SOLUTION FOR ABOVE
+let password = "passw0rd123";
+let isCorrect = false;
+let attempt = "";
+
+while (isCorrect){
+
+    attempt = prompt("please enter your password...");
+    isCorrect = attempt === password;
+    if (!isCorrect) {
+        alert("That was not the correct password...");
+    }
+
+}
