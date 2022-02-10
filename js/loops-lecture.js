@@ -200,6 +200,6 @@
 // }
 let myNiceArr = ["Casey", "Ry", "Mark", "Larry"];
 
-for (let i = 0; i < myNiceArr.max; i++){
+for (let i = 0; i < myNiceArr.length; i++){
     console.log("Hello, " + myNiceArr[i]);
 }
