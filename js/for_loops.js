@@ -17,12 +17,12 @@
 // showMultiplicationTable(7);
 // Same problem, with for loop ...
 //let num;
-function showMultiplicationTable (num) {
-    for (i = 1; i <= 10; i++) {
-        console.log(num + " x " + i + " = " + (num*i));
-    }
-}
-showMultiplicationTable(7);
+// function showMultiplicationTable (num) {
+//     for (i = 1; i <= 10; i++) {
+//         console.log(num + " x " + i + " = " + (num*i));
+//     }
+// }
+// showMultiplicationTable(7);
 
 // // "For Loops" #3.
 // for (i = 0; i < 10; i++) {
@@ -50,3 +50,10 @@ showMultiplicationTable(7);
 //     console.log(100 - 5*i);
 // }
 
+//Instructor solutions
+function showMultiplicationTables(num) {
+    for (let multiplier = 1; multiplier <= 10; multiplier++) {
+        console.log(num + " x " + multiplier + " = " + (num * multiplier));
+    }
+}
+showMultiplicationTables(7);
