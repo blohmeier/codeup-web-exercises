@@ -1,13 +1,13 @@
 // using same example input even numbers 8-50
-let num = 8
-while (num < 50) {
-    if (num % 2 === 0) {
-        console.log(num)
-        num++
-    } else {
-        num++
-    }
-}
+// let num = 8
+// while (num < 50) {
+//     if (num % 2 === 0) {
+//         console.log(num)
+//         num++
+//     } else {
+//         num++
+//     }
+// }
 
 // //
 // let fullNameEntered = false;
@@ -69,3 +69,16 @@ while (num < 50) {
 //     }
 //     alert("You entered the correct password.");
 // }
+
+//Start lecture Thursday 10 Feb -  "While Loops #2." from codeup lecture materials
+function loopNums(){
+
+    let num = 1;
+
+    while (num < 65536) {
+        num *= 2
+        console.log(num);
+    }
+}
+
+loopNums();
