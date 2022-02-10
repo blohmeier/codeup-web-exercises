@@ -105,8 +105,12 @@
 
 // you know what will stop the loop AND how many iterations the loop executes
 
-let num = 0;
+// let num = 0;
+//
+// for (num; num <= 50; num++) {
+//     console.log(num)
+// }
 
-for (num; num <= 50; num++) {
-    console.log(num)
+for (/*control variable*/; /*test coondition*/; /*iterator*/) {
+    //code to run for each iteration of the loop
 }
