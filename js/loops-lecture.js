@@ -126,23 +126,44 @@
 //MINI-EXERCISES
 // TODO: Use a for loop to print the even numbers between 0 and 30, inclusive.
 //  HINT: remember the remainder operator (modulo)
-for (let num = 1; num <= 30; num++) { // stop the loop when the character count is 36
-    if (num % 2 === 0) {
-        console.log(num)
-    }
-}
+// for (let num = 1; num <= 30; num++) {
+//     if (num % 2 === 0) {
+//         console.log(num)
+//     }
+// }
 // TODO: loop through numbers 1 - 40. Print "marco" if it's divisible by 3. Print "polo" if it's divisible by 5.
 //  -> If it's neither print "I'm not playing"
 //  -> Print "marco polo" if it's divisible by 3 and 5.
-for (let num = 1; num <= 40; num++) { // stop the loop when the character count is 36
-    //console.log("Number is: " + num);
-    if (num % 3 === 0 && num % 5 !== 0) {
-        console.log("Number is: " + num + " that means print: marco")
-    } else if (num % 3 !== 0 && num % 5 === 0) {
-        console.log("Number is: " + num + " that means print: polo")
-    } else if (num % 3 === 0 && num % 5 === 0) {
-        console.log("Number is: " + num + " that means print: marco polo")
+// for (let num = 1; num <= 40; num++) {
+//     //console.log("Number is: " + num);
+//     if (num % 3 === 0 && num % 5 !== 0) {
+//         console.log("Number is: " + num + " that means print: marco")
+//     } else if (num % 3 !== 0 && num % 5 === 0) {
+//         console.log("Number is: " + num + " that means print: polo")
+//     } else if (num % 3 === 0 && num % 5 === 0) {
+//         console.log("Number is: " + num + " that means print: marco polo")
+//     } else {
+//         console.log("Number is: " + num + " that means print: I'm not playing")
+//     }
+// }
+
+//Instructor solutions
+// for (let i = 0; i <= 30; i++) {
+//     if (i % 2 === 0) {
+//         console.log(i);
+//     }
+// }
+// for (let i = 2; i <= 30; i += 2) {
+//     console.log(i);
+// }
+for (let i = 1; i <= 40; i++) {
+    if (i % 3 === 0 && (i % 3 === 0)) {
+        console.log(i + " MARCO POLO")
+    } else if (i % 3 === 0) {
+        console.log(i + " marco");
+    } else if (i % 5 === 0) {
+        console.log(i + " polo");
     } else {
-        console.log("Number is: " + num + " that means print: I'm not playing")
+        console.log(i + " I'm not playing... this isn't fun :(")
     }
 }
