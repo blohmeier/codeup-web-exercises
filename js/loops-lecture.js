@@ -111,6 +111,38 @@
 //     console.log(num)
 // }
 
-for (/*control variable*/; /*test coondition*/; /*iterator*/) {
-    //code to run for each iteration of the loop
+// for (/*control variable*/; /*test condition*/; /*iterator*/) {
+//     //code to run for each iteration of the loop
+// }
+
+// let letters = "";
+// console.log(letters.length);
+// for (let i = letters.length; i <= 36; i++) { // stop the loop when the character count is 36
+//     letters += "z";
+//     console.log(letters);
+// }
+// console.log(letters.length);
+
+//MINI-EXERCISES
+// TODO: Use a for loop to print the even numbers between 0 and 30, inclusive.
+//  HINT: remember the remainder operator (modulo)
+for (let num = 1; num <= 30; num++) { // stop the loop when the character count is 36
+    if (num % 2 === 0) {
+        console.log(num)
+    }
+}
+// TODO: loop through numbers 1 - 40. Print "marco" if it's divisible by 3. Print "polo" if it's divisible by 5.
+//  -> If it's neither print "I'm not playing"
+//  -> Print "marco polo" if it's divisible by 3 and 5.
+for (let num = 1; num <= 40; num++) { // stop the loop when the character count is 36
+    //console.log("Number is: " + num);
+    if (num % 3 === 0 && num % 5 !== 0) {
+        console.log("Number is: " + num + " that means print: marco")
+    } else if (num % 3 !== 0 && num % 5 === 0) {
+        console.log("Number is: " + num + " that means print: polo")
+    } else if (num % 3 === 0 && num % 5 === 0) {
+        console.log("Number is: " + num + " that means print: marco polo")
+    } else {
+        console.log("Number is: " + num + " that means print: I'm not playing")
+    }
 }
