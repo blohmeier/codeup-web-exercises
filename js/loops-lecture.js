@@ -71,14 +71,42 @@
 // }
 
 //Start lecture Thursday 10 Feb -  "While Loops #2." from codeup lecture materials
-function loopNums(){
+// function loopNums(){
+//
+//     let num = 1;
+//
+//     while (num < 65536) {
+//         num *= 2
+//         console.log(num);
+//     }
+// }
+//
+// loopNums();
 
-    let num = 1;
+//Do While Loop (instructor solution)
+// This is how you get a random number between 50 and 100
+// var conesInInventory = Math.floor(Math.random() * 50) + 50;
+//
+//
+// // This expression will generate a random number between 1 and 5
+//
+// do { // each iteration is a new customer
+//     let requestedCones = Math.floor(Math.random() * 5) + 1;
+//     // do you have eenough cones to sell them?
+//     // what happens when you 'sell' them a cone?
+// } while() // when do you stop selling cones
 
-    while (num < 65536) {
-        num *= 2
-        console.log(num);
-    }
+//while / do-while
+
+//ypou know what will stop the lppp, but not how many iteerations the loop will exeute
+
+
+// for-loop
+
+// you know what will stop the loop AND how many iterations the loop executes
+
+let num = 0;
+
+for (num; num <= 50; num++) {
+    console.log(num)
 }
-
-loopNums();
