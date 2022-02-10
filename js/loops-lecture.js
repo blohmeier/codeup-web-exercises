@@ -58,7 +58,7 @@
 // }
 // alert("That is correct! ");
 //INSTRUCTOR SOLUTION FOR ABOVE
-// let password = "passw0rd123";
+//let password = "passw0rd123";
 // let isCorrect = false;
 // let attempt = "";
 // while (!isCorrect){
@@ -66,10 +66,22 @@
 //     isCorrect = attempt === password;
 //     if (!isCorrect) {
 //         alert("That was not the correct password...");
+//     } else {
+//         alert("You entered the correct password.");
 //     }
-//     alert("You entered the correct password.");
 // }
-
+// Second solution - from github
+// var pin = "secret";
+//
+// var input = prompt("Welcome please enter your password:");
+//
+// while (input != pin)
+// {
+//     alert("WRONG PASSWORD, TRY AGAIN");
+//     input = prompt("Enter your password");
+// }
+//
+// alert("Pin accepted");
 //Start lecture Thursday 10 Feb -  "While Loops #2." from codeup lecture materials
 // function loopNums(){
 //
@@ -156,14 +168,38 @@
 // for (let i = 2; i <= 30; i += 2) {
 //     console.log(i);
 // }
-for (let i = 1; i <= 40; i++) {
-    if (i % 3 === 0 && (i % 3 === 0)) {
-        console.log(i + " MARCO POLO")
-    } else if (i % 3 === 0) {
-        console.log(i + " marco");
-    } else if (i % 5 === 0) {
-        console.log(i + " polo");
-    } else {
-        console.log(i + " I'm not playing... this isn't fun :(")
-    }
+// for (let i = 1; i <= 40; i++) {
+//     if (i % 3 === 0 && (i % 3 === 0)) {
+//         console.log(i + " MARCO POLO")
+//     } else if (i % 3 === 0) {
+//         console.log(i + " marco");
+//     } else if (i % 5 === 0) {
+//         console.log(i + " polo");
+//     } else {
+//         console.log(i + " I'm not playing... this isn't fun :(")
+//     }
+// }
+//Break and continue lecture
+// function printRandomNumbers(){
+//     for (let i = 1; i <= 10; i++) {
+//         let random = Math.floor((Math.random() * 180) + 20);
+//         if (random % 2 === 0) {
+//             console.log(random + " is even");
+//         } else {
+//             console.log(random + " is odd");
+//         }
+//     }
+// }
+// printRandomNumbers();
+
+// Start of arrays
+// let myNiceArr = ["Casey", "Ry", "Mark", "Larry"];
+//
+// for (let i = 0; i < myNiceArr.length; i++){
+//     console.log("Hello, " + myNiceArr[i]);
+// }
+let myNiceArr = ["Casey", "Ry", "Mark", "Larry"];
+
+for (let i = 0; i < myNiceArr.max; i++){
+    console.log("Hello, " + myNiceArr[i]);
 }

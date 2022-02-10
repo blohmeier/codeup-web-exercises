@@ -51,9 +51,82 @@
 // }
 
 //Instructor solutions
-function showMultiplicationTables(num) {
-    for (let multiplier = 1; multiplier <= 10; multiplier++) {
-        console.log(num + " x " + multiplier + " = " + (num * multiplier));
-    }
-}
-showMultiplicationTables(7);
+//1.
+// function showMultiplicationTables(num) {
+//     for (let multiplier = 1; multiplier <= 10; multiplier++) {
+//         console.log(num + " x " + multiplier + " = " + (num * multiplier));
+//     }
+// }
+//showMultiplicationTables(7);
+
+//2.
+// function printRandomNumbers(){
+//     for (let i = 1; i <= 10; i++) {
+//         let random = Math.floor((Math.random() * 180) + 20);
+//         if (random % 2 === 0) {
+//         console.log(random + " is even");
+//         } else {
+//         console.log(random + " is odd");
+//         }
+//     }
+// }
+// printRandomNumbers();
+
+//3.
+// function printNumStack() {
+//     for(let outerNum = 1; outerNum < 10; outerNum++) {
+//         let numString = "";
+//         for(let innerNum = 1; innerNum <= outerNum; innerNum++) {
+//             //console.log(outerNum); prints all nums, but not on same line.
+//             numString += outerNum + "";
+//         }
+//         console.log(numString);
+//     }
+// }
+//
+// printNumStack();
+
+// for (var i = 1; i < 10; i++){
+//     console.log(i.toString().repeat(i))
+// }
+//
+// function roughSizeOfObject( object ) {
+//
+//     var objectList = [];
+//     var stack = [ object ];
+//     var bytes = 0;
+//
+//     while ( stack.length ) {
+//         var value = stack.pop();
+//
+//         if ( typeof value === 'boolean' ) {
+//             bytes += 4;
+//         }
+//         else if ( typeof value === 'string' ) {
+//             bytes += value.length * 2;
+//         }
+//         else if ( typeof value === 'number' ) {
+//             bytes += 8;
+//         }
+//         else if
+//         (
+//             typeof value === 'object'
+//             && objectList.indexOf( value ) === -1
+//         )
+//         {
+//             objectList.push( value );
+//
+//             for( var i in value ) {
+//                 stack.push( value[ i ] );
+//             }
+//         }
+//     }
+//     return bytes;
+// }
+//4.
+// function numsLessFive() {
+//     for (let i = 100; i >= 5; i -= 5){
+//         console.log(i);
+//     }
+// }
+// numsLessFive();
