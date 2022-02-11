@@ -1,4 +1,4 @@
-"use strict;"
+"use strict";
 
 // console.log("test")
 
@@ -14,8 +14,8 @@ var dogAges = [5, 2, 3, 10];
 // Will not be able to do the below in Java - can't do heterogeneous arrays in Java. Don't do the below.
 // var dogs = ["Fido", 5, "Spot", 2];
 
-console.log("Dog names: " + dogNames);
-console.log(dogNames.length);
+// console.log("Dog names: " + dogNames);
+// console.log(dogNames.length);
 
 // first elemnt is at index 0
 // console.log(dogNames[0]); // Fido
@@ -61,4 +61,14 @@ console.log(dogNames.length);
 // }
 
 // forEach loops
-dogNames.forEach()
+dogNames.forEach(function(dogName, index) {
+    // this function will be executed on each element
+    // as the forEach iterates over the array
+    // BUT to skip:
+    // if(a certain record) {
+    //      skip that record
+    // }
+    console.log("Dog at index " + index + " is " + dogName);
+});
+
+// Do not use forEach loop to change array contents.
