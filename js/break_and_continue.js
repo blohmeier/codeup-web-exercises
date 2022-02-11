@@ -42,7 +42,23 @@
 // console.log("test log")
 var oddNumber = promptForOddNumberInRange(1, 50);
 
+printOddNumbersInRangeWithSkip(1, 50, oddNumber);
 
+function printOddNumbersInRangeWithSkip(low, high, skipNumber) {
+    //INCLUSIVE
+    for (let i = 0; i <= high; i++) {
+        if(i === skipNumber || i % 2 === 0) {
+            // if i is the skipNumber then output something special
+            if(i === skipNumber) {
+                console.log("Yikes! Skipping number: " i);
+                
+            }
+            continue;
+        }
+        // if you get here then should be an odd number that is within range and not skipnumber
+        console.log("Here is an odd number: " + i);
+    }
+}
 
 function promptForOddNumberInRange(low, high) {
     // loop until user gives odd number in the range INCLUSIVE
