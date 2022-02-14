@@ -13,6 +13,7 @@
     var planetsArray = planetsString.split('|');;
     console.log(planetsArray);
 
+
     /**
      * TODO:
      * Create a string with <br> tags between each planet. console.log() your
