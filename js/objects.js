@@ -13,6 +13,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = {};
+        person.firstName = "Brett";
+        person.lastName = "Lohmeier";
+
+    console.log(person.firstName) // "Brett"
+    console.log(person.lastName) // "Lohmeier"
 
     /**
      * TODO:
@@ -23,6 +29,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function () {
+        return ("Hello from " + person.firstName + " " + person.lastName + "!");
+    };
+    console.log(person.sayHello()) // "Hello from Brett Lohmeier!"
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
