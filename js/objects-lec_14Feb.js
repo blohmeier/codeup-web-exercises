@@ -37,8 +37,16 @@ console.log(Object.keys(cohort));
 
 // IN KEYWORD
 // Below: used to count number of duplicates in a string of letters. Create object where each letter is a property and value is number of times you find that property
-if (!`numOfWheels` in car) {
+if (!(`numOfWheels` in car)) {
     car.numOfWheels = 4;
 }
 
 console.log(car);
+
+// NESTED VALUES
+
+let elixirCohort = {
+    name: `Elixir`,
+    startYear: `2021`,
+    students: [`Array of student names - Hector, David, Brendan, Brice etc`]
+}
