@@ -27,6 +27,19 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    var planetsList = `<ul><li>` + planetsArray.join('<li>') + `</ul>`;
-    console.log(planetsList);
+    //My solution
+    // var planetsList = `<ul><li>` + planetsArray.join('<li>') + `</ul>`;
+    //console.log(planetsList);
+    // Reviewer solution
+    function buildPlanetUl(arrOfPlanets) {
+        let newString = `<ul>`;
+        for (let i = 0; i < arrOfPlanets.length; i++) {
+            newString += `<li>`;
+            newString += arrOfPlanets[i];
+            newString += `</li>`;
+        }
+        newString += '<ul>';
+        return newString;
+    }
+    console.log(buildPlanetUl(planetsArray))
 })();
