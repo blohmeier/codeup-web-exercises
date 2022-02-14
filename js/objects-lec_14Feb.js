@@ -86,3 +86,12 @@ car.honk = function () {
 }
 
 car.honk();
+
+elixirCohort.printAllStudentNames = function () {
+    //console.log(this.students); // "this" means elixirCohort
+    this.students.forEach(function (student) {
+        console.log(student.name);
+    })
+}
+
+elixirCohort.printAllStudentNames();
