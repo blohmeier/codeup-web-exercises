@@ -48,5 +48,41 @@ console.log(car);
 let elixirCohort = {
     name: `Elixir`,
     startYear: `2021`,
-    students: [`Array of student names - Hector, David, Brendan, Brice etc`]
+    students: [`Array of student names - Hector, David, Brendan, Brice etc`],
+    hasGraduated: false
 }
+
+console.log(elixirCohort.startYear);
+
+console.log(elixirCohort.hasGraduated);
+
+elixirCohort.hasGraduated = true;
+
+console.log(elixirCohort.hasGraduated);
+
+// OBJECTS WITHIN OBJECTS
+
+elixirCohort.students = [
+    { // students[0]
+        name: `Ry`,
+        age: 27
+    },
+    { // students[1]
+        name: `Casey`,
+        age: 27
+    },
+    {
+        name: `Docrob`,
+        age: 40
+    }
+]
+console.log(elixirCohort.students[0].name); //Ry
+console.log(elixirCohort.students[1].name); //Casey
+
+// ASSIGNING FUNCTIONALITY(BEHAVIORS) TO AN OBJECT
+
+car.honk = function () {
+    console.log("Honque Honque")
+}
+
+car.honk();
