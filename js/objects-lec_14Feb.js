@@ -81,15 +81,21 @@ console.log(elixirCohort.students[1].name); //Casey
 
 // ASSIGNING FUNCTIONALITY(BEHAVIORS) TO AN OBJECT
 
-car.honk = function () {
-    console.log("Honque Honque")
+// car.honk = function () {
+//     console.log("Honque Honque");
+// }
+//
+// car.honk();
+
+car.printNumberOfWheels = function () {
+    console.log(this.numOfWheels);
 }
 
-car.honk();
+car.printNumberOfWheels();
 
 elixirCohort.printAllStudentNames = function () {
     //console.log(this.students); // "this" means elixirCohort
-    this.students.forEach(function (student) {
+    this.students.forEach(function (student) { // again, this means elixirCohort
         console.log(student.name);
     })
 }
