@@ -15,13 +15,15 @@
         logInfo: function (doRounding) {
             // TODO: complete this method.
             if (doRounding) {
-                var circlePi = Math.round(Math.PI);
-            }
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(this.getArea(this.radius)));
+            } else {
+
 
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
 
             console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea(this.radius));
+        }
         }
     };
 
