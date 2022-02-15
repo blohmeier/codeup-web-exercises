@@ -159,12 +159,13 @@
         console.log("Author : " + books[i].author.firstName + " " + books[i].author.lastName);
     }*/
 // Corrected effort:
-    books.forEach(function (book, index) {
+    /*books.forEach(function (book, index) {
         console.log(`Book # ` + (index + 1));
         console.log(`Title: ` + book.title);
         console.log(`Title: ` + book.author.firstName + " " + book.author.lastName);
         console.log(`---`);
-    })
+    })*/
+    //final refactoring
 
     /**
      * Bonus:
@@ -176,8 +177,43 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(title,author) {
-
+    //final refactoring step: reproduce above code:
+    function printAllBooks (books) {
+        console.log(`---`);
+        books.forEach(function (book, index) {
+            console.log(`Book # ` + (index + 1));
+            showBookInfo(book);
+        })
     }
 
+    //effort provided in walk-through
+
+    function createBook(title,authorName) {
+        let authorNameSplit = authorName.split(' ');
+        return {
+            title: title,
+            author: {
+                firstName: authorNameSplit[0],
+                lastName: authorNameSplit[1]
+            }
+        }
+
+    }
+    function showBookInfo(book) {
+        console.log(`Title: ` + book.title);
+        console.log(`Title: ` + book.author.firstName + " " + book.author.lastName);
+        console.log(`---`);
+    }
+
+    //before addBook function:
+    //console.log(createBook(`Clean Code`, 'Bob Martin'));
+
+    //after addBook function:
+    addBook(createBook(`Clean Code`, 'Bob Martin'));
+
+
+    function addBook(book) {
+        books.push(book);
+    }
+    printAllBooks(books)
 })();
