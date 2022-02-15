@@ -54,26 +54,17 @@
         {name: 'George', amount: 320}
     ];
 
-    // create a logDiscount method on the shoppers object
-    //shoppers.logPayment = function () {
-        //shoppers.forEach(function (shopper) {
-            //if (shoppers.amount >= 250) {
-                console.log("For " + shoppers.name + ", " + shoppers.amount + "spent before discount, discount was: " + ((shoppers.amount*.12) + "and amount after discount is " + (shoppers.amount - (shoppers.amount*.12))));
-            // } else {
-            //     console.log("For " + shoppers.name + ", " + shoppers.amount + "spent before discount, discount was: " + ((shoppers.amount*.12) + "and amount after discount is " + (shoppers.amount - (shoppers.amount*.12))));
-            // }
-       // })
-    //};
-    //shoppers.forEach();
-
-    elixirCohort.printAllStudentNames = function () {
-        //console.log(this.students); // "this" means elixirCohort
-        this.students.forEach(function (student) { // again, this means elixirCohort
-            console.log(student.name);
+    shoppers.logPayment = function () {
+        shoppers.forEach(function (shopper) {
+            if (shopper.amount >= 250) {
+                console.log("For " + shopper.name + ", " + shopper.amount + " spent before discount, discount was: " + ((shopper.amount*.12) + ", and amount after discount is " + (shopper.amount - (shopper.amount*.12))) + ".");
+            } else {
+                console.log("For " + shopper.name + ", " + shopper.amount + " spent. No discount. Amount after discount is still " + shopper.amount + ".");
+            }
         })
     }
 
-    elixirCohort.printAllStudentNames();
+    shoppers.logPayment();
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
