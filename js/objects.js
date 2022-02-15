@@ -62,7 +62,7 @@
 
     shoppers.logPayment = function () {
         shoppers.forEach(function (shopper) {
-            if (shopper.amount >= 250) {
+            if (shopper.amount > 200) {
                 console.log("For " + shopper.name + ", " + shopper.amount + " spent before discount, discount was: " + ((shopper.amount*.12) + ", and amount after discount is " + (shopper.amount - (shopper.amount*.12))) + ".");
             } else {
                 console.log("For " + shopper.name + ", " + shopper.amount + " spent. No discount. Amount after discount is still " + shopper.amount + ".");
