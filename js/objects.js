@@ -79,6 +79,47 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {
+            title: "Genetic Algorithms and Machine Learning for Programmers",
+            author: {
+                firstName: "Frances",
+                lastName: "Buontempo",
+            },
+        },
+        {
+            title: "The Visual Display of Quantitative Information",
+            author: {
+                firstName: "Edward",
+                lastName: "Tufte",
+            },
+        },
+        {
+            title: "Practical Object-Oriented Design",
+            author: {
+                firstName: "Sandi",
+                lastName: "Metz",
+            },
+        },
+        {
+            title: "Weapons of Math Destruction",
+            author: {
+                firstName: "Cathy",
+                lastName: "O'Neil",
+            },
+        },
+        {
+            title: "The Things They Carried",
+            author: {
+                firstName: "Tim",
+                lastName: "O'Neil",
+            },
+        },
+    ];
+    console.log(books[0].title) // "Genetic Algorithms and Machine Learning for Programmers"
+    console.log(books[0].author.firstName) // "Frances"
+    console.log(books[0].author.lastName) // "Bountempo"
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
