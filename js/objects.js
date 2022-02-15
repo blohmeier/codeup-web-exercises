@@ -144,6 +144,15 @@
      *      ---
      *      ...
      */
+    console.log(books.length);
+
+    for (let i = 0; i <= (books.length - 1); i++) {
+        //console.log("Book # " + Object.keys(books[i]));
+        console.log("Book # " + (i + 1));
+        console.log("Title : " + books[i].title);
+        console.log("Author : " + books[i].author.firstName + " " + books[i].author.lastName);
+    }
+
 
     /**
      * Bonus:
