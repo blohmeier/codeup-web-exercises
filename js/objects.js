@@ -48,11 +48,23 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // create a logDiscount method on the shoppers object
+    //shoppers.logPayment = function () {
+        //shoppers.forEach(function (shopper) {
+            //if (shoppers.amount >= 250) {
+                console.log("For " + shoppers.name + ", " + shoppers.amount + "spent before discount, discount was: " + ((shoppers.amount*.12) + "and amount after discount is " + (shoppers.amount - (shoppers.amount*.12))));
+            // } else {
+            //     console.log("For " + shoppers.name + ", " + shoppers.amount + "spent before discount, discount was: " + ((shoppers.amount*.12) + "and amount after discount is " + (shoppers.amount - (shoppers.amount*.12))));
+            // }
+       // })
+    //};
+    //shoppers.forEach();
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
