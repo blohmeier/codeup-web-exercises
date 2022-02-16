@@ -50,11 +50,11 @@ person2.name = "Brett"
 
 console.log(person2.name);*/
 
-let person2 = Object.create(person);
+/*let person2 = Object.create(person);
 person2["names"] = ["Ry", "Sutton"];
 person2["occupation"] = "Fab Father";
 person2.dob = "01.01.1992";
-console.log(person2);
+console.log(person2);*/
 /*person2["dob"] = "01.02.1992";
 console.log(person2)*/
 
