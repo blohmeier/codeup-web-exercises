@@ -99,3 +99,11 @@ console.log(contactInfo.city + ", " + contactInfo.state + " " + contactInfo.post
 // It should look like this-ish:
 // 123 Anywhere Ln
 // Beverly Hills, CA 90210
+
+/*
+JS Object Warmup, pt 3:
+Create a property on the person object to store their contact info
+    -> Assign the contact info variable to that property
+    -> Log that entire object and its properties to the console*/
+
+
