@@ -15,8 +15,13 @@ h6 {
     color: green;
 }
 
-body {
+html {
+    background-size: 30%;
     background-color: #FCD6CB;
-    background-image: url('../images/technology-background-1632715.jpg');
-    background-repeat: repeat-y;
+    background-image: url('../images/technology-background-1632715.jpg') ;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
+body
+{ font-style: oblique; }
+ul { list-style: square; }
