@@ -25,3 +25,34 @@ html {
 body
 { font-style: oblique; }
 ul { list-style: square; }
+td {
+    padding: 10px;
+    font-size: 12px;
+}
+tr {
+    padding: 14px;
+    font-size: 18px;
+}
+table {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
