@@ -6,36 +6,46 @@
 </head>
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
+        <section>
+            <label for="email">email</label>
+            <input id="email" name="email" type="text">
+            <br>
 
-        <label for="email">email</label>
-        <input id="email" name="email" type="text">
-        <br>
+            <label for="password">password</label>
+            <input id="password" name="password" type="password">
+            <br>
 
-        <label for="password">password</label>
-        <input id="password" name="password" type="password">
-        <br>
+            <label for="bio">bio</label>
+            <textarea id="bio" name="bio"></textarea>
 
-        <textarea name="bio"></textarea>
-
-        <!--<label for="bio">bio</label>
-        <input id="bio" name="bio" type="bio">-->
-        <br>
-
-        <input type="submit">
-        <br>
-        <h2>How did you hear about us?</h2>
-        <label for="android">
-            Android <input id="android" type="checkbox" name="phones" value="android">
-        </label>
-        <label for="ios">
-            iOS <input id="ios" type="checkbox" name="phones" value="ios">
-        </label>
-        <label for="windows">
-            Windows <input id="windows" type="checkbox" name="phones" value="windows">
-        </label>
-        <label for="other">
-            Other <input id="other" type="checkbox" name="phones" value="other">
-        </label>
+            <br>
+        </section>
+        <section><h2>How did you hear about us?</h2>
+            <label for="billboard">
+                billboard <input id="billboard" type="checkbox" name="adtype" value="billboard">
+            </label>
+            <label for="radio advertisement">
+                radio advertisement <input id="radio advertisement" type="checkbox" name="adtype" value="radio advertisement">
+            </label>
+            <label for="internet advertisement">
+                internet advertisement <input id="internet advertisement" type="checkbox" name="adtype" value="internet advertisement">
+            </label>
+            <label for="other">
+                Other <input id="other" type="checkbox" name="adtype" value="other">
+            </label>
+        </section>
+        <section>
+            <h2>Select web browser you are using</h2>
+            <select name="coffee_preference">
+                <option value="Firefox">Firefox</option>
+                <option value="Microsoft Edge">Dark Roast</option>
+                <option value="Google Chrome">Espresso Blend</option>
+            </select>
+            <br>
+        </section>
+        <section>
+            <input type="submit">
+        </section>
     </form>
 </body>
 </html>
