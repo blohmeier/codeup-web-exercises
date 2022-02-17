@@ -14,3 +14,9 @@ h5,
 h6 {
     color: green;
 }
+
+body {
+    background-color: #FCD6CB;
+    background-image: url('../images/technology-background-1632715.jpg');
+    background-repeat: repeat-y;
+}
