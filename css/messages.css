@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
-.alert {
+.message {
     width: 100%;
     padding: 12px 16px;
     border-radius: 4px;
@@ -15,3 +15,30 @@ body, html {
     margin-bottom: 12px;
     font-size: 16px;
 }
+
+.message.message-info {
+    background-color: rgba(217, 237, 247, 1);
+    color: rgba(49, 112, 143, 1);
+    border-color: rgba(126, 182, 193, 1);
+}
+
+.message.message-success {
+    background-color: rgba(227, 253, 235, 1);
+    border-color: rgba(38, 179, 3, 1);
+    color: rgba(60, 118, 61, 1);
+}
+
+.message.message-warning {
+    background-color: rgba(252, 248, 227, 1);
+    border-color: rgba(177, 161, 129, 1);
+    color: rgba(138, 109, 59, 1);
+}
+
+.message.message-error {
+    background-color: rgba(248, 215, 218, 1);
+    border-color: rgba(220, 53, 69, 1);
+    color: rgba(114, 28, 36,1);
+}
+
+/*
+resource used: https://codepen.io/sandervolbeda/pen/YbBByY*/
