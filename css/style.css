@@ -1,10 +1,11 @@
 .fancy-header {
-    color: purple; /* single line comment */
+    color: #800000; /* single line comment */
 }
-h1 {
-    margin: 50px auto;
+h1, p {
+    /*margin: 50px auto;
     width: 500px;
-    padding: 10px;
+    padding: 10px;*/
+    text-align: center;
 }
 
 h2,
@@ -12,18 +13,23 @@ h3,
 h4,
 h5,
 h6 {
-    color: green;
+    color: #807a00;
 }
 
 html {
-    background-size: 30%;
+    /*background-size: 30%;
     background-color: #FCD6CB;
     background-image: url('../images/technology-background-1632715.jpg') ;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top center;*/
 }
-body
-{ font-style: oblique; }
+body {
+    font-style: oblique;
+    background-image: url('../images/technology-background-1632715.jpg');
+    background-size: 15%;
+    color: white;
+
+}
 ul { list-style: square; }
 td {
     padding: 10px;
@@ -36,6 +42,7 @@ tr {
 table {
     border-spacing: 10px;
     border-collapse: separate;
+    color: white;
 }
 /* unvisited link (:link) */
 a:link {
