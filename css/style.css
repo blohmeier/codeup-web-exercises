@@ -1,5 +1,45 @@
+
+
+*{
+    margin: 0;
+}
+
+
+
+nav {
+    background-color: black;
+    color: #FFF;
+}
+
+#github-logo{
+    border-radius: 50%;
+}
+
+li {
+    list-style: none
+}
+
+.nav-anchor:any-link{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.border-element{
+    border: 2px darkgrey solid;
+}
+
+#be-specific{
+    border: 2px darkgrey solid;
+    background-color: darkgrey;
+}
+
+footer .footer-li{
+    font-family: arial;
+}
+/*
+
 .fancy-header {
-    color: #800000; /* single line comment */
+    color: #800000; !* single line comment *!
 }
 h1 {
     color: white;
@@ -21,7 +61,6 @@ body {
     background-size: 15%;
 }
 ul { list-style: square; }
-li{list-style: none}
 td {
     padding: 10px;
     font-size: 12px;
@@ -35,22 +74,22 @@ table {
     border-collapse: separate;
     color: white;
 }
-/* unvisited link (:link) */
+!* unvisited link (:link) *!
 a:link {
     color:red;
 }
 
-/* visited link (:visited) */
+!* visited link (:visited) *!
 a:visited {
     color:black;
 }
 
-/* mouse hover over link (:hover) */
+!* mouse hover over link (:hover) *!
 a:hover {
     color:blue;
 }
 
-/* active/selected link (:active) */
+!* active/selected link (:active) *!
 a:active {
     color:green;
 }
@@ -59,24 +98,4 @@ img.resize {
     max-width:10%;
     max-height:10%;
 }
-#github-logo{
-    border-radius: 70%;
-}
-.nav-anchor:any-link{
-    color: #FFF;
-    text-decoration: none;
-}
-.border-element{
-    border: 2px darkgrey solid;
-}
-#be-specific{
-    border: 2px darkgrey solid;
-    background-color: darkgrey;
-}
-footer .footer-li{
-    font-family: arial;
-}
-nav {
-    background-color: black;
-    color: white;
-}
+*/
