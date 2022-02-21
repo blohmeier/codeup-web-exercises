@@ -1,10 +1,8 @@
 .fancy-header {
     color: #800000; /* single line comment */
 }
-h1, p {
-    /*margin: 50px auto;
-    width: 500px;
-    padding: 10px;*/
+h1 {
+    color: white;
     text-align: center;
 }
 
@@ -16,21 +14,14 @@ h6 {
     color: #807a00;
 }
 
-html {
-    /*background-size: 30%;
-    background-color: #FCD6CB;
-    background-image: url('../images/technology-background-1632715.jpg') ;
-    background-repeat: no-repeat;
-    background-position: top center;*/
-}
 body {
     font-style: oblique;
+    font-size: 12px;
     background-image: url('../images/technology-background-1632715.jpg');
     background-size: 15%;
-    color: white;
-
 }
 ul { list-style: square; }
+li{list-style: none}
 td {
     padding: 10px;
     font-size: 12px;
@@ -67,4 +58,25 @@ a:active {
 img.resize {
     max-width:10%;
     max-height:10%;
+}
+#github-logo{
+    border-radius: 70%;
+}
+.nav-anchor:any-link{
+    color: #FFF;
+    text-decoration: none;
+}
+.border-element{
+    border: 2px darkgrey solid;
+}
+#be-specific{
+    border: 2px darkgrey solid;
+    background-color: darkgrey;
+}
+footer .footer-li{
+    font-family: arial;
+}
+nav {
+    background-color: black;
+    color: white;
 }
