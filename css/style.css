@@ -63,3 +63,8 @@ a:hover {
 a:active {
     color:green;
 }
+
+img.resize {
+    max-width:10%;
+    max-height:10%;
+}
