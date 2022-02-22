@@ -66,13 +66,11 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
-    display: flex;
     flex-grow: 4;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
-    display: flex;
     flex-grow: 2;
 }
 
@@ -90,7 +88,6 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-    display: flex;
     align-self: center;
     flex-grow: 2;
 }
@@ -108,7 +105,6 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
-    display: flex;
     flex-grow: 2;
 }
 
