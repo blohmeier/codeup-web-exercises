@@ -43,12 +43,14 @@ section {
     /* enter needed declarations here */
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
+
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
@@ -62,10 +64,14 @@ section:nth-of-type(1) div:last-child {
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    display: flex;
+    flex-grow: 4;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    display: flex;
+    flex-grow: 2;
 
 }
 
