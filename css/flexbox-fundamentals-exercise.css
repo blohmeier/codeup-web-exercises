@@ -42,7 +42,7 @@ h2, h3 {
 section {
     /* enter needed declarations here */
     display: flex;
-    flex-direction: row;
+    /*flex-direction: row;*/
     justify-content: space-between;
 }
 
