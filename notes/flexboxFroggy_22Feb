@@ -1,0 +1,89 @@
+Flexbox Froggy answers:
+1
+#pond {
+  display: flex;
+flex-direction: row-reverse;
+}
+2
+#pond {
+  display: flex;
+justify-content: center;
+}
+3
+#pond {
+  display: flex;
+justify-content: space-around;
+}
+4
+#pond {
+  display: flex;
+justify-content: space-between;
+}
+5
+#pond {
+  display: flex;
+align-items: flex-end;
+}
+6
+#pond {
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+7
+#pond {
+  display: flex;
+justify-content: space-around;
+align-items: flex-end;
+}
+8
+#pond {
+  display: flex;
+flex-direction: row-reverse;
+}
+9
+#pond {
+  display: flex;
+flex-direction: column;
+}
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+flex-direction: column-reverse;
+align-content: center;
+}
+24
+#pond {
+  display: flex;
+flex-flow:column-reverse wrap-reverse;
+justify-content:center;
+align-content:space-between;
+
+}
