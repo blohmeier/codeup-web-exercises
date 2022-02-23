@@ -71,7 +71,11 @@ flex-direction: column;
 21
 
 22
-
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+align-content: flex-end;
+}
 23
 #pond {
   display: flex;
