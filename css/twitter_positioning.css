@@ -26,17 +26,15 @@ a {
     color: var(--link-color);
 }
 .top-nav {
-    background-color: white;
-    margin: 30px;
-    display: flex;
+    background: var(--light-bg);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
 }
 .nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 30px;
-    background-color: white;
 }
 .nav-link {
     color: var(--main-link-color);
@@ -48,6 +46,7 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -70,4 +69,40 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+.nav-item {
+    display: inline-block;
+    padding: 1.5em;
+}
+.profile-image {
+    position: absolute;
+    top: 240px;
+}
+.profile-form {
+    float: right;
+    line-height: 80px;
+}
+.profile-details {
+    width: 25%;
+    float: left;
+    margin: 0px .5em 0px .5em;
+}
+.timeline {
+    width: 50%;
+    float: left;
+    margin: 0px .5em 0px .5em;
+    display: inline-block;
+    position: center;
+    top: 240px;
+}
+.who-to-follow {
+    width: 25%;
+    float: right;
+    margin: 0px .5em 0px .5em;
+    display: inline-block;
+    position: absolute;
+    top: 400px;
+}
+.container {
+    border: 2em;
 }
