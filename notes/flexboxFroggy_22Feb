@@ -53,7 +53,12 @@ flex-direction: column;
 12
 
 13
-
+#pond {
+  display: flex;
+flex-direction: row-reverse;
+justify-content: center;
+align-items: flex-end;
+}
 14
 #pond {
   display: flex;
