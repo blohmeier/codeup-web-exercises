@@ -55,7 +55,12 @@ flex-direction: column;
 13
 
 14
-
+#pond {
+  display: flex;
+}
+.yellow {
+order: 1;
+}
 15
 #pond {
   display: flex;
