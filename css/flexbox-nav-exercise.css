@@ -31,7 +31,7 @@ nav ul li {
 }
 
 nav a {
-    text-decoration: none;
+    text-decoration: un;
     color: black;
 }
 nav a:hover {
