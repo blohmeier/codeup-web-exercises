@@ -33,12 +33,10 @@ nav{
 li>a{
     color: blue;
 }
-
 .nav-links{
     list-style: none;
     margin: .5em;
     padding-right: 2.5em;
-    display: lis
 }
 /*Image*/
 img {
@@ -59,61 +57,57 @@ footer{
 /*Transitioned to larger screen*/
 @media screen and (min-width:992px) {
     body {
-        background-color: brown;
+        background-color: white;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1em 1em;
     }
     .hidden-on-desktop {
         display: none;
     }
     h1 {
         align-self: flex-start;
+        margin: 0 0 ;
     }
     ul>li{
         background-color: white;
         text-align: right;
         padding-top:  .5em ;
         padding-bottom: .5em;
-        margin: 10px;
+        margin-left: 1em;
+        margin-right: 0;
         width: auto;
-        display: inline-block;
     }
     nav{
-        display: flex;
-        /*justify-content: flex-end;*/
         flex-direction: row-reverse;
-        width: 130%;
+        justify-content: flex-start;
         align-content: flex-end;
         align-self: flex-start;
         margin-left: auto;
-        float: right;
-        position: absolute;
-        left: 10em;
-
+        width: 40%;
     }
     li>a{
         color: blue;
     }
-    .nav-links{
-        list-style: none;
-        margin: .5em;
-        padding-right: 2.5em;
+    /*is ul */  .nav-links{
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+    .main{
+        width: 70%;
     }
-    section   {
-        display: inline-block;
+    .sub-section{
+        width: 30%;
     }
-    .main {
-        margin-right: 50em
+    img{
+        margin: 0;
+        width: 100%;
     }
-    .sub-section {
-        margin-left: 50em
+
+    .header-img{
+        width: 100%;
     }
 }
-
-    /*margin-right: 50em;
-    display: inline-block;
-}*/
-/*.sub-section {
-display: flex;
-margin-left: 50em
-}*/
-
-

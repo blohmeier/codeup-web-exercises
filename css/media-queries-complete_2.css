@@ -3,13 +3,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Lobster', cursive;
+    margin: 2em 1em;
 }
 /*Nav*/
 .alert-info {
     background-color: skyblue;
     border: .2em solid grey;
     text-align: center;
-    padding: 1em 4.5em;
+    padding: 1em 1em;
 }
 .alert-info a{
     text-decoration: none;
@@ -28,17 +30,16 @@ nav{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    width: 130%;
+    width: 100%;
 }
 li>a{
     color: blue;
 }
-
 .nav-links{
     list-style: none;
     margin: .5em;
-    padding-right: 2.5em;
-    display: lis
+    padding: 0;
+    /*padding-right: 2.5em;*/
 }
 /*Image*/
 img {
@@ -50,70 +51,75 @@ img {
     justify-content: center;
     margin: 0;
 }
+.hidden-on-mobile {
+    display: none;
+}
 
 /*footers*/
 footer{
     margin-right: auto;
 }
 
+
 /*Transitioned to larger screen*/
 @media screen and (min-width:992px) {
     body {
-        background-color: brown;
+        background-color: white;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1em 2em;
     }
     .hidden-on-desktop {
         display: none;
     }
+    .hidden-on-mobile{
+        display: block;
+        width: 100%;
+    }
     h1 {
         align-self: flex-start;
+        margin: 0 0 ;
     }
     ul>li{
         background-color: white;
         text-align: right;
         padding-top:  .5em ;
         padding-bottom: .5em;
-        margin: 10px;
+        margin-left: 1em;
+        margin-right: 0;
         width: auto;
-        display: inline-block;
     }
     nav{
-        display: flex;
-        /*justify-content: flex-end;*/
         flex-direction: row-reverse;
-        width: 130%;
+        justify-content: flex-start;
         align-content: flex-end;
         align-self: flex-start;
         margin-left: auto;
-        float: right;
-        position: absolute;
-        left: 10em;
-
+        width: 40%;
     }
     li>a{
         color: blue;
     }
+    /*is ul */
     .nav-links{
+        display: flex;
+        flex-wrap: wrap;
         list-style: none;
-        margin: .5em;
-        padding-right: 2.5em;
+        margin: 0;
+        padding: 0;
     }
-    section   {
-        display: inline-block;
+    .main{
+        width: 70%;
     }
-    .main {
-        margin-right: 50em
+    .sub-section{
+        width: 30%;
     }
-    .sub-section {
-        margin-left: 50em
+    img{
+        margin: 0;
+        /*width: 100%;*/
+    }
+
+    .header-img{
+        width: 100%;
     }
 }
-
-    /*margin-right: 50em;
-    display: inline-block;
-}*/
-/*.sub-section {
-display: flex;
-margin-left: 50em
-}*/
-
-
