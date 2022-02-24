@@ -64,6 +64,7 @@ footer{
     }
     h1 {
         align-self: flex-start;
+        float: left;
     }
     ul>li{
         background-color: white;
@@ -72,21 +73,27 @@ footer{
         padding-bottom: .5em;
         margin: 10px;
         width: auto;
+        display: inline-block;
     }
     nav{
+        /*
         display: flex;
+        */
         /*justify-content: flex-end;*/
         flex-direction: row-reverse;
+        /*
         width: 130%;
+        */
         align-content: flex-end;
-        align-self: flex-start;
-        margin-left: auto;
+        /*align-self: flex-start;
+        margin-left: 0;*/
         float: right;
     }
     li>a{
         color: blue;
     }
     .nav-links{
+        float: right;
         list-style: none;
         margin: .5em;
         padding-right: 2.5em;
