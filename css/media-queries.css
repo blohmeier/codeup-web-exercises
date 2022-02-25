@@ -13,12 +13,18 @@ body {
     text-align: center;
     padding: 1em 1em;
 }
-.alert-info a{
+.alert-info a {
     text-decoration: none;
     color: black;
 }
+nav{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+}
 /*List*/
-ul>li{
+li {
     background-color: #abada8;
     text-align: center;
     padding-top:  .5em ;
