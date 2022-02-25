@@ -1,3 +1,12 @@
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    margin: 2em 1em;
+}
+
 @media screen and (min-width:380px) /* Small devices (phones and pocket devices, 576 and up) */{
     .alert-info {
         background-color: lightblue;
