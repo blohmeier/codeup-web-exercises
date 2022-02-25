@@ -17,20 +17,29 @@ body {
     text-decoration: none;
     color: black;
 }
-nav{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 100%;
-}
 /*List*/
-li {
+ul>li {
     background-color: #abada8;
     text-align: center;
     padding-top:  .5em ;
     padding-bottom: .5em;
     margin: 10px;
     width: 95%;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+}
+/*li>a{
+    color: blue;
+}*/
+.nav-links{
+    list-style: none;
+    margin: .5em;
+    padding: 0;
+    /*padding-right: 2.5em;*/
 }
 @media screen and (min-width:380px) /* Small devices (phones and pocket devices, 576 and up) */{
     .alert-info {
