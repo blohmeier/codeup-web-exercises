@@ -17,6 +17,15 @@ body {
     text-decoration: none;
     color: black;
 }
+/*List*/
+ul>li{
+    background-color: #abada8;
+    text-align: center;
+    padding-top:  .5em ;
+    padding-bottom: .5em;
+    margin: 10px;
+    width: 95%;
+}
 @media screen and (min-width:380px) /* Small devices (phones and pocket devices, 576 and up) */{
     .alert-info {
         background-color: lightblue;
