@@ -13,6 +13,10 @@ body {
     text-align: center;
     padding: 1em 1em;
 }
+.alert-info a{
+    text-decoration: none;
+    color: black;
+}
 @media screen and (min-width:380px) /* Small devices (phones and pocket devices, 576 and up) */{
     .alert-info {
         background-color: lightblue;
