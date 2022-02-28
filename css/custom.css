@@ -2,6 +2,11 @@
     display: none;
 }
 
+.tabs-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /*Transitioned to larger screen*/
 @media screen and (min-width:992px) {
     .hidden-on-mobile{
