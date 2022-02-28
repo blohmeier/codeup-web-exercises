@@ -7,10 +7,26 @@
     flex-direction: column;
     align-items: center;
 }
-
+.card-footer {
+    /*width: 0;*/
+}
 .card-footer div {
     display: inline-block;
 }
+h1 {
+    text-align: center;
+    justify-content: center;
+}
+.jumbotron{
+    margin:15px 30px 0px 30px;
+    border-radius:10px;
+    background-image: url("../images/pizza.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:white !important;
+    /*height:340px;*/
+}
+
 /*Transitioned to larger screen*/
 @media screen and (min-width:992px) {
     .hidden-on-mobile{
