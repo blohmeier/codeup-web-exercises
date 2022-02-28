@@ -7,11 +7,14 @@
     flex-direction: column;
     align-items: center;
 }
+
+.card-footer div {
+    display: inline-block;
+}
 /*Transitioned to larger screen*/
 @media screen and (min-width:992px) {
     .hidden-on-mobile{
         display: block;
         width: 100%;
     }
-
 }
