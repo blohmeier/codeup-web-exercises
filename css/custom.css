@@ -1,0 +1,12 @@
+.hidden-on-mobile {
+    display: none;
+}
+
+/*Transitioned to larger screen*/
+@media screen and (min-width:992px) {
+    .hidden-on-mobile{
+        display: block;
+        width: 100%;
+    }
+
+}
