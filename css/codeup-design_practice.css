@@ -1,27 +1,22 @@
-p {
-    font-family: 'Abel', sans-serif;
-}
 body {
     background-color: #F0F0F0;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 1em 2em;
+    flex-direction: column;
+    margin: 1em 0em;
+}
+.logo-text p {
+    font-family: 'Abel', sans-serif;
+    text-align: center;
 }
 /*Nav*/
-.alert-info {
-    background-color: skyblue;
-    border: .2em solid grey;
+.nav-banner {
+    background-color: white;
     text-align: center;
-    padding: 1em 1em;
+    padding: 0em 0em;
 }
-.alert-info a{
-    text-decoration: none;
-    color: black;
-}
+
 /*List*/
 ul>li{
-    background-color: white;
     text-align: right;
     padding-top:  .5em ;
     padding-bottom: .5em;
@@ -30,11 +25,10 @@ ul>li{
     width: auto;
 }
 nav{
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: flex-start;
-    align-content: flex-end;
+    align-content: flex-start;
     align-self: flex-start;
-    margin-left: auto;
     width: 40%;
 }
 li>a{
@@ -44,90 +38,15 @@ li>a{
 }
 .nav-links{
     display: flex;
-    flex-wrap: wrap;
     list-style: none;
-    margin: 0;
+    margin: 0em 2em;
     padding: 0;
 }
 /*Image*/
 img {
-    width: 95%;
+    margin-top: -5vw;
+    margin-bottom: -5vw;
+    max-width: 15vw;
 }
-
-.header-img {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-}
-.hidden-on-mobile {
-    display: none;
-}
-
-/*footers*/
-footer{
-    margin-right: auto;
-}
-
-
-/*Transitioned to larger screen*/
-@media screen and (min-width:992px) {
-    body {
-        background-color: white;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 1em 2em;
-    }
-    .hidden-on-desktop {
-        display: none;
-    }
-    .hidden-on-mobile{
-        display: block;
-        width: 100%;
-    }
-    h1 {
-        align-self: flex-start;
-        margin: 0 0 ;
-    }
-    ul>li{
-        background-color: white;
-        text-align: right;
-        padding-top:  .5em ;
-        padding-bottom: .5em;
-        margin-left: 1em;
-        margin-right: 0;
-        width: auto;
-    }
-    nav{
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        align-content: flex-end;
-        align-self: flex-start;
-        margin-left: auto;
-        width: 40%;
-    }
-    li>a{
-        color: blue;
-    }
-    /*is ul */
-    .nav-links{
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    .main{
-        width: 70%;
-    }
-    .sub-section{
-        width: 30%;
-    }
-    img{
-        margin: 0;
-        /*width: 100%;*/
-    }
-
-    .header-img{
-        width: 100%;
-    }
+.logo-img {
 }
