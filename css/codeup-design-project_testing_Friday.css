@@ -1,0 +1,332 @@
+* {
+    padding: 0;
+    margin: 1em 0em;
+}
+
+.nav-banner {
+    background-color: white;
+    text-align: center;
+    padding: 0em 0em;
+}
+
+.nav-link {
+    font-size: xxx-large;
+}
+
+#circle1 {
+    background: #E6563B;
+    color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    margin: auto;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+#circle2 {
+    background: #DEA03D;
+    color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    margin: auto;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+#circle3 {
+    background: #7CB06C;
+    color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    margin: auto;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+#circle4 {
+    background: #00ABA9;
+    color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    margin: auto;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+#circle5 {
+    background: #E6563B;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle5 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle6 {
+    background: #DEA03D;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle6 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle7 {
+    background: #7CB06C;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle7 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle8 {
+    background: #00ABA9;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle8 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle9 {
+    background: #E6563B;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle9 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle10 {
+    background: #DEA03D;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle10 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle11 {
+    background: #7CB06C;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle11 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle12 {
+    background: #00ABA9;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle12 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle13 {
+    background: #E6563B;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle13 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle14 {
+    background: #DEA03D;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle14 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle15 {
+    background: #7CB06C;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle15 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle16 {
+    background: #00ABA9;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle16 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle17 {
+    background: #E6563B;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle17 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle18 {
+    background: #DEA03D;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle18 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle19 {
+    background: #7CB06C;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle19 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+#circle20 {
+    background: #00ABA9;
+    color: black;
+    border-radius: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+#circle20 h5 {
+    font-size: .9em;
+    margin: 0em;
+}
+
+.listitems {
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
