@@ -2,11 +2,10 @@
     padding: 0;
     margin: 1em 0em;
 }
-body {
-    background-color: #F0F0F0;
-}
-h1, h2, h3, h4, h5 {
+
+h1,h2,h3,h4,h5 {
     font-family: 'Anton', sans-serif;
+
 }
 p {
     font-family: 'Abel', sans-serif;
@@ -337,4 +336,24 @@ p {
     list-style: none;
     display: flex;
     flex-direction: row-reverse;
+}
+
+.line
+{
+    border: purple;
+    margin: 100px;
+    border-style: groove;
+
+    color: #00ABA9;
+    width: auto;
+    height: 3px;
+}
+/*Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint*/
+.hide-on-vs {
+    display: none;
+}
+@media (min-width: 576px) {
+    .hide-on-vs {
+        display: block;
+    }
 }

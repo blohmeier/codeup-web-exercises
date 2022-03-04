@@ -1,24 +1,41 @@
 * {
-    padding: 0;
-    margin: 1em 0em;
+   /* padding: 0;*/
+    /*margin: 1em 0em;*/
+    background-color: rgba(240, 240, 240, 0.3);
 }
-body {
-    background-color: #F0F0F0;
+:root {
+    --primary-color: F0F0F0;
 }
-h1, h2, h3, h4, h5 {
+html, body {
+    margin:0;
+    padding:0;
+
+}
+h1 {
+    margin:0;
+}
+
+margin {
+    background-color: rgba(240, 240, 240, 0.3);
+}
+h1,h2,h3,h4,h5 {
     font-family: 'Anton', sans-serif;
+
 }
 p {
     font-family: 'Abel', sans-serif;
 }
 .nav-banner {
-    background-color: white;
     text-align: center;
     padding: 0em 0em;
 }
 
 .nav-link {
     font-size: xxx-large;
+    padding: 0;
+}
+.nav-link a {
+    padding: 0;
 }
 
 #circle1 {
@@ -51,7 +68,7 @@ p {
 
 #circle3 {
     background: #7CB06C;
-    color: white;
+    color: white
     border-radius: 50%;
     border: 10px solid white;
     margin: auto;
@@ -337,4 +354,88 @@ p {
     list-style: none;
     display: flex;
     flex-direction: row-reverse;
+}
+
+/*.line
+{
+    border: purple;
+    margin: 100px;
+    border-style: groove;
+
+    color: #00ABA9;
+    width: auto;
+    height: 3px;
+}*/
+/*Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint*/
+.hide-on-vs {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .hide-on-vs {
+        display: block;
+    }
+    .hide-on-s {
+        display: none;
+    }
+    .hide-on-m {
+        display: block;
+    }
+    /*body
+    {
+        color: #7CB06C;
+    }*/
+}
+@media (min-width: 992px) {
+    .hide-on-m {
+        display: none;
+    }
+}
+
+#myVideo {
+    /*position: fixed;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    min-width: 100%;
+    min-height: 100%;
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+/*
+$position-values: (
+0: 0,
+50: 50%,
+100: 100%
+);*/
+/*.datedAside {
+    background: linear-gradient(180deg,
+    rgba(0,0,0,0) calc(50% - 0px),
+    rgba(192,192,192,1) calc(50%),
+    rgba(0,0,0,0) calc(50% + 10px)
+    );
+}
+hr {
+    opcaity: 0.6;
+    width: 350px;
+    height: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color:#666;
+}*/
+.divabsolute {
+    position: absolute;
+    opcaity: 0;
+    top: 30px;
+    right: 0;
+    left: 0;
+    width: auto;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.3) /* white background with 30% opacity */;
 }
