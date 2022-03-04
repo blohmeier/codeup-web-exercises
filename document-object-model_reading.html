@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!--<title>Title</title>-->
+    <!--FOR Example 4c only:-->
+    <title>Sample Page</title>
 </head>
 <body>
 <!--Source: https://java.codeup.com/javascript-i/bom-and-dom/dom/-->
@@ -17,7 +19,7 @@
     })();
 </script>-->
 <!--EXAMPLE 2: Retrieve element list by class or tag name-->
-<h1>List One</h1>
+<!--<h1>List One</h1>
 <ul>
     <li class="odd list-one-item">List 1, Item 1</li>
     <li class="even list-one-item">List 1, Item 2</li>
@@ -64,6 +66,123 @@
         // li.odd.list-two-item
         // li.even.list-two-item
     })();
+</script>-->
+<!--EXAMPLE 3: Direct Access to Form Inputs ... NOT SEEING OUTPUT FROM INSPECT TOOL?-->
+<!--<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+<script>
+    "use strict";
+    (function() {
+        // get the "username" input
+        var usernameInput = document.forms.login.username;
+
+        // log the value of the "username" input
+        console.log(usernameInput.value);
+    })();
+</script>-->
+<!--EXAMPLE 4a: Accessing or Modifying Element Properties -_-_- Accessing or Modifying Inner HTML and Text-->
+<!--<h1 id="main-heading">Hello World!</h1>
+<div id="main-section">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div>
+<script>
+    "use strict";
+    (function() {
+        // Get the main heading h1 by id
+        var mainHeading = document.getElementById('main-heading');
+        console.log(mainHeading.innerHTML); // Prints Hello World!
+
+        // Assign a new value to the inner HTML of the main heading
+        mainHeading.innerHTML = "Hello Codeup!";
+
+        console.log(mainHeading.innerHTML); // Prints Hello Codeup!
+
+        // Get the main section div by id
+        var mainSection = document.getElementById('main-section');
+
+        console.log(mainSection.innerHTML);
+        // Prints
+        // <p>Paragraph 1</p>
+        // <p>Paragraph 2</p>
+    })();
+</script>-->
+<!--EXAMPLE 4b1: Accessing or Modifying Element Properties -_-_- Accessing or Modifying Attributes-->
+<!--<a href="http://www.yahoo.com" id="search-link">Web Search</a>
+<script>
+    "use strict";
+    (function() {
+        // Get the search link anchor by id
+        var searchLink = document.getElementById("search-link");
+
+        // Does an element have an attribute?
+        console.log(searchLink.hasAttribute("href")); // Prints true
+        console.log(searchLink.hasAttribute("class")); // Prints false
+
+        // Get an attribute value
+        console.log(searchLink.getAttribute("href")); // Prints "http://www.yahoo.com"
+
+        // Add or modify an attribute
+        searchLink.setAttribute("class", "btn btn-default");
+        // Adds the attribute class and sets it to "btn btn-default"
+
+        searchLink.setAttribute("href", "http://google.com");
+        // Changes the href attribute to "http://google.com"
+
+        // Remove an attribute
+        searchLink.removeAttribute("class"); // Remove the class attribute
+    })();
+</script>-->
+<!--EXAMPLE 4b2: Accessing or Modifying Element Properties -_-_- Accessing or Modifying Attributes-->
+<!--<ul>
+    <li data-dbid="123">Item one</li>
+    <li data-dbid="234">Item two</li>
+</ul>
+<script>
+    "use strict";
+    (function() {
+        // Get the main heading h1 by id
+        var listItems = document.getElementsByTagName('li');
+
+        for (var i = 0; i < listItems.length; i++) {
+            var dbId = listItems[i].getAttribute("data-dbid");
+            console.log(dbId);
+        }
+        // Prints
+        // 123
+        // 234
+    })();
+</script>-->
+<!--EXAMPLE 4c: Accessing or Modifying Element Properties -_-_- Accessing or Modifying Styles - SEE head element also!!-->
+<body>
+<script>
+    "use strict";
+    (function() {
+        // Get the body element (notice we need to use index 0 of the array!)
+        var bodyElement = document.getElementsByTagName('body')[0];
+
+        // Change the body font color
+        bodyElement.style.color = '#444'; // Dark grey
+
+        bodyElement.style['background-color'] = "#fefefe"; // Very light grey
+        // We had to use [] syntax since the property name has a dash
+
+        bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+        // Replace dashes with camelCase to use standard . syntax
+    })();
 </script>
+</body>
+
 </body>
 </html>
