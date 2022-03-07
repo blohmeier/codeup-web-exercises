@@ -5,7 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-target.addEventListener(type, listener);
+<button id="btn1">Click Me!</button>
+<script>
+    'use strict';
 
+    // create a handler function
+    var listener = function (event) {
+        alert('You clicked the button!');
+    }
+
+    // register the listener to handle clicks on btn1
+    document.getElementById('btn1').addEventListener('click', listener);
+
+</script>
 </body>
 </html>
