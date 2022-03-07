@@ -8,10 +8,10 @@
 
 <h1 id="main-header">Hello World!</h1>
 
-<button id="main-head">Main Header</button>
-<button id="sub-head">Sub Header</button>
-<button id="list-items">List Items</button>
-<button id="sub-para">Sub Paragraph</button>
+<button id="main-header-button">Button 1 - Main Header</button>
+<button id="sub-header-button">Button 2 - Sub Header</button>
+<button id="list-items-button">Button 3 - List Items</button>
+<button id="sub-paragraph-button">Button 4 - Sub Paragraph</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -35,11 +35,11 @@
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.querySelector("#main-header");
-        console.log(mainHeader);
+        //console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-        var mainHeaderSelector = document.querySelector("#main-head");
+        /*mainHeader.innerHTML = "JavaScript is Cool";*/
+        var mainHeaderSelector = document.querySelector("#main-header-button");
 
         var mainHeaderAlter = function () {
             mainHeader.innerHTML = "JavaScript is Cool";
@@ -49,32 +49,31 @@
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.querySelector("#sub-header");
-        console.log(subHeader);
+        //console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
         /*subHeader.style.color = "blue";*/
-        var subHeadChange = function () {
+        var subHeadAlter = function () {
             subHeader.style.color = "blue";
         }
 
-        var subHeadButton = document.querySelector("#sub-head");
+        var subHeaderButton = document.querySelector("#sub-header-button");
 
-        subHeadButton.addEventListener("click", subHeadChange);
+        subHeaderButton.addEventListener("click", subHeadAlter);
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.querySelectorAll("li");
-        console.log(listItems);
+        //console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
-        var changeListItems = function () {
+        var changeListItemColors = function () {
             for (var i = 0; i < listItems.length; i += 2) {
                 listItems[i].style.color = "grey";
             }
         }
 
-        var listItemsChange = document.querySelector("#list-items");
-
-        listItemsChange.addEventListener("click", changeListItems)
+        var listItemsChange = document.querySelector("#list-items-button");
+        listItemsChange.addEventListener("click", changeListItemColors)
 
         // TODO: Set text color of li with dbid = 1 to blue
 
@@ -86,17 +85,15 @@
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.querySelectorAll(".sub-paragraph");
-        console.log(subParagraphs);
+        //console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        /*var subParaButton = document.querySelector("#sub-para");*/
+        var subParaButton = document.querySelector("#sub-paragraph-button");
 
-        /*var subParaChange = function() {*/
+        var subParaChange = function() {
             subParagraphs[0].innerHTML = "<h1>Mission Accomplished!</h1>";
-        /*}*/
-        /*
-
-        subParaButton.addEventListener("click", subParaChange);*/
+        }
+        subParaButton.addEventListener("click", subParaChange);
 
     })();
 </script>
