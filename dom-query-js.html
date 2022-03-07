@@ -52,18 +52,18 @@
         console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
-        /*var subHeadChange = function () {
+        /*subHeader.style.color = "blue";*/
+        var subHeadChange = function () {
             subHeader.style.color = "blue";
-        }*/
+        }
 
         var subHeadButton = document.querySelector("#sub-head");
 
         subHeadButton.addEventListener("click", subHeadChange);
 
-
         // TODO: Uncomment the next line and get all list items
         var listItems = document.querySelectorAll("li");
+        console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
         var changeListItems = function () {
@@ -86,17 +86,17 @@
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.querySelectorAll(".sub-paragraph");
+        console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        /*var subParaButton = document.querySelector("#sub-para");*/
 
-
-        var subParaButton = document.querySelector("#sub-para");
-
-        var subParaChange = function() {
+        /*var subParaChange = function() {*/
             subParagraphs[0].innerHTML = "<h1>Mission Accomplished!</h1>";
-        }
+        /*}*/
+        /*
 
-        subParaButton.addEventListener("click", subParaChange);
+        subParaButton.addEventListener("click", subParaChange);*/
 
     })();
 </script>
