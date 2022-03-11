@@ -6,8 +6,8 @@
 </head>
 <body>
 <div class="jquery-selectors-exercise-div">
-    <h1 id="jquery-selectors-exercise-h1">This is my main heading</h1>
-    <p id="jquery-selectors-exercise-p">This is my paragraph</p>
+    <h1 id="jquery-selectors-exercise-h1 same-id">This is my main heading</h1>
+    <p id="jquery-selectors-exercise-p same-id">This is my paragraph</p>
     <ul class="jquery-selectors-exercise-ul">
         <li class="jquery-selectors-exercise-li">This is my list element in an unordered list</li>
     </ul>
@@ -20,7 +20,7 @@
         alert('The DOM has finished loading!' );
     });
     $(document).ready(function() {
-        alert($('#jquery-selectors-exercise-h1').html());
+        alert($('#same-id').html());
     });
 </script>
 </body>
