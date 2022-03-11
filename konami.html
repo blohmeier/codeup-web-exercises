@@ -9,9 +9,23 @@
 <script>
     "use strict";
     $(document).ready(function() {
-        let myKonami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65,16, 13]
+        let myKonami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 66, 65, 16, 13];
+        let konamiPosition = 0;
+
         $(document).keyup(function(e){
             console.log(e.keyCode);
+            let expectedKey = myKonami[konamiPosition];
+            let keyPressed = e.keyCode;
+
+            if (expectedKey === keyPressed) {
+                konamiPosition++;
+                if (konamiPosition === myKonami.length) {
+                    alert('added 30 lives');
+                    konamiPosition = 0;
+                }
+            } else {
+                konamiPosition = 0;
+            }
         });
     })
 </script>
