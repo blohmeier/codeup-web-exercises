@@ -5,11 +5,17 @@
     <title>JQuery Exercises</title>
 </head>
 <body>
-<div class="jquery-selectors-exercise-div codeup">
-    <h1 id="jquery-selectors-exercise-h1" class="codeup">This is my main heading</h1>
+<div class="jquery-selectors-exercise-div">
+    <!--<div class="jquery-selectors-exercise-div codeup">-->
+
+    <h1>This is my main heading</h1>
+    <!--<h1 id="codeup" >This is my main heading</h1>-->
+    <!--<h1 id="jquery-selectors-exercise-h1" class="codeup">This is my main heading</h1>-->
     <p id="jquery-selectors-exercise-p" >This is my paragraph</p>
-    <ul class="jquery-selectors-exercise-ul" id="codeup">
-        <li class="jquery-selectors-exercise-li ">This is my list element in an unordered list</li>
+    <ul class="jquery-selectors-exercise-ul">
+    <!--<ul class="jquery-selectors-exercise-ul" id="codeup">-->
+    <li id="codeup">This is my list element in an unordered list</li>
+    <!--<li class="jquery-selectors-exercise-li " id="mouse-events-item-4">This is my list element in an unordered list</li>-->
     </ul>
 </div>
 
@@ -43,15 +49,24 @@
 <!--Above completed "Selectors" exercise. Ready to begin "Events - Mouse Events" exercise. Code for that exercise is added below.-->
 <script>
     /*Item 2 is below*/
-    $('#jquery-selectors-exercise-h1').click(function() {
+    /*$('#jquery-selectors-exercise-h1').click(function() {
         $('h1').css('background-color', 'red');
         alert('h1 with the id of "jquery-selectors-exercise-h1" was clicked!');
-    });
+    });*/
     /*Item 3 is below*/
-    $('#jquery-selectors-exercise-p').dblclick(function() {
+    /*$('#jquery-selectors-exercise-p').dblclick(function() {
         $('p').css('font-size', '18px');
         alert('p with the id of "jquery-selectors-exercise-p" was double clicked!');
-    });
+    });*/
+    /*Item 4 is below*/
+    $('#codeup').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', 'black');
+        }
+    );
 
 </script>
 
