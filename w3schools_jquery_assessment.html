@@ -17,6 +17,15 @@ $("*").hide();
 $("[href]").hide();
 6.Use the correct selector to hide all odd table rows in a table.$("").hide();
 $("tr:odd").hide();
+7.Use the correct event to hide all <p> elements with a "click":
+$("p"). (function(){
+    $(this).hide();
+});
+$("p").click(function(){
+    $(this).hide();
+});
+
+
 
 $("").hide();
 </body>
