@@ -49,7 +49,7 @@
     <li>The year 1948 marked an even greater change when Congress authorized the Central and South Florida Project. This involved the construction of an elaborate system of roads, canals, levees, and water-control structures stretching throughout South Florida. </li>
 </ul>
 
-<button id="tellow-bg">Make last li in each ul have yellow backgro0und</button>
+<button id="yellow-bg">Make last li in each ul have yellow backgro0und</button>
 
 <script src="js/jquery.js"></script>
 <script>
@@ -62,6 +62,11 @@
         });
 
         //End of "Attributes And CSS" Exercises. Start of "Traversing" Exercises
+        $('#yellow-bg').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
 
 
     });
