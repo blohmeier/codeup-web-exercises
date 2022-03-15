@@ -6,7 +6,9 @@
 </head>
 <body>
 
-<div id="weather"></div>
+<div id="weatherDesc"></div>
+<div id="maxTemp"></div>
+<div id="minTemp"></div>
 
 <script src="js/keys.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -17,7 +19,7 @@
     let units = "imperial";
 
     // DO FETCH STUFF
-    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='+ lon + '&units=' + units + '&appid=' + OWM_KEY)
+    /*fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='+ lon + '&units=' + units + '&appid=' + OWM_KEY)
     .then(response => response.json())
     .then(data => {
         let html = '';
@@ -30,15 +32,46 @@
 
         $('#weather').html(html);
 
-        /*END OF 'FOR' LOOP AND ASSOC. CODE. WORKING CODE TO TEST 'FOR' LOOP ABOVE*/
-        /*for (let i = 0; i < data.daily.length; i++) {
+        /!*END OF 'FOR' LOOP AND ASSOC. CODE. WORKING CODE TO TEST 'FOR' LOOP ABOVE*!/
+        /!*for (let i = 0; i < data.daily.length; i++) {
             console.log(data.daily[i].temp.day);
-        }*/
-    });
+        }*!/
+    });*/
 
 
     /*For in-class exercise*/
-    fetch('/search?term=kiss%20the%20rain&locale=en-US&offset=0&limit=5 HTTP/1.1')
+    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='+ lon + '&units=' + units + '&appid=' + OWM_KEY)
+        .then(response => response.json())
+        .then(data => {
+
+            let weatherDescHtml = '';
+            weatherDescHtml += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                let weatherDesc = data.daily[i].weather[0].description
+                weatherDescHtml += '<li>' + weatherDesc + '</li>';
+            }
+            weatherDescHtml += '</ul>';
+
+            let maxTempHtml = '';
+            maxTempHtml += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                let maxTemp = data.daily[i].temp.max
+                maxTempHtml += '<li>' + maxTemp + '</li>';
+            }
+            maxTempHtml += '</ul>';
+
+            let minTempHtml = '';
+            minTempHtml += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                let minTemp = data.daily[i].temp.min
+                minTempHtml += '<li>' + minTemp + '</li>';
+            }
+            minTempHtml += '</ul>';
+
+            $('#weatherDesc').html(weatherDescHtml);
+            $('#maxTemp').html(maxTempHtml);
+            $('#minTemp').html(minTempHtml);
+        });
 
 
 </script>
