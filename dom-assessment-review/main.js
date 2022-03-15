@@ -45,28 +45,29 @@ $('#font-grow').children().dblclick(function () {
     // reset as doubled size
     $(this).css('font-size' , doubled + 'px')
 
-})
-
+});
 
 /*Item 8 - When the button with the id of upcase-name is clicked, the element with the id of output should display the text Your uppercase name is: + the value of the input element with the id of input transformed to uppercase.*/
-/*$(document).ready(function () {
-    $("#input[type=text]").keyup(function () {
-        $(this).val($(this).val().toUpperCase());
-    });
+$('#upcase-name').click(function () {
+    let upcasedInput = $('#input').val().toUpperCase();
+    $('#output').text(upcasedInput);
 });
-function GetData() {
-    alert($("#output").val());
-}*/
+
 /*Item 9 - When a list item inside of the ul with the id of hl-toggle is first clicked, the background of the li that was clicked should change to yellow. When a list item that has a yellow background is clicked, the background should toggle back to the original background. Hint: you should use the yellow-bg class for this.*/
 
-/*$('#hl-toggle li').click(function() {
-    $(this).css("background-color", "yellow");
-    /!*$('#hl-toggle li').toggle(function () {
-        $(this).css("background-color", "yellow");
-    });*!/
-});*/
-/*$('#hl-toggle li').toggle(function(){
-    $(this).css("background-color", "yellow");
-});*/
+$('#hl-toggle li').click(function(){
+    $(this).toggleClass('yellow-bg');
+});
 
 /*Item 10 - When an li with the class of sibling-clicker is clicked, set the font-weight of the li below it to bold. All other lis with the class of sibling-clicker should be normal. When the bottom-most li with the class of sibling-clicker is clicked, set the top-most sibling-clicker li to a font-weight of bold. Hint: Notice that the text of the bottom-most li is different.*/
+
+$('.sibling-clicker').click(function () {
+
+    if ($(this).val() === 'I am the last sibling') {
+        /*console.log("Fuond the last sibling");*/
+        $('.sibling-clicker').first().css('font-weight', 'bold');
+        $(this).parent().children().first().css('font-weight', 'bold');
+    }
+    $('.sibling-clicker').css('font-weight', 'normal');
+    $(this).next().css('font-weight', 'bold');
+})
