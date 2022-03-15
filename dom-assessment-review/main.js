@@ -63,11 +63,12 @@ $('#hl-toggle li').click(function(){
 
 $('.sibling-clicker').click(function () {
 
-    if ($(this).val() === 'I am the last sibling') {
-        /*console.log("Fuond the last sibling");*/
-        $('.sibling-clicker').first().css('font-weight', 'bold');
+    if ($(this).text() === 'I am the last sibling') {
+        $('.sibling-clicker').css('font-weight', 'normal');
         $(this).parent().children().first().css('font-weight', 'bold');
+    } else {
+        $('.sibling-clicker').css('font-weight', 'normal');
+        $(this).next().css('font-weight', 'bold');
     }
-    $('.sibling-clicker').css('font-weight', 'normal');
-    $(this).next().css('font-weight', 'bold');
+
 })
