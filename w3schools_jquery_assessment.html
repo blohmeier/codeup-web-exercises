@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-JQuery SELECTORS
-
+<!--FROM: https://www.w3schools.com/jquery/jquery_exercises.asp-->
+<!--JQuery SELECTORS--><!--
 1.Use the correct selector to hide all <p> elements. $("").hide();
 $("p").hide();
 2.Use the correct selector to hide an element with id="test". $("").hide();
@@ -19,9 +19,9 @@ $("*").hide();
 $("[href]").hide();
 6.Use the correct selector to hide all odd table rows in a table.$("").hide();
 $("tr:odd").hide();
+-->
 
-JQuery EVENTS
-
+<!--JQuery EVENTS--><!--
 1.Use the correct event to hide all <p> elements with a "click":
 $("p"). (function(){
     $(this).hide();
@@ -29,7 +29,6 @@ $("p"). (function(){
 $("p").click(function(){
     $(this).hide();
 });
-
 2.Use the correct event to hide all <p> elements with a "double-click".
 $("p"). (function(){
     $(this).hide();
@@ -37,8 +36,39 @@ $("p"). (function(){
 $("p").dblclick(function(){
     $(this).hide();
 });
+3. When the mouse pointer enters a <p> element, it should be hidden. Use the correct event to do so.
+$("p").mouseenter(function(){
+    $(this).hide();
+    });
+4.If you press a keyboard key inside an <input> element, it should be hidden. Use the correct event to do so.
+$("input").keypress(function(){
+  $(this).hide();
+});
+5.Use the on() method to attach a click event handler to all <p> elements.
+$("p").on("click", function(){
+  $(this).hide();
+});-->
 
+<!--jQuery Hide and Show--><!--
+1.Use a jQuery method to hide a <p> element when it is clicked on.
+$("p").click(function(){
+  $(this).hide();
+});
+2.Use a jQuery method to hide a <p> element when it is clicked on. Note: The speed should be "slow".
+$("p").click(function(){
+  $(this).hide(slow");
+});
+3.Use a jQuery method to show a <p> element.
+$("button").click(function(){
+  $("p").show();
+});
+4.Use a jQuery method to toggle between hiding and showing a <p> element.
+$("button").click(function(){
+  $("p").toggle();
+});-->
 
-$("").hide();
+<!--jQuery Fade--><!--
+
+-->
 </body>
 </html>
