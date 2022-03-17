@@ -13,16 +13,8 @@
 </head>
 <body>
 
-<div id="weatherDesc"></div>
-<div id="maxTemp"></div>
-<div id="minTemp"></div>
+<div id="weather"></div>
 
-<div class="container text-center justify-content-center">
-    <div class="row">
-    </div>
-    <div id="forecast" className="row m-0 forecastBoxes">
-    </div>
-</div>
 <script src="js/keys.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
@@ -31,7 +23,50 @@
     let lon = -94.04;
     let units = "imperial";
 
+    // DO FETCH STUFF
     fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='+ lon + '&units=' + units + '&appid=' + TEST1_KEY)
+    .then(response => response.json())
+    .then(data => {
+        let html = '';
+        html+= '<div class="row">'
+        for (let i = 1; i <= 5; i++) {
+            html+= '<div class="col-sm-2 card mx-auto mt-4">'
+            html+= '<ul style="list-style-type:none">'
+            html+= '<p>' + '<strong>' + "Day Number: " + '</strong>' + i + '</p>'
+            let dailyTempMax = data.daily[i].temp.max
+            let dailyTempMin = data.daily[i].temp.min
+            html+= '<li>' + '<strong>' + "Hi / Lo: " + '</strong>' + dailyTempMax + ' &#47 ' + dailyTempMin + '</li>';
+            let dailyDesc = data.daily[i].weather[0].description
+            html+= '<li>' + '<strong>' + "Description: " + '</strong>' +dailyDesc + '</li>';
+            let dailyHum = data.daily[i].humidity
+            html+= '<li>' + '<strong>' + "Humidity: " + '</strong>' + dailyHum + '</li>';
+            let dailyWind = data.daily[i].wind_speed
+            html+= '<li>' + '<strong>' + "Wind Speed: " + '</strong>' + dailyWind + '</li>';
+            let dailyPress = data.daily[i].pressure
+            html+= '<li>' + '<strong>' + "Pressure: " + '</strong>' + dailyPress + '</li>';
+            html+= '</ul>';
+            html+='</div>';
+        }
+        html+= '</div>'
+
+
+        $('#weather').html(html);
+
+        /*END OF 'FOR' LOOP AND ASSOC. CODE. WORKING CODE TO TEST 'FOR' LOOP ABOVE*/
+        for (let i = 1; i <= 5; i++) {
+            console.log("Day number: " + i);
+            console.log(data.daily[i].temp.max);
+            console.log(data.daily[i].temp.min);
+            console.log(data.daily[i].weather[0].description);
+            console.log(data.daily[i].humidity);
+            console.log(data.daily[i].wind_speed);
+            console.log(data.daily[i].pressure);
+        }
+    });
+
+
+    /*For in-class exercise*/
+    /*fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='+ lon + '&units=' + units + '&appid=' + TEST1_KEY)
         .then(response => response.json())
         .then(data => {
 
@@ -40,8 +75,6 @@
             for (let i = 0; i < 5; i++) {
                 let weatherDesc = data.daily[i].weather[0].description
                 weatherDescHtml += '<li>' + weatherDesc + '</li>';
-                let maxTemp = data.daily[i].temp.max
-                maxTempHtml += '<li>' + maxTemp + '</li>';
             }
             weatherDescHtml += '</ul>';
 
@@ -64,7 +97,7 @@
             $('#weatherDesc').html(weatherDescHtml);
             $('#maxTemp').html(maxTempHtml);
             $('#minTemp').html(minTempHtml);
-        });
+        });*/
 
 
 </script>
