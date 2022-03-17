@@ -1,4 +1,6 @@
 "use strict";
+
+console.log("Hello from external Javascript")
 // console.log("This is fine ");
 //
 // let myName = "Brett";
@@ -32,16 +34,17 @@
 
 //Working with Data Types, Operators, and Vars questipons
 //First problem group
-// let userInput = prompt('Favorite color?');
-// while(userInput != "red") {
-//     prompt("No good, try again!");
-// }
-// if (userInput = "red"){
-//     console.log("That's my favorite too!");
-// }
+/*let userInput = prompt('Favorite color?');
+while(userInput != "red") {
+    prompt("No good, try again!");
+}
+if (userInput = "red"){
+    console.log("That's my favorite too!");
+}*/
 
 // better version of the above ("First Problem Group")
-// alert(prompt("Favorite color?") + " " + "is my favorite color too!");
+alert("Welcome to my website!");
+alert(prompt("Favorite color?") + " " + "is my favorite color too!");
 
 //WRONG PROBLEMS!!.
 //Wrong Problem 1
@@ -80,12 +83,12 @@
 //Second problem group (refactoring problem 3 from previous lesson, with prompts and alerts).
 //3a
 //Instructor answer
-// let lilMermaid = parseInt(prompt("How long did you rent 'The Little Mermaid'?"));
-// let broBear = parseInt(prompt("How long did you rent 'Brother Bear'?"));
-// let herc = parseInt(prompt("How long did you rent 'Hercules'?"));
-//
-// console.log(lilMermaid ? lilMermaid * 3 : "You did not enter a number");
-// alert((lilMermaid + broBear + herc) * 3);
+let lilMermaid = parseInt(prompt("How long did you rent 'The Little Mermaid'?"));
+let broBear = parseInt(prompt("How long did you rent 'Brother Bear'?"));
+let herc = parseInt(prompt("How long did you rent 'Hercules'?"));
+
+console.log(lilMermaid ? lilMermaid * 3 : "You did not enter a number");
+alert((lilMermaid + broBear + herc) * 3);
 //3b
 //Instructor answer
 // let g = parseInt(prompt("How many hours did you work for Google?")) * 400;
