@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <title>Weather Map Work</title>
 </head>
 <body>
 
+<div id="weatherDesc"></div>
+<div id="maxTemp"></div>
+<div id="minTemp"></div>
+
+<div class="container text-center justify-content-center">
+    <div class="row">
+    </div>
+    <div id="forecast" className="row m-0 forecastBoxes">
+    </div>
+</div>
+<script src="js/keys.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    let lat = 33.44;
+    let lon = -94.04;
+    let units = "imperial";
+
+    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='+ lon + '&units=' + units + '&appid=' + TEST1_KEY)
+        .then(response => response.json())
+        .then(data => {
+
+            let weatherDescHtml = '';
+            weatherDescHtml += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                let weatherDesc = data.daily[i].weather[0].description
+                weatherDescHtml += '<li>' + weatherDesc + '</li>';
+                let maxTemp = data.daily[i].temp.max
+                maxTempHtml += '<li>' + maxTemp + '</li>';
+            }
+            weatherDescHtml += '</ul>';
+
+            let maxTempHtml = '';
+            maxTempHtml += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                let maxTemp = data.daily[i].temp.max
+                maxTempHtml += '<li>' + maxTemp + '</li>';
+            }
+            maxTempHtml += '</ul>';
+
+            let minTempHtml = '';
+            minTempHtml += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                let minTemp = data.daily[i].temp.min
+                minTempHtml += '<li>' + minTemp + '</li>';
+            }
+            minTempHtml += '</ul>';
+
+            $('#weatherDesc').html(weatherDescHtml);
+            $('#maxTemp').html(maxTempHtml);
+            $('#minTemp').html(minTempHtml);
+        });
+
+
+</script>
 </body>
 </html>
