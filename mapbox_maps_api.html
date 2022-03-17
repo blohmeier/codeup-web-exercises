@@ -22,9 +22,6 @@
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
-<button id="codeup">Go to CodeUp</button>
-<button id="favrest">Go to Favorite Restaurant</button>
-
 <!-- Keys JS -->
 <script src="js/keys.js"></script>
 <!-- JQuery JS -->
@@ -52,10 +49,40 @@
         return new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v11',
-            zoom: 10,
+            zoom: 12,
             center: [lon, lat]
         });
     }
+
+    var favorites = [
+        {
+            placename: "Sushiya",
+            address: "1306 Elm St, Dallas, TX 75202"
+        },
+        {
+            placename: "Family Thais",
+            address: "208 N Market St #150, Dallas, TX 75202"
+        },
+        {
+            placename: "Mr Mesero",
+            address: "4444 McKinney Ave, Dallas, TX 75205"
+        }
+    ]
+
+
+    favorites.forEach(function (favorite) {
+        geocode(favorite.address, MP_BX).then(function(locationset) {
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(locationset)
+                .addTo(map);
+
+            var popup = new mapboxgl.Popup()
+                .setHTML(favorite.placename)
+
+            marker.setPopup(popup)
+        });
+    })
 
     function createMarker(lon, lat) {
         return new mapboxgl.Marker()
@@ -67,29 +94,8 @@
     function createPopup(lon, lat) {
         return new mapboxgl.Popup()
             .setLngLat([lon, lat])
-            .setHTML("<p>Codeup Rocks!</p>")
+            .setHTML("<p>Center of downtown</p>")
     }
-
-    //geocode for 3 favorite restaurants
-    $('#codeup').click(function() {
-        geocode("600 Navarro St #350, San Antonio, TX 78205", MP_BX).then(function(result) {
-            console.log(result);
-            map.setCenter(result);
-            map.setZoom(14);
-        });
-    })
-
-    //geocode stuff 2 - favorite restaurant
-    $('#favrest').click(function() {
-        geocode("1403 E Campbell Rd, Richardson, TX 75081", MP_BX).then(function(result) {
-            console.log(result);
-            map.setCenter(result);
-            map.setZoom(14);
-        });
-    })
-
-
-
 
 </script>
 </body>
