@@ -102,7 +102,7 @@ function setGeocoderEventListener() {
         lng = marker._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
 
-        /*From mouse click result, use lat long output as new lat/long for firing 'getWeatherData'*/
+        /*TODO: From mouse click result, use lat long output as new lat/long for firing 'getWeatherData'*/
         /*lat = e.lngLat.lat;
         lng = e.lngLat.lng;
         clickLocation = getWeatherData(lat, lng);*/
@@ -117,10 +117,12 @@ function setGeocoderEventListener() {
         if (weatherData) {
             weatherData.remove();
         }
+        console.log(e);
         var coordinates = e.lngLat;
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML('you clicked here: <br/>' + coordinates)
+            .setHTML(`<p>${coordinates}</p>`)
+            /*.setHTML('you clicked here: <br/>' + coordinates)*/
             .addTo(map);
         lat = e.lngLat.wrap().lat;
         lng = e.lngLat.wrap().lng;
@@ -181,7 +183,22 @@ function formatDate(unixDate) {
     return new Date(unixDate * 1000).toISOString().split('T')[0];
 }
 
-/*ADDED TO GET DOUBLE CLICK FUNCTIONALITY. Sources:
-First Try: https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
-Second Try: https://stackoverflow.com/questions/63158744/display-lat-lng-coordinates-on-click-on-mapbox-gl-js
-*/
+//Testing draggable marker
+const coordinates2 = document.getElementById('coordinates2');
+const marker2 = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([-96.7969, 32.7763])
+    .addTo(map);
+
+function onDragEnd() {
+    const lngLat = marker2.getLngLat();
+    coordinates2.style.display = 'block';
+    coordinates2.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+}
+
+marker2.on('dragend', onDragEnd);
+window.addEventListener('contextmenu', (event) => {
+    console.log(event.button)
+    map.flyTo({zoom:4});
+})
