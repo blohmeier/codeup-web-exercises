@@ -9,8 +9,9 @@ let marker;
 let popup;
 
 /*NEW VARS TO GET MAP AND FORECAST WORKING TOGETHER*/
-var lat = '';
-var lng = '';
+var lat = 32.7763;
+var lng = -96.7969;
+let weatherData;
 
 /**
  * Invoke the initial functions to kick off our application
@@ -26,7 +27,7 @@ function init() {
     map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-96.7969, 32.7763], // starting position [lng, lat]
+        center: [lng, lat], // starting position [lng, lat]
         zoom: 12 // starting zoom
     });
 
@@ -84,18 +85,24 @@ function setGeocoderEventListener() {
         marker = getMarker(e.result.geometry.coordinates);
         console.log(getMarker(e.result.geometry.coordinates));
         var mapboxLat = marker._lngLat.lat;
+        lat = marker._lngLat.lat;
         console.log(mapboxLat);
         var mapboxLng = marker._lngLat.lng;
         console.log(mapboxLng);
+        lng = marker._lngLat.lat;
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+        weatherData = getWeatherData(lat, lng);
     });
+    return lat;
+    return lng;
+
 }
 
 /*ADDED FROM html*/
-let startingLat = 32.7767;
-let startingLon = -96.7970;
+/*let startingLat = 32.7767;
+let startingLon = -96.7970;*/
 
-getWeatherData(startingLat, startingLon);
+getWeatherData(lat, lng);
 
 function getWeatherData(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${TEST1_KEY}`)
