@@ -8,6 +8,10 @@ let geocoder;
 let marker;
 let popup;
 
+/*NEW VARS TO GET MAP AND FORECAST WORKING TOGETHER*/
+var lat = '';
+var lng = '';
+
 /**
  * Invoke the initial functions to kick off our application
  * **/
