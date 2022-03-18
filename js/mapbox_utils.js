@@ -106,9 +106,25 @@ function setGeocoderEventListener() {
         /*lat = e.lngLat.lat;
         lng = e.lngLat.lng;
         clickLocation = getWeatherData(lat, lng);*/
-
-
-
+    });
+    map.on('click', function(e) {
+        if (marker) {
+            marker.remove();
+        }
+        if (popup) {
+            popup.remove();
+        }
+        if (weatherData) {
+            weatherData.remove();
+        }
+        var coordinates = e.lngLat;
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML('you clicked here: <br/>' + coordinates)
+            .addTo(map);
+        lat = e.lngLat.wrap().lat;
+        lng = e.lngLat.wrap().lng;
+        weatherData = getWeatherData(lat, lng);
     });
 }
 
@@ -169,20 +185,3 @@ function formatDate(unixDate) {
 First Try: https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
 Second Try: https://stackoverflow.com/questions/63158744/display-lat-lng-coordinates-on-click-on-mapbox-gl-js
 */
-
-function latLonOnClick (lat, lon) {
-    map.on('style.load', function() {
-        map.on('click', function(e) {
-            var coordinates = e.lngLat;
-            var clickLat = e.lngLat.lat;
-            console.log(clickLat);
-            var clickLon = e.lngLat.lng;
-            console.log(clickLon);
-            new mapboxgl.Popup()
-                .setLngLat(coordinates)
-                .setHTML('you clicked here: <br/>' + coordinates)
-                .addTo(map);
-        });
-    });
-}
-clickLocation = latLonOnClick();
