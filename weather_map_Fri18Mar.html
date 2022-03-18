@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/weather_map_F18Mar_style.css">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+
+<input type="text" id="lat">
+<input type="text" id="lon">
+<input type="submit" id="submit">
+
+
+<div id="weather"></div>
+<!--END OF WEATHERMAP HTML STUFF-->
+<!--START OF MAPBOX HTML STUFF-->
+
+<!-- The HTML element that serves as the Mapbox container -->
+
+    <div id='map' ></div>
+
+
+
+<!-- Keys JS -->
+<script src="js/keys.js"></script>
+<!-- JQuery JS -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Geocoder JS -->
+<script src="js/geocoder-utils.js"></script>
+<!--END OF MAPBOX STUFF-->
+
+<script src="js/keys.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+
+    // START OF OPENWEATHERMAP JS STUFF
+
+    /*let startingLat = 33.44;
+    let startingLon = -94.04;*/
+    let startingLat = 32.7767;
+    let startingLon = -96.7970;
+
+    getWeatherData(startingLat, startingLon);
+
+    function getWeatherData(lat, lon) {
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${TEST1_KEY}`)
+            .then(response => response.json())
+            .then(data => {
+                $('#weather').html(buildCardCont(data.daily));
+            });
+    }
+
+    function extractWeatherData(dayObj) {
+        return {
+            date: dayObj.dt,
+            dailyTemp: dayObj.temp.day,
+            humidity: dayObj.humidity,
+            pressure: dayObj.pressure
+        }
+    }
+
+    function buildCardCont(dayArr) {
+        let html = '<div class="row">'
+        for (let i = 0; i < 5; i++) {
+            html += buildWeatherCard(dayArr[i]);
+        }
+        html += '</div>';
+        return html;
+    }
+
+    function buildWeatherCard(day) {
+        let html = '';
+        let weather = extractWeatherData(day);
+        let formattedDate = formatDate(weather.date);
+        // language=HTML
+        html += `
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    ${formattedDate}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp: ${weather.dailyTemp}</li>
+                    <li class="list-group-item">Hum: ${weather.humidity}</li>
+                    <li class="list-group-item">Pressure: ${weather.pressure}</li>
+                </ul>
+            </div>`
+        return html;
+    }
+
+    function formatDate(unixDate) {
+        return new Date(unixDate * 1000).toISOString().split('T')[0];
+    }
+
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        let userLat = $('#lat').val();
+        let userLon = $('#lon').val();
+        getWeatherData(userLat, userLon);
+    })
+
+    // END OF OPENWEATHERMAP STUFF
+    // START OF MAPBOX STUFF
+
+    let map = initMap(startingLon, startingLat);
+    let marker = createMarker(startingLon, startingLat);
+    let popup = createPopup(startingLon, startingLat);
+
+    marker.setPopup(popup);
+
+    function initMap(lon, lat) {
+        mapboxgl.accessToken = MP_BX;
+        return new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v10',
+            zoom: 10,
+            center: [lon, lat]
+        });
+    }
+
+    function createMarker(lon, lat) {
+        return new mapboxgl.Marker()
+            .setLngLat([lon, lat])
+            .addTo(map);
+    }
+
+    /*map.setZoom()
+    map.setCenter(lat,lon)*/
+
+    function createPopup(lon, lat) {
+        return new mapboxgl.Popup()
+            .setLngLat([lon, lat])
+            .setHTML("<p>Codeup Rocks!</p>")
+    }
+
+    //geocode stuff
+    $('#codeup').click(function() {
+        geocode("1500 Marilla Street, Dallas, TX 75201", MP_BX).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(14);
+        });
+    })
+    // END OF MAPBOX STUFF
+
+
+</script>
+</body>
+</html>

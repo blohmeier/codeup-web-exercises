@@ -1,3 +1,4 @@
-const OWM_KEY = "c1597a6f4bda51d846d731f6fe26782e";
-const TEST1_KEY = "057a6392ed908d38e1613e1d44985802";
-const MP_BX = 'pk.eyJ1IjoiYmxvaG1laWVyIiwiYSI6ImNsMHYyNzduaTEzNG8za3FvZ2RiOWFwY2QifQ.HJ61bz444XRPQFgq2wZfcg';
+"use strict";
+var OWM_KEY = "c1597a6f4bda51d846d731f6fe26782e";
+var TEST1_KEY = "057a6392ed908d38e1613e1d44985802";
+var MP_BX = 'pk.eyJ1IjoiYmxvaG1laWVyIiwiYSI6ImNsMHYyNzduaTEzNG8za3FvZ2RiOWFwY2QifQ.HJ61bz444XRPQFgq2wZfcg';
