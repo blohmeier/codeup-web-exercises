@@ -77,6 +77,13 @@ function setGeocoderEventListener() {
 
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
         marker = getMarker(e.result.geometry.coordinates);
+        console.log(getMarker(e.result.geometry.coordinates));
+        var mapboxLat = marker._lngLat.lat;
+        console.log(mapboxLat);
+        var mapboxLng = marker._lngLat.lng;
+        console.log(mapboxLng);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
     });
 }
+
+
