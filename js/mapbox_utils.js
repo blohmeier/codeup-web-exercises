@@ -12,6 +12,10 @@ let popup;
 var lat = 32.7763;
 var lng = -96.7969;
 let weatherData;
+let clickLocation;
+let clickLocationLat;
+let clickLocationLon;
+let clickUpdate
 
 /**
  * Invoke the initial functions to kick off our application
@@ -80,6 +84,12 @@ function setGeocoderEventListener() {
         if (popup) {
             popup.remove();
         }
+        if (weatherData) {
+            weatherData.remove();
+        }
+        if (clickUpdate) {
+            clickUpdate.remove();
+        }
 
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
         marker = getMarker(e.result.geometry.coordinates);
@@ -92,15 +102,15 @@ function setGeocoderEventListener() {
         lng = marker._lngLat.lat;
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
         weatherData = getWeatherData(lat, lng);
+        clickUpdate = getWeatherData(lat, lng)
+
     });
-    return lat;
-    return lng;
+    /*return lat;
+    return lng;*/
 
 }
 
 /*ADDED FROM html*/
-/*let startingLat = 32.7767;
-let startingLon = -96.7970;*/
 
 getWeatherData(lat, lng);
 
@@ -153,10 +163,24 @@ function formatDate(unixDate) {
     return new Date(unixDate * 1000).toISOString().split('T')[0];
 }
 
+/*ADDED TO GET DOUBLE CLICK FUNCTIONALITY. Sources:
+First Try: https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
+Second Try: https://stackoverflow.com/questions/63158744/display-lat-lng-coordinates-on-click-on-mapbox-gl-js
+*/
 
-$('#submit').click(function (e) {
-    e.preventDefault();
-    let userLat = $('#lat').val();
-    let userLon = $('#lon').val();
-    getWeatherData(userLat, userLon);
-})
+function latLonOnClick () {
+    map.on('style.load', function() {
+        map.on('click', function(e) {
+            var coordinates = e.lngLat;
+            console.log(coordinates.lat);
+            lat = coordinates.lat;
+            console.log(coordinates.lng);
+            lng = coordinates.lng;
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML('you clicked here: <br/>' + coordinates)
+                .addTo(map);
+        });
+    });
+}
+clickLocation = latLonOnClick();
