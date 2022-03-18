@@ -13,9 +13,9 @@ var lat = 32.7763;
 var lng = -96.7969;
 let weatherData;
 let clickLocation;
-let clickLocationLat;
-let clickLocationLon;
-let clickUpdate
+let clickLat;
+let clickLon;
+
 
 /**
  * Invoke the initial functions to kick off our application
@@ -87,27 +87,29 @@ function setGeocoderEventListener() {
         if (weatherData) {
             weatherData.remove();
         }
-        if (clickUpdate) {
-            clickUpdate.remove();
-        }
 
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
-        marker = getMarker(e.result.geometry.coordinates);
-        console.log(getMarker(e.result.geometry.coordinates));
-        var mapboxLat = marker._lngLat.lat;
-        lat = marker._lngLat.lat;
-        console.log(mapboxLat);
-        var mapboxLng = marker._lngLat.lng;
-        console.log(mapboxLng);
-        lng = marker._lngLat.lat;
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+        marker = getMarker(e.result.geometry.coordinates);
+        /*console.log(getMarker(e.result.geometry.coordinates));*/
+
+        /*From search box entry result, use marker output to get new lat/long for firing 'getWeatherData'*/
+        /*var mapboxLat = marker._lngLat.lat;*/
+        /*console.log(mapboxLat);*/
+        lat = marker._lngLat.lat;
+        /*var mapboxLng = marker._lngLat.lng;*/
+        /*console.log(mapboxLng);*/
+        lng = marker._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
-        clickUpdate = getWeatherData(lat, lng)
+
+        /*From mouse click result, use lat long output as new lat/long for firing 'getWeatherData'*/
+        /*lat = e.lngLat.lat;
+        lng = e.lngLat.lng;
+        clickLocation = getWeatherData(lat, lng);*/
+
+
 
     });
-    /*return lat;
-    return lng;*/
-
 }
 
 /*ADDED FROM html*/
@@ -168,14 +170,14 @@ First Try: https://docs.mapbox.com/mapbox-gl-js/example/drag-a-marker/
 Second Try: https://stackoverflow.com/questions/63158744/display-lat-lng-coordinates-on-click-on-mapbox-gl-js
 */
 
-function latLonOnClick () {
+function latLonOnClick (lat, lon) {
     map.on('style.load', function() {
         map.on('click', function(e) {
             var coordinates = e.lngLat;
-            console.log(coordinates.lat);
-            lat = coordinates.lat;
-            console.log(coordinates.lng);
-            lng = coordinates.lng;
+            var clickLat = e.lngLat.lat;
+            console.log(clickLat);
+            var clickLon = e.lngLat.lng;
+            console.log(clickLon);
             new mapboxgl.Popup()
                 .setLngLat(coordinates)
                 .setHTML('you clicked here: <br/>' + coordinates)
