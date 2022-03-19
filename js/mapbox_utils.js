@@ -15,6 +15,7 @@ let weatherData;
 let clickLocation;
 let clickLat;
 let clickLon;
+let icon;
 
 
 /**
@@ -39,7 +40,7 @@ function init() {
     geocoder = new MapboxGeocoder({
         accessToken: MP_BX,
         mapboxgl: mapboxgl,
-        marker: false
+        marker: true
     });
 
     /*Add the geocoder variable value to the map as a control (form input)*/
@@ -75,6 +76,7 @@ function getPopup(description, coordinates) {
  * **/
 function setGeocoderEventListener() {
     geocoder.on("result", function (e) {
+        console.log(this)
         /*We need to ensure marker/popup variables hoisted at the top actual *have* a value
         * Otherwise, calling a remove() method on a non-existent object will result in a runtime error
         * */
@@ -89,8 +91,8 @@ function setGeocoderEventListener() {
         }
 
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
-        popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
-        marker = getMarker(e.result.geometry.coordinates);
+        /*popup = getPopup(e.results.place_name, e.results.geometry.coordinates);
+        marker = getMarker(e.results.geometry.coordinates);*/
         /*console.log(getMarker(e.result.geometry.coordinates));*/
 
         /*From search box entry result, use marker output to get new lat/long for firing 'getWeatherData'*/
@@ -121,13 +123,15 @@ function setGeocoderEventListener() {
         var coordinates = e.lngLat;
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(`<p>${coordinates}</p>`)
+            .setHTML(`<p>Longitude: ${coordinates.lng}<br />Latitude: ${coordinates.lat}</p>`)
             /*.setHTML('you clicked here: <br/>' + coordinates)*/
             .addTo(map);
         lat = e.lngLat.wrap().lat;
         lng = e.lngLat.wrap().lng;
         weatherData = getWeatherData(lat, lng);
     });
+    geocoder.on('dragend', function (e) {
+    })
 }
 
 /*ADDED FROM html*/
@@ -146,6 +150,7 @@ function extractWeatherData(dayObj) {
     return {
         date: dayObj.dt,
         dailyTemp: dayObj.temp.day,
+        icon: dayObj.weather[0].icon,
         humidity: dayObj.humidity,
         pressure: dayObj.pressure
     }
@@ -163,19 +168,26 @@ function buildCardCont(dayArr) {
 function buildWeatherCard(day) {
     let html = '';
     let weather = extractWeatherData(day);
+    console.log(day)
+    console.log(weather.icon)
     let formattedDate = formatDate(weather.date);
     // language=HTML
     html += `
-            <div class="card" style="width: 18rem;">
+            <div class="card col-xs-12 col-md p-0" <!--style="width: 16.5rem-->;">
                 <div class="card-header">
                     ${formattedDate}
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp: ${weather.dailyTemp}</li>
-                    <li class="list-group-item">Hum: ${weather.humidity}</li>
+                    <li class="list-group-item">Temp: ${weather.dailyTemp}</li>`
+    html += "<li class=\"list-group-item\">" + '<img src="http://openweathermap.org/img/wn/' + weather.icon + '@2x.png"/>' + '</li>'
+    html +=        `<li class="list-group-item">Hum: ${weather.humidity}</li>
                     <li class="list-group-item">Pressure: ${weather.pressure}</li>
                 </ul>
-            </div>`
+            </div>
+    `
+                    /*<li class="list-group-item"><img src="http://openweathermap.org/img/wn/' + weather.icon + '@2x.png"/></li>
+
+    html += "<div>" + '<img src="http://openweathermap.org/img/wn/' + weather.icon + '@2x.png"/>' + '</div>'*/
     return html;
 }
 
@@ -189,16 +201,18 @@ const marker2 = new mapboxgl.Marker({
     draggable: true
 })
     .setLngLat([-96.7969, 32.7763])
-    .addTo(map);
+    .addTo(map)
 
 function onDragEnd() {
     const lngLat = marker2.getLngLat();
     coordinates2.style.display = 'block';
     coordinates2.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
 }
-
 marker2.on('dragend', onDragEnd);
-window.addEventListener('contextmenu', (event) => {
+//End Testing draggable marker
+//Start right click zoom
+/*window.addEventListener('contextmenu', (event) => {
     console.log(event.button)
     map.flyTo({zoom:4});
-})
+});*/
+//End right click zoom
