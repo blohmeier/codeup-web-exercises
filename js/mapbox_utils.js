@@ -91,9 +91,9 @@ function setGeocoderEventListener() {
         }
 
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
-        /*popup = getPopup(e.results.place_name, e.results.geometry.coordinates);
-        marker = getMarker(e.results.geometry.coordinates);*/
-        /*console.log(getMarker(e.result.geometry.coordinates));*/
+        popup = getPopup(e.results.place_name, e.results.geometry.coordinates);
+        marker = getMarker(e.results.geometry.coordinates);
+        console.log(getMarker(e.result.geometry.coordinates));
 
         /*From search box entry result, use marker output to get new lat/long for firing 'getWeatherData'*/
         /*var mapboxLat = marker._lngLat.lat;*/
@@ -119,7 +119,7 @@ function setGeocoderEventListener() {
         if (weatherData) {
             weatherData.remove();
         }
-        console.log(e);
+        //console.log(e);
         var coordinates = e.lngLat;
         new mapboxgl.Popup()
             .setLngLat(coordinates)
@@ -129,9 +129,12 @@ function setGeocoderEventListener() {
         lat = e.lngLat.wrap().lat;
         lng = e.lngLat.wrap().lng;
         weatherData = getWeatherData(lat, lng);
+        map.flyTo({
+            center: [lng, lat],
+            zoom: 14,
+            speed: 9
+        });
     });
-    geocoder.on('dragend', function (e) {
-    })
 }
 
 /*ADDED FROM html*/
@@ -150,8 +153,12 @@ function extractWeatherData(dayObj) {
     return {
         date: dayObj.dt,
         dailyTemp: dayObj.temp.day,
+        dailyTempMax: dayObj.temp.max,
+        dailyTempMin: dayObj.temp.min,
         icon: dayObj.weather[0].icon,
+        description: dayObj.weather[0].description,
         humidity: dayObj.humidity,
+        wind: dayObj.wind_speed,
         pressure: dayObj.pressure
     }
 }
@@ -178,16 +185,15 @@ function buildWeatherCard(day) {
                     ${formattedDate}
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Temp: ${weather.dailyTemp}</li>`
-    html += "<li class=\"list-group-item\">" + '<img src="http://openweathermap.org/img/wn/' + weather.icon + '@2x.png"/>' + '</li>'
-    html +=        `<li class="list-group-item">Hum: ${weather.humidity}</li>
-                    <li class="list-group-item">Pressure: ${weather.pressure}</li>
+                    <!--<li class="list-group-item">Temperature: ${weather.dailyTemp}</li>-->`
+    html +=        "<li class=\"list-group-item\">" + weather.dailyTempMax + '° / ' + weather.dailyTempMin +  '°' + '</li>'
+    html +=        "<li class=\"list-group-item\">" + '<img src="http://openweathermap.org/img/wn/' + weather.icon + '.png"/>' + '<br>' + weather.description  + '</li>'
+    html +=        `<!--<li class="list-group-item">Description: ${weather.description}</li>-->
+                    <li class="list-group-item">Humidity: ${weather.humidity}</li>
+                    <li class="list-group-item">Wind: ${weather.wind}</li>
+                    <li class="list-group-item bgtext"><p>Pressure: ${weather.pressure}</p></li>
                 </ul>
-            </div>
-    `
-                    /*<li class="list-group-item"><img src="http://openweathermap.org/img/wn/' + weather.icon + '@2x.png"/></li>
-
-    html += "<div>" + '<img src="http://openweathermap.org/img/wn/' + weather.icon + '@2x.png"/>' + '</div>'*/
+            </div>`
     return html;
 }
 
@@ -195,7 +201,7 @@ function formatDate(unixDate) {
     return new Date(unixDate * 1000).toISOString().split('T')[0];
 }
 
-//Testing draggable marker
+//Start testing draggable marker
 const coordinates2 = document.getElementById('coordinates2');
 const marker2 = new mapboxgl.Marker({
     draggable: true
@@ -211,8 +217,11 @@ function onDragEnd() {
 marker2.on('dragend', onDragEnd);
 //End Testing draggable marker
 //Start right click zoom
-/*window.addEventListener('contextmenu', (event) => {
+window.addEventListener('contextmenu', (event) => {
     console.log(event.button)
-    map.flyTo({zoom:4});
-});*/
+    map.flyTo({
+        zoom: 2,
+        speed: 9
+    });
+});
 //End right click zoom
