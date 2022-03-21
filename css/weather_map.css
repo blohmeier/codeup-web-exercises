@@ -1,0 +1,86 @@
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Nav*/
+.alert-info {
+    background-color: skyblue;
+    border: .2em solid grey;
+    text-align: center;
+    padding: 1em 4.5em;
+}
+.alert-info a{
+    text-decoration: none;
+    color: black;
+}
+/*List*/
+ul>li{
+    background-color: white;
+    text-align: center;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 130%;
+}
+.nav-links{
+    list-style: none;
+    margin: .5em;
+    padding-right: 2.5em;
+}
+
+/*Transitioned to larger screen*/
+@media screen and (min-width:992px) {
+    body {
+        background-color: white;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .hidden-on-desktop {
+        display: none;
+    }
+    h1 {
+        align-self: flex-start;
+        margin: 0 2em ;
+    }
+    ul>li{
+        background-color: white;
+        margin-right: 0;
+        margin-left: 0;
+        width: auto;
+    }
+    nav{
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-content: flex-end;
+        align-self: flex-start;
+        margin-left: auto;
+        margin-right: 3em;
+        width: 40%;
+    }
+    .nav-links{
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+.geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 10px;
+}
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+

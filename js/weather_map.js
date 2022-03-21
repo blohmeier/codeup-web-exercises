@@ -12,10 +12,9 @@ let popup;
 var lat = 32.7763;
 var lng = -96.7969;
 let weatherData;
-let clickLocation;
 let clickLat;
-let clickLon;
 let icon;
+let popupPlaceName;
 
 
 /**
@@ -33,7 +32,7 @@ function init() {
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [lng, lat], // starting position [lng, lat]
-        zoom: 12 // starting zoom
+        zoom: 5 // starting zoom
     });
 
     /*Make the geocoder object, set to the geocoder variable declared above*/
@@ -42,6 +41,7 @@ function init() {
         mapboxgl: mapboxgl,
         marker: true
     });
+
 
     /*Add the geocoder variable value to the map as a control (form input)*/
     map.addControl(geocoder);
@@ -52,6 +52,8 @@ function init() {
     })
         .setLngLat([lng, lat])
         .addTo(map);
+    console.log(marker)
+    $('#currentCity-span').text("Dallas, Texas, United States");
 }
 
 /**
@@ -59,7 +61,9 @@ function init() {
  * param coordinates: number array containing the lng lat of the location
  * **/
 function getMarker(coordinates) {
-    return new mapboxgl.Marker()
+    return new mapboxgl.Marker({
+        /*draggable: true*/
+    })
         .setLngLat(coordinates)
         .addTo(map);
 }
@@ -100,6 +104,9 @@ function setGeocoderEventListener() {
         /*Finally, set the hoisted marker/popup variables to new respective objects*/
         console.log(e);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+        popupPlaceName = e.result.place_name;
+        console.log(popupPlaceName)
+        let coordinates = e.lngLat;
         marker = getMarker(e.result.geometry.coordinates);
         console.log(getMarker(e.result.geometry.coordinates));
 
@@ -111,6 +118,26 @@ function setGeocoderEventListener() {
         /*console.log(mapboxLng);*/
         lng = marker._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
+
+        map.flyTo({
+            center: [lng, lat],
+            zoom: 5,
+            speed: 9
+        });
+
+        $('#currentCity-span').text(e.result.place_name);
+
+    });
+    marker.on('click', function(e) {
+        if (popup) {
+            popup.remove();
+        }
+        if (weatherData) {
+            weatherData.remove();
+        }
+        if (marker) {
+            marker.remove();
+        }
     });
     marker.on('dragend', function(e) {
         if (popup) {
@@ -119,19 +146,20 @@ function setGeocoderEventListener() {
         if (weatherData) {
             weatherData.remove();
         }
-        var coordinates = e.lngLat;
+
+        let coordinates = e.lngLat;
         /*new mapboxgl.Marker({
             draggable: true
         })
             .setLngLat(coordinates)
             .addTo(map);*/
-        console.log(e.target._lngLat.lat);
+        /*console.log(e.target._lngLat.lat);*/
         lat = e.target._lngLat.lat;
         lng = e.target._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
         map.flyTo({
             center: [lng, lat],
-            zoom: 14,
+            zoom: 5,
             speed: 9
         });
     });
@@ -172,6 +200,11 @@ function buildCardCont(dayArr) {
     return html;
 }
 
+function getCity () {
+    let cityInput = $(popupPlaceName);
+    $('#currentCity-span-span').text(cityInput);
+}
+
 function buildWeatherCard(day) {
     let html = '';
     let weather = extractWeatherData(day);
@@ -200,28 +233,3 @@ function buildWeatherCard(day) {
 function formatDate(unixDate) {
     return new Date(unixDate * 1000).toISOString().split('T')[0];
 }
-
-//Start testing draggable marker
-/*const coordinates2 = document.getElementById('coordinates2');
-const marker2 = new mapboxgl.Marker({
-    draggable: true
-})
-    .setLngLat([-96.7969, 32.7763])
-    .addTo(map)
-
-function onDragEnd() {
-    const lngLat = marker2.getLngLat();
-    coordinates2.style.display = 'block';
-    coordinates2.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-}
-marker2.on('dragend', onDragEnd);*/
-//End Testing draggable marker
-//Start right click zoom
-/*window.addEventListener('contextmenu', (event) => {
-    console.log(event.button)
-    map.flyTo({
-        zoom: 2,
-        speed: 9
-    });
-});*/
-//End right click zoom
