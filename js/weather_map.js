@@ -39,7 +39,7 @@ function init() {
     geocoder = new MapboxGeocoder({
         accessToken: MP_BX,
         mapboxgl: mapboxgl,
-        marker: true
+        /*marker: true*/
     });
 
 
@@ -53,7 +53,7 @@ function init() {
         .setLngLat([lng, lat])
         .addTo(map);
     console.log(marker)
-    $('#currentCity-span').text("Dallas, Texas, United States");
+    $('.currentCity-span').text("Dallas, Texas, United States");
 }
 
 /**
@@ -62,10 +62,11 @@ function init() {
  * **/
 function getMarker(coordinates) {
     return new mapboxgl.Marker({
-        /*draggable: true*/
+        draggable: true,
+        color: 'red'
     })
         .setLngLat(coordinates)
-        .addTo(map);
+        .setPopup(popup)
 }
 
 
@@ -78,7 +79,7 @@ function getPopup(description, coordinates) {
     return new mapboxgl.Popup()
         .setLngLat(coordinates)
         .setHTML(`<p>${description}</p>`)
-        .addTo(map);
+        /*.addTo(map);*/
 }
 
 
@@ -100,22 +101,12 @@ function setGeocoderEventListener() {
         if (weatherData) {
             weatherData.remove();
         }
-
-        /*Finally, set the hoisted marker/popup variables to new respective objects*/
         console.log(e);
-        popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
-        popupPlaceName = e.result.place_name;
-        console.log(popupPlaceName)
-        let coordinates = e.lngLat;
+       /* let coordinates = e.lngLat;*/
         marker = getMarker(e.result.geometry.coordinates);
-        console.log(getMarker(e.result.geometry.coordinates));
+        /*console.log(getMarker(e.result.geometry.coordinates));*/
 
-        /*From search box entry result, use marker output to get new lat/long for firing 'getWeatherData'*/
-        /*var mapboxLat = marker._lngLat.lat;*/
-        /*console.log(mapboxLat);*/
         lat = marker._lngLat.lat;
-        /*var mapboxLng = marker._lngLat.lng;*/
-        /*console.log(mapboxLng);*/
         lng = marker._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
 
@@ -125,19 +116,8 @@ function setGeocoderEventListener() {
             speed: 9
         });
 
-        $('#currentCity-span').text(e.result.place_name);
+        $('.currentCity-span').text(e.result.place_name);
 
-    });
-    marker.on('click', function(e) {
-        if (popup) {
-            popup.remove();
-        }
-        if (weatherData) {
-            weatherData.remove();
-        }
-        if (marker) {
-            marker.remove();
-        }
     });
     marker.on('dragend', function(e) {
         if (popup) {
@@ -147,25 +127,23 @@ function setGeocoderEventListener() {
             weatherData.remove();
         }
 
-        let coordinates = e.lngLat;
-        /*new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat(coordinates)
-            .addTo(map);*/
-        /*console.log(e.target._lngLat.lat);*/
+        /*marker = getMarker(e.dragend);*/
+        /*console.log('event: ', e.dragend.target)*/
+
+
         lat = e.target._lngLat.lat;
         lng = e.target._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
+
         map.flyTo({
             center: [lng, lat],
             zoom: 5,
             speed: 9
         });
+
+        /*$('.currentCity-span').text(e.result.place_name);*/
     });
 }
-
-/*ADDED FROM html*/
 
 getWeatherData(lat, lng);
 
@@ -202,7 +180,7 @@ function buildCardCont(dayArr) {
 
 function getCity () {
     let cityInput = $(popupPlaceName);
-    $('#currentCity-span-span').text(cityInput);
+    $('#currentCity-span').text(cityInput);
 }
 
 function buildWeatherCard(day) {

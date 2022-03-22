@@ -21,15 +21,22 @@
 
 </head>
 <body>
-<h1>Weather App</h1>
-<nav>
+<!--<h1>Weather App</h1>-->
+<!--<nav>
     <ul class="nav-links">
-        <li>City: <span id="currentCity-span"></span></li>
+        <li>City: <span class="currentCity-span"></span></li>
     </ul>
-</nav>
+</nav>-->
 <div class="container text-center justify-content-center">
-    <div id="geocoder" class="geocoder"></div>
-
+    <header>
+        <div class="heading">
+            <h1>Weather App</h1>
+        </div>
+        <nav>
+            <div>City:&nbsp<span class="currentCity-span"></span></div>
+        </nav>
+    </header>
+    <h1 style="align-self: flex-start"></h1>
     <div id="weather"></div>
     <div id='map' ></div>
 </div>
