@@ -15,6 +15,7 @@ let weatherData;
 let clickLat;
 let icon;
 let popupPlaceName;
+let results2
 
 
 /**
@@ -91,13 +92,27 @@ function setGeocoderEventListener() {
         lat = e.target._lngLat.lat;
         lng = e.target._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
-        map.flyTo({
+        /*map.flyTo({
             center: [lng, lat],
             zoom: 5,
             speed: 9
         });
         console.log(e.target._lngLat.lng);
-        $('.currentCity-span').text(reverseGeocode({lat: lat, lng: lng}, MP_BX));
+        $('.currentCity-span').text(reverseGeocode({lat: lat, lng: lng}, MP_BX));*/
+
+        /*imported*/
+        map.flyTo({
+            center: [lng, lat],
+            zoom: 5,
+            speed: 9
+        });
+        reverseGeocode({lng: e.target._lngLat.lng, lat: e.target._lngLat.lat}, TEST1_KEY).then(function(results) {
+            // logs the address for the current dropped marker
+            results2 = results;
+            console.log(results2)
+            $('.currentCity-span').text(results2);
+        });
+
     });
 }
 
