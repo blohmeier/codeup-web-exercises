@@ -52,7 +52,6 @@ function init() {
     })
         .setLngLat([lng, lat])
         .addTo(map);
-    console.log(marker)
     $('.currentCity-span').text("Dallas, Texas, United States");
 }
 
@@ -68,65 +67,37 @@ function getMarker(coordinates) {
         .addTo(map);
 }
 
-/**
- * Encapsulates code to listen for the geocoder to return a result and allows us to get new Marker and Popup objects
- * **/
 function setGeocoderEventListener() {
     geocoder.on("result", function (e) {
-        /*console.log(this)*/
-        /*We need to ensure marker/popup variables hoisted at the top actual *have* a value
-        * Otherwise, calling a remove() method on a non-existent object will result in a runtime error
-        * */
-        if (marker) {
-            marker.remove();
-        }
-        if (popup) {
-            popup.remove();
-        }
         if (weatherData) {
             weatherData.remove();
         }
-        console.log(e);
-       /* let coordinates = e.lngLat;*/
         marker = getMarker(e.result.geometry.coordinates);
-        /*console.log(getMarker(e.result.geometry.coordinates));*/
-
         lat = marker._lngLat.lat;
         lng = marker._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
-
         map.flyTo({
             center: [lng, lat],
             zoom: 5,
             speed: 9
         });
-
         $('.currentCity-span').text(e.result.place_name);
-
     });
     marker.on('dragend', function(e) {
-        if (popup) {
-            popup.remove();
-        }
         if (weatherData) {
             weatherData.remove();
         }
-
-        /*marker = getMarker(e.dragend);*/
-        /*console.log('event: ', e.dragend.target)*/
-
 
         lat = e.target._lngLat.lat;
         lng = e.target._lngLat.lng;
         weatherData = getWeatherData(lat, lng);
-
         map.flyTo({
             center: [lng, lat],
             zoom: 5,
             speed: 9
         });
-
-        /*$('.currentCity-span').text(e.result.place_name);*/
+        console.log(e.target._lngLat.lng);
+        $('.currentCity-span').text(reverseGeocode({lat: lat, lng: lng}, MP_BX));
     });
 }
 
