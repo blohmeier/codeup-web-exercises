@@ -39,7 +39,7 @@ function init() {
     geocoder = new MapboxGeocoder({
         accessToken: MP_BX,
         mapboxgl: mapboxgl,
-        /*marker: true*/
+        marker: false
     });
 
 
@@ -62,26 +62,11 @@ function init() {
  * **/
 function getMarker(coordinates) {
     return new mapboxgl.Marker({
-        draggable: true,
-        color: 'red'
+        draggable: true
     })
         .setLngLat(coordinates)
-        .setPopup(popup)
+        .addTo(map);
 }
-
-
-/**
- * Utility function to get a new Popup object whenever invoked
- * param description: string represented details of the location
- * param coordinates: number array containing the lng lat of the location
- * **/
-function getPopup(description, coordinates) {
-    return new mapboxgl.Popup()
-        .setLngLat(coordinates)
-        .setHTML(`<p>${description}</p>`)
-        /*.addTo(map);*/
-}
-
 
 /**
  * Encapsulates code to listen for the geocoder to return a result and allows us to get new Marker and Popup objects
