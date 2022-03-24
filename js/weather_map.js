@@ -3,14 +3,9 @@ mapboxgl.accessToken = MP_BX;
 let map;
 let geocoder;
 let marker;
-let popup;
-
-var lat = 32.7763;
 var lng = -96.7969;
+var lat = 32.7763;
 let weatherData;
-let clickLat;
-let icon;
-let popupPlaceName;
 let results2
 let coordinatesVar
 
@@ -19,8 +14,6 @@ init();
 setGeocoderEventListener1();
 setGeocoderEventListener2();
 
-
-/**Define a function to instantiate the map and geocoder objects and bind them together**/
 function init() {
     map = new mapboxgl.Map({
         container: 'map',
@@ -35,7 +28,6 @@ function init() {
         mapboxgl: mapboxgl,
         marker: false,
     });
-    /*console.log('geocoder',geocoder)*/
 
     /*Add the geocoder variable value to the map as a control (form input)*/
     map.addControl(geocoder);
@@ -49,15 +41,6 @@ function init() {
     $('.currentCity-span').text("Dallas, Texas, United States");
 }
 
-function getNewMarker() {
-    if (marker) {
-        marker.remove();
-    }
-    return new mapboxgl.Marker({draggable: true})
-            .setLngLat(coordinatesVar)
-            .addTo(map);
-}
-
 function setGeocoderEventListener1() {
     geocoder.on("result", function (e) {
         if (marker) {
@@ -66,11 +49,8 @@ function setGeocoderEventListener1() {
         if (weatherData) {
             weatherData.remove();
         }
-        map.flyTo({
-            center: [e.result.geometry.coordinates[0], e.result.geometry.coordinates[1]],
-            zoom: 5,
-            speed: 9
-        });
+        map.flyTo({center: [e.result.geometry.coordinates[0], e.result.geometry.coordinates[1]]});
+        /*Add new draggable marker connected to forecast*/
         marker = new mapboxgl.Marker({
             draggable: true
         })
@@ -79,6 +59,7 @@ function setGeocoderEventListener1() {
 
         weatherData = getWeatherData(e.result.geometry.coordinates[1], e.result.geometry.coordinates[0]);
         $('.currentCity-span').text(e.result.place_name);
+        /*Ensure event listener for draggable mouse is restarted*/
         setGeocoderEventListener2();
     });
 }
@@ -89,11 +70,7 @@ function setGeocoderEventListener2() {
         }
         weatherData = getWeatherData(e.target._lngLat.lat, e.target._lngLat.lng);
 
-        map.flyTo({
-            center: [e.target._lngLat.lng, e.target._lngLat.lat],
-            zoom: 5,
-            speed: 9
-        });
+        map.flyTo({center: [e.target._lngLat.lng, e.target._lngLat.lat]});
 
         //Log address for dropped marker
         reverseGeocode({lng: e.target._lngLat.lng, lat: e.target._lngLat.lat}, TEST1_KEY).then(function(results) {
