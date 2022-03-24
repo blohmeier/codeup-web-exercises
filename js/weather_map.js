@@ -1,13 +1,8 @@
 "use strict";
 mapboxgl.accessToken = MP_BX;
-let map;
-let geocoder;
-let marker;
+let map, geocoder, marker, weatherData, results2, coordinatesVar;
 var lng = -96.7969;
 var lat = 32.7763;
-let weatherData;
-let results2
-let coordinatesVar
 
 /*Build map and start event listeners*/
 init();
