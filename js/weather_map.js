@@ -28,11 +28,9 @@ function init() {
     map.addControl(geocoder);
 
     /*Draggable marker connected to forecast*/
-    marker = new mapboxgl.Marker({
-        draggable: true
-    })
+    marker = new mapboxgl.Marker({draggable: true})
         .setLngLat([lng, lat])
-        .addTo(map);
+        .addTo(map)
     $('.currentCity-span').text("Dallas, Texas, United States");
 }
 
@@ -49,6 +47,7 @@ function setGeocoderEventListener1() {
         marker = new mapboxgl.Marker({
             draggable: true
         })
+            //[0] is longitude, [1] is latitude.
             .setLngLat([e.result.geometry.coordinates[0], e.result.geometry.coordinates[1]])
             .addTo(map);
 
