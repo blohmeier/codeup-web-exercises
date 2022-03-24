@@ -1,14 +1,10 @@
 "use strict";
-/**
- * Define all the file-scoped variables we'll need in various parts of this js file
- * **/
 mapboxgl.accessToken = MP_BX;
 let map;
 let geocoder;
 let marker;
 let popup;
 
-/*NEW VARS TO GET MAP AND FORECAST WORKING TOGETHER*/
 var lat = 32.7763;
 var lng = -96.7969;
 let weatherData;
@@ -16,22 +12,19 @@ let clickLat;
 let icon;
 let popupPlaceName;
 let results2
+let coordinatesVar
 
-
-/**
- * Invoke the initial functions to kick off our application
- * **/
+/*Build map and start event listeners*/
 init();
-setGeocoderEventListener();
+setGeocoderEventListener1();
+setGeocoderEventListener2();
 
 
 /**Define a function to instantiate the map and geocoder objects and bind them together**/
 function init() {
-
-    /*Make the mapbox map object, set to map variable declared above*/
     map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
         center: [lng, lat], // starting position [lng, lat]
         zoom: 5 // starting zoom
     });
@@ -40,9 +33,9 @@ function init() {
     geocoder = new MapboxGeocoder({
         accessToken: MP_BX,
         mapboxgl: mapboxgl,
-        marker: false
+        marker: false,
     });
-
+    /*console.log('geocoder',geocoder)*/
 
     /*Add the geocoder variable value to the map as a control (form input)*/
     map.addControl(geocoder);
@@ -56,63 +49,57 @@ function init() {
     $('.currentCity-span').text("Dallas, Texas, United States");
 }
 
-/**
- * Utility function to get a new Marker object whenever invoked
- * param coordinates: number array containing the lng lat of the location
- * **/
-function getMarker(coordinates) {
-    return new mapboxgl.Marker({
-        draggable: true
-    })
-        .setLngLat(coordinates)
-        .addTo(map);
+function getNewMarker() {
+    if (marker) {
+        marker.remove();
+    }
+    return new mapboxgl.Marker({draggable: true})
+            .setLngLat(coordinatesVar)
+            .addTo(map);
 }
 
-function setGeocoderEventListener() {
+function setGeocoderEventListener1() {
     geocoder.on("result", function (e) {
+        if (marker) {
+            marker.remove();
+        }
         if (weatherData) {
             weatherData.remove();
         }
-        marker = getMarker(e.result.geometry.coordinates);
-        lat = marker._lngLat.lat;
-        lng = marker._lngLat.lng;
-        weatherData = getWeatherData(lat, lng);
         map.flyTo({
-            center: [lng, lat],
+            center: [e.result.geometry.coordinates[0], e.result.geometry.coordinates[1]],
             zoom: 5,
             speed: 9
         });
+        marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([e.result.geometry.coordinates[0], e.result.geometry.coordinates[1]])
+            .addTo(map);
+
+        weatherData = getWeatherData(e.result.geometry.coordinates[1], e.result.geometry.coordinates[0]);
         $('.currentCity-span').text(e.result.place_name);
+        setGeocoderEventListener2();
     });
+}
+function setGeocoderEventListener2() {
     marker.on('dragend', function(e) {
         if (weatherData) {
             weatherData.remove();
         }
+        weatherData = getWeatherData(e.target._lngLat.lat, e.target._lngLat.lng);
 
-        lat = e.target._lngLat.lat;
-        lng = e.target._lngLat.lng;
-        weatherData = getWeatherData(lat, lng);
-        /*map.flyTo({
-            center: [lng, lat],
-            zoom: 5,
-            speed: 9
-        });
-        console.log(e.target._lngLat.lng);
-        $('.currentCity-span').text(reverseGeocode({lat: lat, lng: lng}, MP_BX));*/
-
-        /*imported*/
         map.flyTo({
-            center: [lng, lat],
+            center: [e.target._lngLat.lng, e.target._lngLat.lat],
             zoom: 5,
             speed: 9
         });
+
+        //Log address for dropped marker
         reverseGeocode({lng: e.target._lngLat.lng, lat: e.target._lngLat.lat}, TEST1_KEY).then(function(results) {
-            // logs the address for the current dropped marker
             results2 = results;
-            console.log(results2)
             $('.currentCity-span').text(results2);
         });
-
     });
 }
 
